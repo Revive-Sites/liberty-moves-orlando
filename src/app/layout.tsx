@@ -6,6 +6,7 @@ import ChatWidget from '@/components/ChatWidget';
 import GTM from '@/components/GTM';
 import StickyMobileCTA from '@/components/StickyMobileCTA';
 import FloatingQuoteWidget from '@/components/FloatingQuoteWidget';
+import ExitIntent from '@/components/ExitIntent';
 
 const SITE_URL = 'https://libertymovesorlando.com';
 
@@ -34,7 +35,10 @@ export const metadata: Metadata = {
     images: ['/og.png'],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
-  alternates: { canonical: SITE_URL },
+  alternates: {
+    canonical: SITE_URL,
+    languages: { 'en-US': SITE_URL, 'es': `${SITE_URL}/es` },
+  },
   other: { 'geo.region': 'US-FL', 'geo.placename': 'Orlando', 'geo.position': '28.5383;-81.3792', 'ICBM': '28.5383, -81.3792' },
 };
 
@@ -56,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <StickyMobileCTA />
         <FloatingQuoteWidget />
+        <ExitIntent />
         <ChatWidget />
       </body>
     </html>

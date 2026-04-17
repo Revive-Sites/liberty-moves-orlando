@@ -23,6 +23,8 @@ export default function Footer() {
               <MapPin size={14}/> {SITE.addressCity}, {SITE.addressState} {SITE.addressZip}
             </div>
             <div className="text-white/60 text-xs mt-3">USDOT {SITE.usdot}</div>
+            <div className="text-white/60 text-xs">FLDACS IM# pending</div>
+            <div className="mt-3"><a href="/es" className="text-xs text-white/70 hover:text-[var(--color-accent)]">Español →</a></div>
           </div>
         </div>
 

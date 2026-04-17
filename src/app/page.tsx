@@ -4,7 +4,7 @@ import TrustCounter from '@/components/sections/TrustCounter';
 import QuoteWizard from '@/components/sections/QuoteWizard';
 import Services from '@/components/sections/Services';
 import WhyUs from '@/components/sections/WhyUs';
-import Testimonials from '@/components/sections/Testimonials';
+import ReviewsSection from '@/components/sections/ReviewsSection';
 import ServiceAreas from '@/components/sections/ServiceAreas';
 import CTA from '@/components/sections/CTA';
 import FAQ from '@/components/sections/FAQ';
@@ -115,7 +115,7 @@ export default function Home() {
 
       <WhyUs />
       <QuoteWizard />
-      <Testimonials />
+      <ReviewsSection minRating={3} />
       <ServiceAreas />
 
       <section className="section-pad">
