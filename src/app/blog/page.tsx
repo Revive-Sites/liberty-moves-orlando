@@ -12,6 +12,11 @@ export const metadata = {
 };
 
 const POSTS = [
+  { slug: 'how-professional-packing-services-protect-your-belongings', title: 'How Professional Packing Services Protect Your Belongings', excerpt: 'Why pro packing dramatically reduces move-day damage — materials, methods, liability differences.', date: 'April 2026', category: 'Packing' },
+  { slug: 'what-makes-liberty-moves-different', title: 'What Makes Liberty Moves Orlando Different in 2026', excerpt: 'Why Orlando residents keep choosing Liberty Moves — transparent pricing, real crews, real accountability.', date: 'March 2026', category: 'Company' },
+  { slug: 'licensed-vs-unlicensed-orlando-movers', title: 'Orlando Movers: The Real Difference Between Licensed and Unlicensed', excerpt: 'What licensing actually protects you from — and the FLDACS/USDOT lookup tools you should use.', date: 'March 2026', category: 'Buyer Guide' },
+  { slug: 'why-hire-local-orlando-movers', title: 'How Hiring Local Movers Makes Relocation Quick and Easy', excerpt: 'Why local Orlando crews outperform national chains — speed, familiarity, pricing.', date: 'February 2026', category: 'Local' },
+  { slug: 'long-distance-moving-services-guide', title: 'What You Need to Know About Long Distance Moving Services', excerpt: 'Interstate moving demystified — licensing, pricing, timing, and what to expect.', date: 'February 2026', category: 'Long Distance' },
   { slug: 'how-much-do-movers-cost-in-orlando', title: 'How Much Do Movers Cost in Orlando? (2026 Pricing Guide)', excerpt: 'Hourly rates, home-size tables, long-distance pricing, and how to save money on your move.', date: 'January 2026', category: 'Pricing' },
   { slug: 'how-much-to-tip-movers-in-florida', title: 'How Much to Tip Movers in Florida (2026)', excerpt: 'Standard tipping for Florida movers — hourly vs percentage, exceptional service.', date: 'January 2026', category: 'Tipping' },
   { slug: 'best-time-to-move-in-orlando', title: 'When’s the Best Time of Year to Move in Orlando?', excerpt: 'Seasonal pricing, hurricane season, and the specific weeks that save hundreds.', date: 'January 2026', category: 'Planning' },
@@ -34,7 +39,7 @@ export default function Blog() {
   return (
     <>
       <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Blog', url: `${SITE.url}/blog` }]} />
-      <PageHero eyebrow="Blog" title="Orlando moving guides that actually help." subtitle="16+ real answers to the questions Orlando homeowners actually ask. Written by people who move houses for a living — not SEO writers." />
+      <PageHero eyebrow="Blog" title="Orlando moving guides that actually help." subtitle="21 guides answering the questions Orlando homeowners actually ask. Written by people who move houses for a living — not SEO writers." />
       <section className="section-pad">
         <div className="container-site max-w-4xl">
           <div className="grid gap-6">

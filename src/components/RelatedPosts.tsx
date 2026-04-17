@@ -3,6 +3,11 @@ import { ArrowRight, Calendar } from 'lucide-react';
 
 type Post = { slug: string; title: string; excerpt: string; category: string };
 const ALL: Post[] = [
+  { slug: 'how-professional-packing-services-protect-your-belongings', title: 'Pro Packing Protects Your Belongings', excerpt: 'Materials, methods, and liability differences.', category: 'Packing' },
+  { slug: 'what-makes-liberty-moves-different', title: 'What Makes Liberty Moves Different', excerpt: 'Transparent pricing, real crews, real accountability.', category: 'Company' },
+  { slug: 'licensed-vs-unlicensed-orlando-movers', title: 'Licensed vs Unlicensed Movers', excerpt: 'What licensing actually protects you from.', category: 'Buyer Guide' },
+  { slug: 'why-hire-local-orlando-movers', title: 'Why Hire Local Orlando Movers', excerpt: 'Why locals outperform national chains.', category: 'Local' },
+  { slug: 'long-distance-moving-services-guide', title: 'Long Distance Moving Services Guide', excerpt: 'Interstate moving demystified.', category: 'Long Distance' },
   { slug: 'how-much-do-movers-cost-in-orlando', title: 'How Much Do Movers Cost in Orlando? (2026)', excerpt: 'Hourly rates, home-size tables, and money-saving tips.', category: 'Pricing' },
   { slug: 'how-much-to-tip-movers-in-florida', title: 'How Much to Tip Movers in Florida', excerpt: 'Hourly vs percentage, exceptional service, cash vs Venmo.', category: 'Tipping' },
   { slug: 'best-time-to-move-in-orlando', title: 'Best Time of Year to Move in Orlando', excerpt: 'Seasonal pricing, hurricane season, cheapest weeks.', category: 'Planning' },
