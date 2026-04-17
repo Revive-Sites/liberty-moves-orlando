@@ -1,8 +1,10 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { SITE, NAV_PRIMARY } from '@/lib/site';
+import { url, IMG } from '@/lib/images';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -10,10 +12,14 @@ export default function Header() {
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-[var(--color-border)]">
       <div className="container-site flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <div className="flex flex-col leading-tight">
-            <span className="font-display font-extrabold text-[var(--color-primary)] text-lg md:text-xl">Liberty Moves</span>
-            <span className="text-[11px] md:text-xs tracking-[0.2em] uppercase text-[var(--color-muted)]">Orlando, FL</span>
-          </div>
+          <Image
+            src={url(IMG.logo, 400)}
+            alt="Liberty Moves Orlando"
+            width={160}
+            height={44}
+            priority
+            className="h-10 md:h-11 w-auto object-contain"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

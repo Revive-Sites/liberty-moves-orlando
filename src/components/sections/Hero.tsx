@@ -1,9 +1,10 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Star, Shield, Clock, ArrowRight } from 'lucide-react';
+import { Phone, Star, Shield, Clock, ArrowRight, Zap } from 'lucide-react';
 import { SITE } from '@/lib/site';
 import { url, IMG } from '@/lib/images';
+import FormEmbed from '@/components/FormEmbed';
 
 export default function Hero({
   eyebrow = 'Orlando Moving Company',
@@ -63,34 +64,23 @@ export default function Hero({
             </div>
           </div>
 
-          {/* Quick-quote card */}
+          {/* In-hero quote form */}
           <div className="lg:justify-self-end w-full max-w-md">
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden ring-1 ring-white/20">
               <div className="bg-[var(--color-accent)] text-[var(--color-text)] px-6 py-3 flex items-center justify-between">
-                <div>
-                  <div className="text-xs uppercase tracking-widest font-bold">Free Quote</div>
-                  <div className="text-sm">Answered within the hour</div>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs font-bold">No obligation</div>
-                  <div className="text-[10px] opacity-70">Real person, not a bot</div>
-                </div>
-              </div>
-              <div className="p-6 space-y-3">
-                <Link href="/contact-us" className="block w-full bg-[var(--color-primary)] hover:bg-[#2a4a76] text-white font-bold py-4 rounded-lg text-center transition">
-                  Request a Quote Online →
-                </Link>
-                <a href={SITE.phoneLink} className="block w-full border-2 border-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white text-[var(--color-primary)] font-bold py-4 rounded-lg text-center transition">
-                  Call {SITE.phoneDisplay}
-                </a>
-                <div className="pt-2 text-center">
-                  <div className="text-xs text-[var(--color-muted)]">Available 7 days a week, 7am–7pm ET</div>
+                <div className="flex items-center gap-2">
+                  <Zap size={18} className="fill-[var(--color-text)]"/>
+                  <div>
+                    <div className="text-sm font-extrabold uppercase tracking-wide">Get Your Free Quote</div>
+                    <div className="text-[11px] font-semibold opacity-80">Answered within the hour · No spam</div>
+                  </div>
                 </div>
               </div>
-              <div className="bg-[var(--color-surface)] border-t border-[var(--color-border)] px-6 py-3 flex items-center justify-between text-xs">
-                <div className="flex items-center gap-1 text-[var(--color-muted)]">
-                  <Shield size={12} className="text-[var(--color-accent)]"/> Licensed · Insured · USDOT {SITE.usdot}
-                </div>
+              <div className="bg-white">
+                <FormEmbed height={530} formName="Liberty Moves — Hero Quote" />
+              </div>
+              <div className="bg-[var(--color-surface)] border-t border-[var(--color-border)] px-6 py-2.5 flex items-center justify-center text-xs gap-1 text-[var(--color-muted)]">
+                <Shield size={12} className="text-[var(--color-accent)]"/> Licensed · Insured · USDOT {SITE.usdot}
               </div>
             </div>
           </div>
