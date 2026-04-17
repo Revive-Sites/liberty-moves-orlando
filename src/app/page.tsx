@@ -3,6 +3,7 @@ import TrustBar from '@/components/sections/TrustBar';
 import TrustCounter from '@/components/sections/TrustCounter';
 import LicenseVerify from '@/components/sections/LicenseVerify';
 import QuoteWizard from '@/components/sections/QuoteWizard';
+import BeforeAfter from '@/components/sections/BeforeAfter';
 import Services from '@/components/sections/Services';
 import WhyUs from '@/components/sections/WhyUs';
 import ReviewsSection from '@/components/sections/ReviewsSection';
@@ -115,6 +116,7 @@ export default function Home() {
       </section>
 
       <WhyUs />
+      <BeforeAfter />
       <LicenseVerify />
       <QuoteWizard />
       <ReviewsSection minRating={3} />
