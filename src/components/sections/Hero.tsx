@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Phone, Star, Shield, Clock, ArrowRight, Zap } from 'lucide-react';
 import { SITE } from '@/lib/site';
 import { url, IMG, VIDEOS } from '@/lib/images';
-import FormEmbed from '@/components/FormEmbed';
+import QuoteForm from '@/components/QuoteForm';
 
 export default function Hero({
   eyebrow = 'Orlando Moving Company',
@@ -74,7 +74,7 @@ export default function Hero({
                 </div>
               </div>
               <div className="bg-white">
-                <FormEmbed height={460} formName="Liberty Moves — Hero Quote" />
+                <QuoteForm compact />
               </div>
               <div className="bg-[var(--color-surface)] border-t border-[var(--color-border)] px-6 py-2.5 flex items-center justify-center text-xs gap-1 text-[var(--color-muted)]">
                 <Shield size={12} className="text-[var(--color-accent)]"/> Licensed · Insured · USDOT {SITE.usdot} · FLDACS {SITE.fldacs}

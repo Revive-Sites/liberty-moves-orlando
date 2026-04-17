@@ -1,5 +1,5 @@
 import PageHero from '@/components/sections/PageHero';
-import FormEmbed from '@/components/FormEmbed';
+import QuoteForm from '@/components/QuoteForm';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
@@ -64,7 +64,13 @@ export default function Contact() {
             </div>
           </div>
           <div>
-            <FormEmbed height={620} formName="Liberty Moves Orlando — Quote Request" />
+            <div className="bg-white rounded-2xl border border-[var(--color-border)] shadow-lg overflow-hidden">
+              <div className="bg-[var(--color-accent)] text-white px-6 py-3">
+                <div className="text-sm font-extrabold uppercase tracking-wide">Request a Free Quote</div>
+                <div className="text-xs opacity-90">Answered within the hour · Licensed USDOT {SITE.usdot} · FLDACS {SITE.fldacs}</div>
+              </div>
+              <QuoteForm />
+            </div>
           </div>
         </div>
       </section>
