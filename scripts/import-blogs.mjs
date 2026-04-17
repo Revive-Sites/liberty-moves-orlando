@@ -4,14 +4,15 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const DIR = '/Users/reviveagency/liberty-moves-orlando-build/scraped/blog';
-const APP = '/Users/reviveagency/liberty-moves-orlando-build/src/app/blog';
+const APP = '/Users/reviveagency/liberty-moves-orlando-build/src/app/blog/b';
 
+// Use EXACT live-site slugs under /blog/b/ for SEO preservation
 const POSTS = [
-  { slug: 'how-professional-packing-services-protect-your-belongings', srcSlug: 'how-professional-packing-services-protect-your-belongings-during-a-move', category: 'Packing', date: '2026-04-10' },
-  { slug: 'what-makes-liberty-moves-different', srcSlug: 'what-makes-liberty-moves-orlando-different-why-every-resident-deserves-the-best-in-2026', category: 'Company', date: '2026-03-19' },
-  { slug: 'licensed-vs-unlicensed-orlando-movers', srcSlug: 'orlando-movers-the-real-difference-between-licensed-and-unlicensed', category: 'Buyer Guide', date: '2026-03-13' },
-  { slug: 'why-hire-local-orlando-movers', srcSlug: 'how-hiring-local-movers-makes-relocation-quick-and-easy', category: 'Local', date: '2026-02-20' },
-  { slug: 'long-distance-moving-services-guide', srcSlug: 'what-you-need-to-know-about-long-distance-moving-services', category: 'Long Distance', date: '2026-02-13' },
+  { slug: 'how-professional-packing-services-protect-your-belongings-during-a-move', srcSlug: 'how-professional-packing-services-protect-your-belongings-during-a-move', category: 'Packing', date: '2026-04-10' },
+  { slug: 'what-makes-liberty-moves-orlando-different-why-every-resident-deserves-the-best-in-2026', srcSlug: 'what-makes-liberty-moves-orlando-different-why-every-resident-deserves-the-best-in-2026', category: 'Company', date: '2026-03-19' },
+  { slug: 'orlando-movers-the-real-difference-between-licensed-and-unlicensed', srcSlug: 'orlando-movers-the-real-difference-between-licensed-and-unlicensed', category: 'Buyer Guide', date: '2026-03-13' },
+  { slug: 'how-hiring-local-movers-makes-relocation-quick-and-easy', srcSlug: 'how-hiring-local-movers-makes-relocation-quick-and-easy', category: 'Local', date: '2026-02-20' },
+  { slug: 'what-you-need-to-know-about-long-distance-moving-services', srcSlug: 'what-you-need-to-know-about-long-distance-moving-services', category: 'Long Distance', date: '2026-02-13' },
 ];
 
 function stripTags(s) {
@@ -130,17 +131,17 @@ import { Phone } from 'lucide-react';
 export const metadata = {
   title: ${JSON.stringify(metaTitle)},
   description: ${JSON.stringify(metaDesc || `${h1Safe} — from Liberty Moves Orlando.`)},
-  alternates: { canonical: \`\${SITE.url}/blog/${post.slug}\` },
+  alternates: { canonical: \`\${SITE.url}/blog/b/${post.slug}\` },
 };
 
 export default function Post() {
   return (
     <>
-      <BlogPostingLd slug=${JSON.stringify(post.slug)} title=${JSON.stringify(metaTitle)} description=${JSON.stringify(metaDesc || '')} date=${JSON.stringify(post.date)} />
+      <BlogPostingLd slug=${JSON.stringify('b/' + post.slug)} title=${JSON.stringify(metaTitle)} description=${JSON.stringify(metaDesc || '')} date=${JSON.stringify(post.date)} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
         { name: 'Blog', url: \`\${SITE.url}/blog\` },
-        { name: ${JSON.stringify(metaTitle.slice(0, 60))}, url: \`\${SITE.url}/blog/${post.slug}\` },
+        { name: ${JSON.stringify(metaTitle.slice(0, 60))}, url: \`\${SITE.url}/blog/b/${post.slug}\` },
       ]} />
       <PageHero eyebrow=${JSON.stringify(post.category + ' · ' + new Date(post.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }))} title=${JSON.stringify(h1Safe)} />
       ${heroImage ? `<section className="pt-8">

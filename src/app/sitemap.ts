@@ -18,11 +18,11 @@ const BLOG_POSTS = [
   'storage-unit-sizes-guide',
   'furniture-disassembly-guide',
   'what-movers-wont-move',
-  'how-professional-packing-services-protect-your-belongings',
-  'what-makes-liberty-moves-different',
-  'licensed-vs-unlicensed-orlando-movers',
-  'why-hire-local-orlando-movers',
-  'long-distance-moving-services-guide',
+  'b/how-professional-packing-services-protect-your-belongings-during-a-move',
+  'b/what-makes-liberty-moves-orlando-different-why-every-resident-deserves-the-best-in-2026',
+  'b/orlando-movers-the-real-difference-between-licensed-and-unlicensed',
+  'b/how-hiring-local-movers-makes-relocation-quick-and-easy',
+  'b/what-you-need-to-know-about-long-distance-moving-services',
 ];
 
 const SPECIALTY = [
