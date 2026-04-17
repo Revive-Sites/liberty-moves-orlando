@@ -22,10 +22,12 @@ export const SITE = {
   logo: '/images/logo.png',
   ghl: {
     locationId: '7pnMlJIyNsgtdaD576rT',
-    formId: 'sDowmGB7fj',
+    formId: 'RjsFjWPKvuPNDGutFGkb',
+    chatWidgetId: '698127e0ed26593e3945a9a5',
     chatWidgetSrc: 'https://widgets.leadconnectorhq.com/loader.js',
-    formEmbedSrc: 'https://link.msgsndr.com/js/form_embed.js',
-    formIframeSrc: 'https://api.leadconnectorhq.com/widget/form/sDowmGB7fj',
+    chatResourcesUrl: 'https://widgets.leadconnectorhq.com/chat-widget/loader.js',
+    formEmbedSrc: 'https://link.reviveagency.io/js/form_embed.js',
+    formIframeSrc: 'https://link.reviveagency.io/widget/form/RjsFjWPKvuPNDGutFGkb',
   },
   gtm: 'GTM-WWLX2D3Q',
 } as const;
