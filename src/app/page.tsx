@@ -16,14 +16,14 @@ const HOME_FAQS = [
   { q: 'How much do movers cost in Orlando?', a: 'Local Orlando moves at Liberty Moves typically run $600–$2,500 depending on home size and crew. A 2-bed apartment averages $650–$1,100. A 3–4 bed home runs $1,200–$2,400. Long-distance moves are priced by weight + distance and quoted with a binding written estimate. See our complete Orlando moving cost guide for detailed tables.' },
   { q: 'Are you licensed and insured to move in Florida?', a: 'Yes. Liberty Moves Orlando is licensed by the U.S. Department of Transportation (USDOT 3455436) with full cargo and liability coverage. We provide certificates of insurance for HOAs and buildings on request, usually same-day.' },
   { q: 'How far in advance should I book Orlando movers?', a: '2–3 weeks ahead for weekday moves, 3–4 weeks for weekends. End-of-month dates fill first. Need to move sooner? Call us — we can often fit same-day or next-day emergency moves.' },
-  { q: 'Do you offer same-day or last-minute moves in Orlando?', a: 'Yes — subject to crew availability. 98% of our local Orlando jobs finish same-day. For next-day or emergency moves, call 407-641-2887 and we\u2019ll tell you honestly whether we can fit you in.' },
+  { q: 'Do you offer same-day or last-minute moves in Orlando?', a: 'Yes — subject to crew availability. 98% of our local Orlando jobs finish same-day. For next-day or emergency moves, call 407-641-2887 and we’ll tell you honestly whether we can fit you in.' },
   { q: 'What Orlando neighborhoods do you serve?', a: 'Every zip code in the Orlando metro. We serve Winter Park, Lake Mary, Kissimmee, Altamonte Springs, Windermere, Celebration, Oviedo, Sanford, Apopka, Winter Garden, and 18 other Central Florida cities — each with a dedicated service page.' },
-  { q: 'Do you pack, or just move?', a: 'Both. Full packing (materials + labor), partial packing (just fragiles or kitchen), or move-only. Packing materials are sold at cost, not marked up. If we pack it, we\u2019re responsible for it.' },
-  { q: 'How much do you tip movers in Florida?', a: 'Industry standard is $5–$10/hour per mover for good service, or 5%–10% of the total move cost. For a full-day 4-person crew, $80–$120 total is typical. Tipping is never required — quality movers don\u2019t expect it, but they always appreciate it.' },
+  { q: 'Do you pack, or just move?', a: 'Both. Full packing (materials + labor), partial packing (just fragiles or kitchen), or move-only. Packing materials are sold at cost, not marked up. If we pack it, we’re responsible for it.' },
+  { q: 'How much do you tip movers in Florida?', a: 'Industry standard is $5–$10/hour per mover for good service, or 5%–10% of the total move cost. For a full-day 4-person crew, $80–$120 total is typical. Tipping is never required — quality movers don’t expect it, but they always appreciate it.' },
   { q: 'Do you move long distance from Orlando?', a: 'Yes — anywhere in the continental U.S. One truck, one crew, direct delivery. No warehouse transfers or third-party handlers. Licensed interstate under USDOT 3455436.' },
   { q: 'What do Orlando movers not move?', a: 'Hazardous materials (propane, paint, gasoline, pool chemicals), firearms, perishable food, plants across state lines, and cash/jewelry (always keep those with you). Full non-allowable list sent with every estimate.' },
-  { q: 'Do you move pianos, safes, and heavy items in Orlando?', a: 'Yes — most upright pianos, gun safes, pool tables, and gym equipment. Grand pianos and 1,000+ lb safes need a specialty crew — we\u2019ll tell you upfront if we\u2019re the right fit.' },
-  { q: 'What\u2019s the best time of year to move in Orlando?', a: 'October through April is easiest: cooler weather, lower humidity, and outside hurricane season (June–November). Summer moves book out fast and get expensive. End-of-month and weekends are always busiest — mid-month weekdays save money.' },
+  { q: 'Do you move pianos, safes, and heavy items in Orlando?', a: 'Yes — most upright pianos, gun safes, pool tables, and gym equipment. Grand pianos and 1,000+ lb safes need a specialty crew — we’ll tell you upfront if we’re the right fit.' },
+  { q: 'What’s the best time of year to move in Orlando?', a: 'October through April is easiest: cooler weather, lower humidity, and outside hurricane season (June–November). Summer moves book out fast and get expensive. End-of-month and weekends are always busiest — mid-month weekdays save money.' },
   { q: 'Do you offer free quotes?', a: 'Yes — always free, always in writing, always no-pressure. Call, text, or fill out our form and a real person (not a call center) will reach out within the day with a clear estimate.' },
 ];
 
@@ -45,7 +45,7 @@ export default function Home() {
 
       <Hero
         eyebrow="Orlando Moving Company"
-        title="Orlando movers who treat your stuff like it\u2019s ours."
+        title="Orlando movers who treat your stuff like it’s ours."
         subtitle="Licensed, insured, and 5-star rated. Upfront pricing, careful crews, and no-surprise service from quote to unload. Serving Orlando and all of Central Florida."
       />
       <TrustBar />
@@ -66,15 +66,15 @@ export default function Home() {
           <div className="prose-ink">
             <h2 className="text-2xl md:text-4xl font-extrabold mt-10">The Orlando moving company families and businesses keep calling back.</h2>
             <p>
-              Liberty Moves Orlando is a licensed, family-run moving company based in Orlando, Florida. We serve every corner of Central Florida — from Winter Park and Windermere to Kissimmee, Lake Mary, and the farthest reaches of Osceola, Seminole, Orange, and Lake counties. Our promise is simple: we treat your things like they\u2019re ours, we price what we quote, and we show up when we say we will.
+              Liberty Moves Orlando is a licensed, family-run moving company based in Orlando, Florida. We serve every corner of Central Florida — from Winter Park and Windermere to Kissimmee, Lake Mary, and the farthest reaches of Osceola, Seminole, Orange, and Lake counties. Our promise is simple: we treat your things like they’re ours, we price what we quote, and we show up when we say we will.
             </p>
             <p>
-              We\u2019re licensed by the U.S. Department of Transportation (<strong>USDOT {SITE.usdot}</strong>), fully bonded, and insured with both cargo and liability coverage. Our crews are uniformed, background-checked, and trained — the same people who load your truck are the ones who unload it. For long-distance moves, that same crew drives your things directly to your new home. No warehouse transfers, no third-party handlers, no surprises.
+              We’re licensed by the U.S. Department of Transportation (<strong>USDOT {SITE.usdot}</strong>), fully bonded, and insured with both cargo and liability coverage. Our crews are uniformed, background-checked, and trained — the same people who load your truck are the ones who unload it. For long-distance moves, that same crew drives your things directly to your new home. No warehouse transfers, no third-party handlers, no surprises.
             </p>
 
             <h3 className="text-xl md:text-2xl font-extrabold mt-10">What makes a Liberty Moves Orlando move different</h3>
             <p>
-              Most movers look alike on paper: trucks, crews, a phone number. The difference shows up on move day. We\u2019re obsessed with two things most competitors treat as afterthoughts: <strong>honest pricing</strong> and <strong>careful handling</strong>. Every quote we send is written, itemized, and binding — no surprise fuel charges, stair fees, or long-carry add-ons. Every crew member is trained on how to wrap, pad, dolly, and stack your belongings so nothing gets scratched, broken, or lost. We\u2019d rather move slower and do it right than rush and damage your things.
+              Most movers look alike on paper: trucks, crews, a phone number. The difference shows up on move day. We’re obsessed with two things most competitors treat as afterthoughts: <strong>honest pricing</strong> and <strong>careful handling</strong>. Every quote we send is written, itemized, and binding — no surprise fuel charges, stair fees, or long-carry add-ons. Every crew member is trained on how to wrap, pad, dolly, and stack your belongings so nothing gets scratched, broken, or lost. We’d rather move slower and do it right than rush and damage your things.
             </p>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <div className="text-[var(--color-accent)] text-sm font-semibold uppercase tracking-[0.2em]">Pricing</div>
             <h2 className="mt-2 text-3xl md:text-5xl font-extrabold">What Orlando movers actually cost.</h2>
-            <p className="mt-4 text-[var(--color-muted)] text-lg">We publish pricing because every homeowner asks. Here\u2019s what typical Orlando moves run at Liberty Moves — no sales call required.</p>
+            <p className="mt-4 text-[var(--color-muted)] text-lg">We publish pricing because every homeowner asks. Here’s what typical Orlando moves run at Liberty Moves — no sales call required.</p>
           </div>
 
           <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-4">

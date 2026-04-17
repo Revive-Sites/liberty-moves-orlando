@@ -22,14 +22,14 @@ const POSTS = [
   {
     slug: 'how-much-to-tip-movers-in-florida',
     title: 'How Much to Tip Movers in Florida (2026)',
-    excerpt: 'What\u2019s standard for tipping Orlando and Florida movers — hourly rates, percentage approach, exceptional service, and how to tip properly.',
+    excerpt: 'What’s standard for tipping Orlando and Florida movers — hourly rates, percentage approach, exceptional service, and how to tip properly.',
     date: 'January 2026',
     category: 'Tipping',
   },
   {
     slug: 'best-time-to-move-in-orlando',
-    title: 'When\u2019s the Best Time of Year to Move in Orlando?',
-    excerpt: 'Orlando\u2019s weather, hurricane season, seasonal pricing, and the specific weeks and days that save you hundreds on your move.',
+    title: 'When’s the Best Time of Year to Move in Orlando?',
+    excerpt: 'Orlando’s weather, hurricane season, seasonal pricing, and the specific weeks and days that save you hundreds on your move.',
     date: 'January 2026',
     category: 'Planning',
   },

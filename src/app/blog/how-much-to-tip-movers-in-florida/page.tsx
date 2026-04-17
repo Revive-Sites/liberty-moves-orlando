@@ -14,7 +14,7 @@ export const metadata = {
 const FAQS = [
   { q: 'Is it customary to tip movers in Florida?', a: 'Yes — tipping is customary for quality service, though not required. Florida standard is $5–$10 per hour per mover, or 5–10% of total move cost.' },
   { q: 'Do you tip movers before or after the move?', a: 'After. Wait until the move is complete so the tip reflects actual service quality. Handing it directly to each mover is common; handing the lump sum to the foreman to split is also fine.' },
-  { q: 'Should I tip in cash?', a: 'Cash is ideal and always appreciated, but Venmo, Zelle, and Cash App work too if that\u2019s easier. Tips go directly to the crew, not the company.' },
+  { q: 'Should I tip in cash?', a: 'Cash is ideal and always appreciated, but Venmo, Zelle, and Cash App work too if that’s easier. Tips go directly to the crew, not the company.' },
 ];
 
 export default function Post() {
@@ -38,7 +38,7 @@ export default function Post() {
             'Never required — but always appreciated for quality work',
           ]} />
 
-          <p>If you\u2019re wondering whether to tip your Florida movers — yes, it\u2019s customary — and how much, the short answer is <strong>$5 to $10 per hour per mover</strong>, or <strong>5% to 10% of the total move cost</strong>. Neither is required. Both are appreciated. Here\u2019s how to think about it.</p>
+          <p>If you’re wondering whether to tip your Florida movers — yes, it’s customary — and how much, the short answer is <strong>$5 to $10 per hour per mover</strong>, or <strong>5% to 10% of the total move cost</strong>. Neither is required. Both are appreciated. Here’s how to think about it.</p>
 
           <h2>Method 1: Hourly tipping ($5–$10/hour per mover)</h2>
           <p>The most common approach in Florida is hourly. Pick a per-hour amount based on service quality, multiply by hours worked, multiply by number of movers:</p>
@@ -61,12 +61,12 @@ export default function Post() {
             <li><strong>7–8%</strong> for great</li>
             <li><strong>10–15%</strong> for exceptional</li>
           </ul>
-          <p>Example: $1,500 move, great service → $105–$120 tip. Split among crew, that\u2019s ~$35–$40 each for a 3-person crew.</p>
+          <p>Example: $1,500 move, great service → $105–$120 tip. Split among crew, that’s ~$35–$40 each for a 3-person crew.</p>
 
           <h2>When to tip more (or less)</h2>
           <p>Tip more if:</p>
           <ul>
-            <li>It\u2019s a long day (10+ hours) — these are brutal on the body</li>
+            <li>It’s a long day (10+ hours) — these are brutal on the body</li>
             <li>Lots of stairs or walk-ups</li>
             <li>Hot weather (Florida summer!) — movers deserve it</li>
             <li>Heavy or specialty items (pianos, safes, gym equipment)</li>
@@ -82,9 +82,9 @@ export default function Post() {
           <h2>How to give the tip</h2>
           <p>A few ways that work:</p>
           <ol>
-            <li><strong>Hand to each mover at the end.</strong> Most personal. Make sure it\u2019s evenly split.</li>
+            <li><strong>Hand to each mover at the end.</strong> Most personal. Make sure it’s evenly split.</li>
             <li><strong>Hand the lump sum to the foreman.</strong> Easier, and the foreman will split it fairly with the crew.</li>
-            <li><strong>Venmo / Zelle / Cash App.</strong> Ask the crew for their handles if you don\u2019t have cash.</li>
+            <li><strong>Venmo / Zelle / Cash App.</strong> Ask the crew for their handles if you don’t have cash.</li>
           </ol>
           <p>Whatever method you pick, tip after the move is complete — that way it reflects actual service, and the crew has something to look forward to at the end of a long day.</p>
 

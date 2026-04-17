@@ -84,7 +84,7 @@ export const CITIES: City[] = [
     homeTypes: 'Single-family homes, farm/acreage properties, new-build communities',
     priceRange: '$650–$2,300 for most local moves',
     distanceFromDowntown: '15 miles northwest of downtown Orlando',
-    localNote: 'Apopka\u2019s growth along the 429 corridor means many Apopka moves are from rental-to-new-build or downsizing from larger acreage properties.',
+    localNote: 'Apopka’s growth along the 429 corridor means many Apopka moves are from rental-to-new-build or downsizing from larger acreage properties.',
   },
   {
     slug: 'oviedo-orlando', name: 'Oviedo', region: 'Seminole County',
@@ -94,7 +94,7 @@ export const CITIES: City[] = [
     homeTypes: 'Master-planned community homes, townhomes, large single-family homes',
     priceRange: '$700–$2,500 for most local moves',
     distanceFromDowntown: '17 miles northeast of downtown Orlando',
-    localNote: 'Oviedo is one of Central Florida\u2019s top-rated school districts — most of our work here is growing families moving into larger homes.',
+    localNote: 'Oviedo is one of Central Florida’s top-rated school districts — most of our work here is growing families moving into larger homes.',
   },
   {
     slug: 'sanford-orlando', name: 'Sanford', region: 'Seminole County',
@@ -110,11 +110,11 @@ export const CITIES: City[] = [
     slug: 'windermere-orlando', name: 'Windermere', region: 'Orange County',
     blurb: 'Luxury-home moves handled with white-glove care. Every piece protected.',
     zips: ['34786'],
-    neighborhoods: ['Isleworth', 'Keene\u2019s Pointe', 'Reserve at Lake Butler Sound', 'Windermere Downs', 'Lake Burden'],
+    neighborhoods: ['Isleworth', 'Keene’s Pointe', 'Reserve at Lake Butler Sound', 'Windermere Downs', 'Lake Burden'],
     homeTypes: 'Luxury lakefront estates, gated golf communities, multi-million-dollar homes',
     priceRange: '$1,500–$8,000 for most local moves',
     distanceFromDowntown: '15 miles southwest of downtown Orlando',
-    localNote: 'Windermere is home to Central Florida\u2019s highest-end real estate. Our Windermere moves include white-glove wrapping, inventoried packing, and art and antique specialists.',
+    localNote: 'Windermere is home to Central Florida’s highest-end real estate. Our Windermere moves include white-glove wrapping, inventoried packing, and art and antique specialists.',
   },
   {
     slug: 'celebration-orlando', name: 'Celebration', region: 'Osceola County',
@@ -144,7 +144,7 @@ export const CITIES: City[] = [
     homeTypes: 'Vacation rental homes, resort-community homes, single-family homes',
     priceRange: '$700–$2,600 for most local moves',
     distanceFromDowntown: '30 miles southwest of downtown Orlando',
-    localNote: 'Davenport\u2019s short-term rental industry drives a lot of furniture turnovers and vacation-home moves — we handle both residential relocations and rental-property logistics.',
+    localNote: 'Davenport’s short-term rental industry drives a lot of furniture turnovers and vacation-home moves — we handle both residential relocations and rental-property logistics.',
   },
   {
     slug: 'gotha-orlando', name: 'Gotha', region: 'Orange County',
@@ -164,7 +164,7 @@ export const CITIES: City[] = [
     homeTypes: 'Gated luxury homes, hillside estates, lakefront properties',
     priceRange: '$1,000–$3,500 for most local moves',
     distanceFromDowntown: '25 miles west of downtown Orlando',
-    localNote: 'Montverde\u2019s hills and long driveways mean we sometimes need shuttle trucks for larger jobs — we scope this during your free estimate.',
+    localNote: 'Montverde’s hills and long driveways mean we sometimes need shuttle trucks for larger jobs — we scope this during your free estimate.',
   },
   {
     slug: 'winter-garden-orlando', name: 'Winter Garden', region: 'Orange County',
@@ -174,7 +174,7 @@ export const CITIES: City[] = [
     homeTypes: 'Historic downtown homes, new-construction in Horizon West, townhomes',
     priceRange: '$700–$2,500 for most local moves',
     distanceFromDowntown: '14 miles west of downtown Orlando',
-    localNote: 'Winter Garden\u2019s Horizon West area is adding thousands of homes per year — we handle many new-construction move-ins with closing-day coordination.',
+    localNote: 'Winter Garden’s Horizon West area is adding thousands of homes per year — we handle many new-construction move-ins with closing-day coordination.',
   },
   {
     slug: 'college-park-orlando', name: 'College Park', region: 'Orange County',
@@ -184,7 +184,7 @@ export const CITIES: City[] = [
     homeTypes: 'Historic Craftsman bungalows, mid-century homes, modern condos, downtown lofts',
     priceRange: '$650–$2,100 for most local moves',
     distanceFromDowntown: '3 miles northwest of downtown Orlando',
-    localNote: 'College Park\u2019s older homes often have narrow doorways, steep staircases, and tight street parking. Our crews are experienced with vintage-home moves.',
+    localNote: 'College Park’s older homes often have narrow doorways, steep staircases, and tight street parking. Our crews are experienced with vintage-home moves.',
   },
   {
     slug: 'maitland-movers', name: 'Maitland', region: 'Orange County',
@@ -194,7 +194,7 @@ export const CITIES: City[] = [
     homeTypes: 'Lakefront homes, historic single-family, townhomes, condos',
     priceRange: '$650–$2,200 for most local moves',
     distanceFromDowntown: '7 miles north of downtown Orlando',
-    localNote: 'Maitland\u2019s Art Center district and lakeside homes mean lots of art, antiques, and specialty items — we bring extra wrapping and care.',
+    localNote: 'Maitland’s Art Center district and lakeside homes mean lots of art, antiques, and specialty items — we bring extra wrapping and care.',
   },
   {
     slug: 'winter-springs-movers', name: 'Winter Springs', region: 'Seminole County',
@@ -214,7 +214,7 @@ export const CITIES: City[] = [
     homeTypes: 'Lakefront single-family, mid-century homes, condos, townhomes',
     priceRange: '$650–$2,200 for most local moves',
     distanceFromDowntown: '10 miles north of downtown Orlando',
-    localNote: 'Casselberry\u2019s many lakes (Howell, Kathryn, Triplet) mean lakeside properties with boat lifts and dock access. We schedule accordingly.',
+    localNote: 'Casselberry’s many lakes (Howell, Kathryn, Triplet) mean lakeside properties with boat lifts and dock access. We schedule accordingly.',
   },
 ];
 
@@ -222,7 +222,7 @@ export const SERVICES = [
   { slug: 'residential-moving', title: 'Residential Moving', blurb: 'Homes, apartments, condos — full-service local moves done in a single day.' },
   { slug: 'commercial-moving', title: 'Commercial Moving', blurb: 'Offices, retail, warehouses. Weekend moves to keep your business open.' },
   { slug: 'long-distance-moving', title: 'Long-Distance Moving', blurb: 'Florida to anywhere in the country. Dedicated trucks, transparent pricing.' },
-  { slug: 'Packing-Services', title: 'Packing Services', blurb: 'Professional packing and materials. We pack it, we move it, we\u2019re responsible.' },
+  { slug: 'Packing-Services', title: 'Packing Services', blurb: 'Professional packing and materials. We pack it, we move it, we’re responsible.' },
 ];
 
 export const NAV_PRIMARY = [

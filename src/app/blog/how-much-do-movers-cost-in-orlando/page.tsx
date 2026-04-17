@@ -14,7 +14,7 @@ export const metadata = {
 const FAQS = [
   { q: 'What is the average cost of movers in Orlando?', a: 'The average local Orlando move costs $900–$1,800 — a typical 2–3 bedroom home with a 3-person crew over 5–8 hours. Studio moves start around $400; 4+ bedroom moves can exceed $2,400.' },
   { q: 'How are Orlando moving costs calculated?', a: 'Local moves are charged hourly based on crew size and truck. Long-distance moves are charged by weight (or cubic feet) plus distance. Both methods include labor, truck, fuel, basic materials, and furniture assembly.' },
-  { q: 'What\u2019s the cheapest way to move in Orlando?', a: 'Pack yourself, declutter first, book mid-month on a weekday, and get 3 written quotes. DIY truck rental is cheapest if you have friends to help — but most people find full-service movers cheaper than time lost doing it yourself.' },
+  { q: 'What’s the cheapest way to move in Orlando?', a: 'Pack yourself, declutter first, book mid-month on a weekday, and get 3 written quotes. DIY truck rental is cheapest if you have friends to help — but most people find full-service movers cheaper than time lost doing it yourself.' },
 ];
 
 export default function Post() {
@@ -37,7 +37,7 @@ export default function Post() {
             'Always get the quote in writing — verbal quotes are meaningless',
           ]} />
 
-          <p>If you\u2019re moving in Orlando and Googling \u201chow much do movers cost,\u201d here\u2019s the honest answer from a licensed local moving company: <strong>most local Orlando moves cost $600 to $2,400 all in</strong>, depending on your home size and how much stuff you have. That\u2019s the short version. Now the details.</p>
+          <p>If you’re moving in Orlando and Googling “how much do movers cost,” here’s the honest answer from a licensed local moving company: <strong>most local Orlando moves cost $600 to $2,400 all in</strong>, depending on your home size and how much stuff you have. That’s the short version. Now the details.</p>
 
           <h2>Why Orlando moving rates are hourly (not flat-rate)</h2>
           <p>Almost every local move in Orlando is priced hourly. Reputable Orlando movers charge $130–$290 per hour for crew + truck + basic materials. Hourly pricing is more honest than flat-rate for local jobs because every move is different — a packed-to-the-ceiling 1-bed takes longer than an organized 2-bed.</p>
@@ -77,13 +77,13 @@ export default function Post() {
           <ul>
             <li><strong>Book Tue–Thu, mid-month.</strong> The cheapest week of the year to move is typically mid-January or mid-February on a Tuesday.</li>
             <li><strong>Pack yourself.</strong> Packing labor is typically the single biggest add-on. DIY saves $1,000+ on most moves.</li>
-            <li><strong>Declutter first.</strong> Sell, donate, or trash anything you don\u2019t want at the new place. You pay by the hour for what movers carry.</li>
+            <li><strong>Declutter first.</strong> Sell, donate, or trash anything you don’t want at the new place. You pay by the hour for what movers carry.</li>
             <li><strong>Get 3 written quotes.</strong> Pricing varies 20–40% between Orlando movers. Quotes should always be written.</li>
             <li><strong>Be ready when the crew arrives.</strong> Boxes packed, nothing blocking pathways, kids and pets out of the way.</li>
           </ul>
 
           <h2>How much to tip Orlando movers</h2>
-          <p>Tipping isn\u2019t required but is appreciated. Florida industry standard is:</p>
+          <p>Tipping isn’t required but is appreciated. Florida industry standard is:</p>
           <ul>
             <li>$5/hour per mover for good service</li>
             <li>$10/hour per mover for exceptional service</li>
@@ -103,7 +103,7 @@ export default function Post() {
           </ul>
 
           <h2>Ready for a free quote?</h2>
-          <p>Liberty Moves Orlando is a licensed, family-run Orlando moving company (USDOT 3455436) with transparent pricing and no high-pressure sales. Request a written quote in minutes — we\u2019ll reply the same day.</p>
+          <p>Liberty Moves Orlando is a licensed, family-run Orlando moving company (USDOT 3455436) with transparent pricing and no high-pressure sales. Request a written quote in minutes — we’ll reply the same day.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/contact-us" className="btn btn-primary">Get my free quote</Link>
             <a href={SITE.phoneLink} className="btn btn-outline">Call {SITE.phoneDisplay}</a>

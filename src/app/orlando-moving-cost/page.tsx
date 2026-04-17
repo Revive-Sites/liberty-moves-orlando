@@ -11,13 +11,13 @@ import { Clock, Truck, AlertCircle, CheckCircle2 } from 'lucide-react';
 const FAQS = [
   { q: 'How much does it cost to hire movers in Orlando, FL?', a: 'Local Orlando movers charge hourly, with most jobs falling between $400 (studio apt, 2-person crew, 3 hours) and $2,400 (4-bedroom home, 4-person crew, 10 hours). Hourly rates for a 2-person crew typically run $130–$180/hr in Orlando; 3-person crews $170–$230/hr; 4-person crews $220–$290/hr — truck and basic materials included.' },
   { q: 'How much does it cost to move a 2-bedroom apartment in Orlando?', a: 'A typical 2-bedroom apartment move in Orlando costs $650–$1,100 with Liberty Moves Orlando. That assumes 2–3 movers, 4–6 hours of work, and a standard truck. Stairs, long carries, or extra-heavy items (pianos, gym equipment) may add time.' },
-  { q: 'How much does it cost to move a 3-bedroom house in Orlando?', a: 'A 3-bedroom Orlando house typically costs $1,200–$1,800 to move locally. That\u2019s a 3-person crew for 6–8 hours. Homes with lots of boxes, complex layouts, or specialty items like pool tables can push to $2,000+.' },
+  { q: 'How much does it cost to move a 3-bedroom house in Orlando?', a: 'A 3-bedroom Orlando house typically costs $1,200–$1,800 to move locally. That’s a 3-person crew for 6–8 hours. Homes with lots of boxes, complex layouts, or specialty items like pool tables can push to $2,000+.' },
   { q: 'Do movers charge by the hour or by weight in Florida?', a: 'Local moves under 50 miles are almost always charged hourly in Florida. Long-distance moves over 50 miles or across state lines are charged by weight (or cubic feet) plus distance, with a binding written estimate.' },
-  { q: 'What\u2019s included in a moving quote?', a: 'At Liberty Moves Orlando, every quote includes: truck, uniformed crew, moving pads, shrink wrap, dollies, tape, furniture disassembly/reassembly, mileage within the metro, and fuel. No hidden fees. Packing materials (boxes, paper) are sold separately at cost if needed.' },
-  { q: 'Are there hidden fees Orlando movers charge?', a: 'Some Orlando movers add surprise fees for stairs, long carries, heavy items, fuel, or \u201cdifficult access.\u201d Liberty Moves Orlando doesn\u2019t. Our quote is our price. If something unexpected comes up on move day, we tell you first and you decide — we don\u2019t surprise-bill.' },
-  { q: 'How much do you tip movers in Orlando, Florida?', a: 'Industry standard: $5–$10/hour per mover for good service, or 5%–10% of total move cost. For a full-day 3-person crew, $90–$150 split among the crew is typical. Tipping is never required and quality crews don\u2019t expect it — but they always appreciate it.' },
+  { q: 'What’s included in a moving quote?', a: 'At Liberty Moves Orlando, every quote includes: truck, uniformed crew, moving pads, shrink wrap, dollies, tape, furniture disassembly/reassembly, mileage within the metro, and fuel. No hidden fees. Packing materials (boxes, paper) are sold separately at cost if needed.' },
+  { q: 'Are there hidden fees Orlando movers charge?', a: 'Some Orlando movers add surprise fees for stairs, long carries, heavy items, fuel, or “difficult access.” Liberty Moves Orlando doesn’t. Our quote is our price. If something unexpected comes up on move day, we tell you first and you decide — we don’t surprise-bill.' },
+  { q: 'How much do you tip movers in Orlando, Florida?', a: 'Industry standard: $5–$10/hour per mover for good service, or 5%–10% of total move cost. For a full-day 3-person crew, $90–$150 split among the crew is typical. Tipping is never required and quality crews don’t expect it — but they always appreciate it.' },
   { q: 'How much does long-distance moving cost from Orlando?', a: 'Long-distance moves from Orlando are priced by weight + distance. Rough ranges: Orlando to Atlanta (~440 mi) $2,800–$5,500 for a 2-bedroom; Orlando to NYC (~1,080 mi) $4,500–$9,000; Orlando to California $7,000–$15,000. All moves include packing if selected. We provide binding written estimates after a walk-through.' },
-  { q: 'What\u2019s the cheapest day to hire movers in Orlando?', a: 'Tuesday, Wednesday, and Thursday mid-month are cheapest. Weekends and the last week of the month book first and sometimes carry a premium. October through April is cheaper than summer.' },
+  { q: 'What’s the cheapest day to hire movers in Orlando?', a: 'Tuesday, Wednesday, and Thursday mid-month are cheapest. Weekends and the last week of the month book first and sometimes carry a premium. October through April is cheaper than summer.' },
   { q: 'Do I need to pay a deposit?', a: 'At Liberty Moves Orlando, we require no deposit for local moves under $2,000 — you pay on completion. Larger or long-distance moves may require a small deposit to hold your date, fully refundable if you cancel 48+ hours out.' },
 ];
 
@@ -89,10 +89,10 @@ export default function OrlandoMovingCost() {
           <div className="prose-ink">
             <h2 className="text-2xl md:text-4xl font-extrabold mt-10">Orlando moving rates: hourly pricing explained</h2>
             <p>
-              Almost every local Orlando move is priced hourly. That\u2019s because local moves vary too much in time to quote flat-rate fairly — a one-bedroom with heavy furniture and stairs can take longer than a two-bedroom with light stuff and an elevator. Hourly pricing is more honest for everyone: you pay for time actually worked, and movers aren\u2019t incentivized to rush.
+              Almost every local Orlando move is priced hourly. That’s because local moves vary too much in time to quote flat-rate fairly — a one-bedroom with heavy furniture and stairs can take longer than a two-bedroom with light stuff and an elevator. Hourly pricing is more honest for everyone: you pay for time actually worked, and movers aren’t incentivized to rush.
             </p>
             <p>
-              At Liberty Moves Orlando, our hourly rates include the truck, the crew, moving pads, shrink wrap, dollies, tape, mileage within the metro, fuel, and basic furniture disassembly and reassembly. No surprise fees for stairs, long carries, or \u201cdifficult access.\u201d
+              At Liberty Moves Orlando, our hourly rates include the truck, the crew, moving pads, shrink wrap, dollies, tape, mileage within the metro, fuel, and basic furniture disassembly and reassembly. No surprise fees for stairs, long carries, or “difficult access.”
             </p>
 
             <div className="overflow-x-auto mt-6">
@@ -141,7 +141,7 @@ export default function OrlandoMovingCost() {
             </div>
 
             <h2 className="text-2xl md:text-4xl font-extrabold mt-12">Long-distance moves from Orlando</h2>
-            <p>Long-distance moves (over 50 miles or across state lines) are priced differently. Instead of hourly, we use weight or cubic feet plus distance, and we provide a <strong>binding written estimate</strong> before the move so there\u2019s no surprise. Below are rough ranges — actual pricing depends on exact weight, access, and services.</p>
+            <p>Long-distance moves (over 50 miles or across state lines) are priced differently. Instead of hourly, we use weight or cubic feet plus distance, and we provide a <strong>binding written estimate</strong> before the move so there’s no surprise. Below are rough ranges — actual pricing depends on exact weight, access, and services.</p>
 
             <div className="overflow-x-auto mt-6">
               <table className="w-full text-left text-sm">
@@ -179,19 +179,19 @@ export default function OrlandoMovingCost() {
             <h2 className="text-2xl md:text-4xl font-extrabold mt-12">How to save money on your Orlando move</h2>
             <ul className="mt-4 space-y-2 text-[var(--color-text)]">
               <li><strong>Book mid-week, mid-month.</strong> Tuesdays–Thursdays the 2nd–3rd week of the month are cheapest.</li>
-              <li><strong>Pack it yourself.</strong> Packing labor is 8–16 hours for a typical home — that\u2019s $1,000+ you save by doing it yourself.</li>
+              <li><strong>Pack it yourself.</strong> Packing labor is 8–16 hours for a typical home — that’s $1,000+ you save by doing it yourself.</li>
               <li><strong>Declutter first.</strong> Movers charge for time. Less stuff = less time = less money.</li>
               <li><strong>Get multiple written quotes.</strong> Pricing varies 20–40% between Orlando movers — shop around.</li>
               <li><strong>Avoid end-of-month.</strong> Last week of the month sometimes carries a premium.</li>
               <li><strong>Be ready when the crew arrives.</strong> Boxes packed, furniture accessible, nothing blocking pathways. Every minute the crew waits is time you pay for.</li>
             </ul>
 
-            <h2 className="text-2xl md:text-4xl font-extrabold mt-12">Tipping movers in Orlando: what\u2019s normal?</h2>
+            <h2 className="text-2xl md:text-4xl font-extrabold mt-12">Tipping movers in Orlando: what’s normal?</h2>
             <p>Tipping movers is not required but is appreciated for quality work. Florida industry standard is:</p>
             <ul className="mt-4 space-y-2 text-[var(--color-text)]">
               <li><strong>$5/hour per mover</strong> for good service</li>
               <li><strong>$10/hour per mover</strong> for exceptional service (extra care, long day, difficult move)</li>
-              <li><strong>5\u201310% of total cost</strong> split among the crew is another common approach</li>
+              <li><strong>5–10% of total cost</strong> split among the crew is another common approach</li>
             </ul>
             <p className="mt-3">Example: a $1,500 move with a 3-person crew over 6 hours → tip $90–$180 total ($30–$60 per mover). Cash is always appreciated, but Venmo, Cash App, and Zelle are fine too. Tip goes entirely to the crew.</p>
 
@@ -199,11 +199,11 @@ export default function OrlandoMovingCost() {
             <div className="mt-4 grid sm:grid-cols-2 gap-4">
               {[
                 { t: 'No written estimate', d: 'Verbal quotes are meaningless. Always get it in writing before booking.' },
-                { t: 'Huge deposits required', d: 'A small deposit is fine for long-distance. Local moves shouldn\u2019t need a big upfront payment.' },
+                { t: 'Huge deposits required', d: 'A small deposit is fine for long-distance. Local moves shouldn’t need a big upfront payment.' },
                 { t: 'No USDOT or FMCSA number', d: 'Every legitimate interstate mover has a USDOT number you can verify online.' },
                 { t: 'Cash-only payment', d: 'Quality movers accept cards and checks. Cash-only is a red flag.' },
                 { t: 'Unmarked truck or rental', d: 'Real movers drive their own, branded equipment.' },
-                { t: 'Surprise fees on move day', d: 'Walk away from any mover who changes the price after you\u2019ve started.' },
+                { t: 'Surprise fees on move day', d: 'Walk away from any mover who changes the price after you’ve started.' },
               ].map((r) => (
                 <div key={r.t} className="card">
                   <AlertCircle className="text-[var(--color-accent)]" size={22}/>

@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'When\u2019s the Best Time of Year to Move in Orlando?',
+  title: 'When’s the Best Time of Year to Move in Orlando?',
   description: 'The best and worst times to move in Orlando — seasonal pricing, hurricane season, holidays, weekday discounts, and specific weeks that save you money.',
   alternates: { canonical: `${SITE.url}/blog/best-time-to-move-in-orlando` },
 };
@@ -26,7 +26,7 @@ export default function Post() {
         { name: 'Best Time to Move in Orlando', url: `${SITE.url}/blog/best-time-to-move-in-orlando` },
       ]} />
       <FAQLd items={FAQS} />
-      <PageHero eyebrow="Planning Guide · January 2026" title="When\u2019s the Best Time of Year to Move in Orlando?" subtitle="Seasonal pricing, hurricane season, the coolest months, and the exact weeks that save hundreds on an Orlando move." />
+      <PageHero eyebrow="Planning Guide · January 2026" title="When’s the Best Time of Year to Move in Orlando?" subtitle="Seasonal pricing, hurricane season, the coolest months, and the exact weeks that save hundreds on an Orlando move." />
 
       <article className="section-pad">
         <div className="container-site max-w-3xl prose-ink">
@@ -38,7 +38,7 @@ export default function Post() {
             'Savings potential: 15–25% between peak and off-peak',
           ]} />
 
-          <p>Orlando movers have a busy season and a slow season, and when you schedule your move can change the price by 20% or more. If you have flexibility, here\u2019s when to aim for — and when to avoid.</p>
+          <p>Orlando movers have a busy season and a slow season, and when you schedule your move can change the price by 20% or more. If you have flexibility, here’s when to aim for — and when to avoid.</p>
 
           <h2>The three factors that drive Orlando moving pricing</h2>
           <ol>
@@ -50,7 +50,7 @@ export default function Post() {
           <h2>Month-by-month in Orlando</h2>
           <ul>
             <li><strong>January:</strong> Cheapest month. Low demand, cool weather, no hurricanes. Best availability. Up to 25% off peak pricing.</li>
-            <li><strong>February:</strong> Also excellent. Similar to January. Valentine\u2019s weekend is slow for moves — great if you can swing it.</li>
+            <li><strong>February:</strong> Also excellent. Similar to January. Valentine’s weekend is slow for moves — great if you can swing it.</li>
             <li><strong>March:</strong> Prices start creeping up as spring buyers close on homes. Still a good window.</li>
             <li><strong>April:</strong> Good. Last easy month before summer demand starts.</li>
             <li><strong>May:</strong> Demand rises. End of the school year triggers lots of family moves.</li>
@@ -72,8 +72,8 @@ export default function Post() {
           <ul>
             <li>Watch NOAA forecasts starting 5 days before your move date</li>
             <li>Have a backup date with your mover (most will accommodate weather-forced reschedules)</li>
-            <li>Avoid scheduling moves right before a storm even if it\u2019s not projected to hit</li>
-            <li>If a storm is in the Gulf, reschedule. Don\u2019t try to finish a move in deteriorating conditions</li>
+            <li>Avoid scheduling moves right before a storm even if it’s not projected to hit</li>
+            <li>If a storm is in the Gulf, reschedule. Don’t try to finish a move in deteriorating conditions</li>
             <li>Get your belongings off trucks and into the destination before any evacuation order</li>
           </ul>
 
@@ -86,8 +86,8 @@ export default function Post() {
             <li><strong>First half of December</strong> (before holiday travel, easy scheduling)</li>
           </ul>
 
-          <h2>When you can\u2019t be flexible</h2>
-          <p>Most people can\u2019t pick their move date — it\u2019s tied to closings, leases, job start dates. Don\u2019t stress about picking the \u201cbest\u201d week. The single biggest money-saver is booking <strong>in advance</strong>: 4–6 weeks out locks in better pricing and better crews regardless of season.</p>
+          <h2>When you can’t be flexible</h2>
+          <p>Most people can’t pick their move date — it’s tied to closings, leases, job start dates. Don’t stress about picking the “best” week. The single biggest money-saver is booking <strong>in advance</strong>: 4–6 weeks out locks in better pricing and better crews regardless of season.</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/orlando-moving-cost" className="btn btn-outline">Orlando pricing guide</Link>

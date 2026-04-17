@@ -125,12 +125,12 @@ export function FAQLd({ items }: { items: Array<{ q: string; a: string }> }) {
 
 export function ReviewsLd() {
   const reviews = [
-    { name: 'Jessica R.', rating: 5, text: 'The crew was on time, polite, and unbelievably careful with our grandmother\u2019s china cabinet. Final bill matched the quote to the dollar.' },
-    { name: 'Marcus D.', rating: 5, text: 'Second time using Liberty. Scheduled a Saturday move in 48 hours, done in five. Best movers in Orlando \u2014 not even close.' },
+    { name: 'Jessica R.', rating: 5, text: 'The crew was on time, polite, and unbelievably careful with our grandmother’s china cabinet. Final bill matched the quote to the dollar.' },
+    { name: 'Marcus D.', rating: 5, text: 'Second time using Liberty. Scheduled a Saturday move in 48 hours, done in five. Best movers in Orlando — not even close.' },
     { name: 'Priya S.', rating: 5, text: 'Long-distance move to Atlanta. They wrapped everything, drove it themselves, unpacked when they arrived. White-glove the whole way.' },
-    { name: 'David O.', rating: 5, text: 'I get nervous about movers because I\u2019ve been burned before. These guys were different. Clear pricing, no games, respectful team.' },
+    { name: 'David O.', rating: 5, text: 'I get nervous about movers because I’ve been burned before. These guys were different. Clear pricing, no games, respectful team.' },
     { name: 'Alina M.', rating: 5, text: 'Our office move took four hours on a Sunday and we opened Monday morning without skipping a beat. Professional top-to-bottom.' },
-    { name: 'Ken H.', rating: 5, text: 'HOA-friendly, elevator-savvy, and the foreman walked me through every step. Price was fair. They\u2019re the first number I\u2019ll share when a neighbor asks.' },
+    { name: 'Ken H.', rating: 5, text: 'HOA-friendly, elevator-savvy, and the foreman walked me through every step. Price was fair. They’re the first number I’ll share when a neighbor asks.' },
   ];
   const data = reviews.map((r, i) => ({
     '@context': 'https://schema.org',
