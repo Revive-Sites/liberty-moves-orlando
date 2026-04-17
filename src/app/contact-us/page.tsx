@@ -64,7 +64,7 @@ export default function Contact() {
             </div>
           </div>
           <div>
-            <FormEmbed height={720} formName="Liberty Moves Orlando — Quote Request" />
+            <FormEmbed height={620} formName="Liberty Moves Orlando — Quote Request" />
           </div>
         </div>
       </section>

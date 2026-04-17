@@ -2,7 +2,13 @@
 import Script from 'next/script';
 import { SITE } from '@/lib/site';
 
-export default function FormEmbed({ height = 643, formName = 'Website Form' }: { height?: number; formName?: string }) {
+/**
+ * GHL form embed. The form_embed.js script auto-resizes this iframe to fit
+ * the form contents via postMessage. We set a reasonable initial height so
+ * there's no layout shift on first paint, but the script adjusts it down
+ * immediately. Must load `afterInteractive`, not lazy, or the resize won't fire.
+ */
+export default function FormEmbed({ height = 540, formName = 'Website Form' }: { height?: number; formName?: string }) {
   const { formId, formIframeSrc, formEmbedSrc } = SITE.ghl;
   return (
     <div className="w-full">
@@ -21,9 +27,9 @@ export default function FormEmbed({ height = 643, formName = 'Website Form' }: {
         data-height={String(height)}
         data-layout-iframe-id={`inline-${formId}`}
         data-form-id={formId}
-        style={{ width: '100%', height: `${height}px`, border: 'none', borderRadius: '15px', background: '#fff' }}
+        style={{ width: '100%', height: `${height}px`, border: 'none', borderRadius: '12px', background: '#fff' }}
       />
-      <Script src={formEmbedSrc} strategy="lazyOnload" />
+      <Script src={formEmbedSrc} strategy="afterInteractive" />
     </div>
   );
 }
