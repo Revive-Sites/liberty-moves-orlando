@@ -1,6 +1,7 @@
 import Hero from '@/components/sections/Hero';
-import TrustBar from '@/components/sections/TrustBar';
+import TrustBadges from '@/components/sections/TrustBadges';
 import TrustCounter from '@/components/sections/TrustCounter';
+import DiscountBand from '@/components/sections/DiscountBand';
 import LicenseVerify from '@/components/sections/LicenseVerify';
 import QuoteWizard from '@/components/sections/QuoteWizard';
 import BeforeAfter from '@/components/sections/BeforeAfter';
@@ -52,7 +53,8 @@ export default function Home() {
         title="Orlando movers who treat your stuff like it’s ours."
         subtitle="Licensed, insured, and 5-star rated. Upfront pricing, careful crews, and no-surprise service from quote to unload. Serving Orlando and all of Central Florida."
       />
-      <TrustBar />
+      <TrustBadges />
+      <DiscountBand />
       <TrustCounter />
 
       <section className="section-pad">
