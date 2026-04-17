@@ -2,43 +2,101 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
-import { SITE, NAV_PRIMARY } from '@/lib/site';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
+import { SITE } from '@/lib/site';
 import { url, IMG } from '@/lib/images';
+
+const SERVICES_MENU = [
+  { label: 'Residential Moving', href: '/residential-moving', desc: 'Homes, apartments, condos' },
+  { label: 'Commercial Moving', href: '/commercial-moving', desc: 'Offices, retail, warehouses' },
+  { label: 'Long-Distance', href: '/long-distance-moving', desc: 'Florida → anywhere in the U.S.' },
+  { label: 'Packing Services', href: '/Packing-Services', desc: 'Full or partial packing' },
+  { label: 'Piano Movers', href: '/piano-movers-orlando', desc: 'Uprights, grands, specialty' },
+  { label: 'Apartment Movers', href: '/apartment-movers-orlando', desc: 'Walk-ups + elevator coordination' },
+  { label: 'Senior Movers', href: '/senior-movers-orlando', desc: 'Downsizing, retirement transitions' },
+  { label: 'UCF Student Movers', href: '/ucf-student-movers-orlando', desc: 'Dorm + apartment moves' },
+  { label: 'Last-Minute / Same-Day', href: '/last-minute-movers-orlando', desc: 'Emergency moves' },
+  { label: 'Storage + Moving', href: '/storage-moving-orlando', desc: 'Climate-controlled storage' },
+];
+
+const AREAS_MENU = [
+  { label: 'Winter Park', href: '/winter-park-orlando' },
+  { label: 'Lake Mary', href: '/lake-mary-orlando' },
+  { label: 'Kissimmee', href: '/kissimmee-orlando' },
+  { label: 'Windermere', href: '/windermere-orlando' },
+  { label: 'Altamonte Springs', href: '/altamonte-springs-orlando' },
+  { label: 'Oviedo', href: '/oviedo-orlando' },
+  { label: 'Sanford', href: '/sanford-orlando' },
+  { label: 'Lake Nona', href: '/lake-nona-movers' },
+  { label: 'Dr. Phillips', href: '/dr-phillips-movers' },
+  { label: 'Winter Garden', href: '/winter-garden-orlando' },
+  { label: 'Celebration', href: '/celebration-orlando' },
+  { label: 'Baldwin Park', href: '/baldwin-park-movers' },
+];
+
+const RESOURCES_MENU = [
+  { label: 'Orlando Moving Cost Guide', href: '/orlando-moving-cost' },
+  { label: 'Moving Tips Blog', href: '/blog' },
+  { label: 'FAQs', href: '/faqs' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'Why Choose Us', href: '/Why-Choose-Us' },
+  { label: 'Leave a Review', href: '/review' },
+];
+
+function Dropdown({ label, items, cols = 2 }: { label: string; items: Array<{ label: string; href: string; desc?: string }>; cols?: number }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-[var(--color-text)] hover:text-[var(--color-primary)] rounded-md transition">
+        {label} <ChevronDown size={14} className={`transition-transform ${open ? 'rotate-180' : ''}`}/>
+      </button>
+      <div className={`absolute top-full left-0 pt-2 transition-all ${open ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2 pointer-events-none'}`}>
+        <div className={`bg-white border border-[var(--color-border)] rounded-xl shadow-2xl p-3 grid gap-1 ${cols === 2 ? 'w-[520px] grid-cols-2' : cols === 3 ? 'w-[680px] grid-cols-3' : 'w-[260px] grid-cols-1'}`}>
+          {items.map((it) => (
+            <Link key={it.href} href={it.href} onClick={() => setOpen(false)} className="group flex flex-col gap-0.5 p-2.5 rounded-lg hover:bg-[var(--color-surface)] transition">
+              <span className="text-sm font-bold text-[var(--color-primary)] group-hover:text-[var(--color-accent)]">{it.label}</span>
+              {it.desc && <span className="text-xs text-[var(--color-muted)] leading-snug">{it.desc}</span>}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-[var(--color-border)]">
       <div className="container-site flex items-center justify-between h-16 md:h-20">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
           <Image
             src={url(IMG.logo, 400)}
             alt="Liberty Moves Orlando"
-            width={160}
-            height={44}
+            width={180}
+            height={52}
             priority
-            className="h-10 md:h-11 w-auto object-contain"
+            className="h-11 md:h-14 w-auto object-contain"
           />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
-          {NAV_PRIMARY.filter(n => n.href !== '/contact-us').map(n => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className="px-3 py-2 text-sm font-medium text-[var(--color-text)] hover:text-[var(--color-primary)] hover:bg-[var(--color-surface)] rounded-md transition"
-            >
-              {n.label}
-            </Link>
-          ))}
+          <Link href="/" className="px-3 py-2 text-sm font-semibold text-[var(--color-text)] hover:text-[var(--color-primary)] rounded-md transition">Home</Link>
+          <Link href="/About-Us" className="px-3 py-2 text-sm font-semibold text-[var(--color-text)] hover:text-[var(--color-primary)] rounded-md transition">About</Link>
+          <Dropdown label="Services" items={SERVICES_MENU} cols={2} />
+          <Dropdown label="Service Areas" items={AREAS_MENU} cols={3} />
+          <Dropdown label="Resources" items={RESOURCES_MENU} cols={1} />
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <a href={SITE.phoneLink} className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary)]">
+        <div className="hidden lg:flex items-center gap-4">
+          <a href={SITE.phoneLink} className="flex items-center gap-2 text-sm font-bold text-[var(--color-primary)] hover:text-[var(--color-accent)] transition">
             <Phone size={16} /> {SITE.phoneDisplay}
           </a>
-          <Link href="/contact-us" className="btn btn-primary text-sm py-2 px-4">Free Quote</Link>
+          <Link href="/contact-us" className="btn btn-primary text-sm py-2.5 px-5">Free Quote →</Link>
         </div>
 
         <button className="lg:hidden p-2" aria-label="menu" onClick={() => setOpen(!open)}>
@@ -47,19 +105,26 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-[var(--color-border)] bg-white">
+        <div className="lg:hidden border-t border-[var(--color-border)] bg-white max-h-[80vh] overflow-y-auto">
           <div className="container-site py-4 flex flex-col gap-1">
-            {NAV_PRIMARY.map(n => (
-              <Link
-                key={n.href}
-                href={n.href}
-                className="py-3 px-2 text-sm font-medium text-[var(--color-text)] border-b border-[var(--color-border)] last:border-b-0"
-                onClick={() => setOpen(false)}
-              >
-                {n.label}
-              </Link>
+            <Link href="/" className="py-3 px-2 text-sm font-semibold border-b border-[var(--color-border)]" onClick={() => setOpen(false)}>Home</Link>
+            <Link href="/About-Us" className="py-3 px-2 text-sm font-semibold border-b border-[var(--color-border)]" onClick={() => setOpen(false)}>About</Link>
+            <div className="py-3 px-2 text-xs uppercase tracking-widest text-[var(--color-accent)] font-bold">Services</div>
+            {SERVICES_MENU.map((s) => (
+              <Link key={s.href} href={s.href} className="py-2 px-4 text-sm text-[var(--color-text)] border-b border-[var(--color-border)]/50" onClick={() => setOpen(false)}>{s.label}</Link>
             ))}
-            <a href={SITE.phoneLink} className="btn btn-primary mt-3"> <Phone size={16} /> Call {SITE.phoneDisplay}</a>
+            <div className="py-3 px-2 text-xs uppercase tracking-widest text-[var(--color-accent)] font-bold mt-2">Service Areas</div>
+            {AREAS_MENU.slice(0, 8).map((s) => (
+              <Link key={s.href} href={s.href} className="py-2 px-4 text-sm text-[var(--color-text)] border-b border-[var(--color-border)]/50" onClick={() => setOpen(false)}>{s.label}</Link>
+            ))}
+            <div className="py-3 px-2 text-xs uppercase tracking-widest text-[var(--color-accent)] font-bold mt-2">Resources</div>
+            {RESOURCES_MENU.map((s) => (
+              <Link key={s.href} href={s.href} className="py-2 px-4 text-sm text-[var(--color-text)] border-b border-[var(--color-border)]/50" onClick={() => setOpen(false)}>{s.label}</Link>
+            ))}
+            <Link href="/contact-us" className="btn btn-primary mt-4" onClick={() => setOpen(false)}>Get a Free Quote →</Link>
+            <a href={SITE.phoneLink} className="flex items-center justify-center gap-2 mt-2 py-3 border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-bold rounded-lg">
+              <Phone size={16}/> {SITE.phoneDisplay}
+            </a>
           </div>
         </div>
       )}

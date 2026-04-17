@@ -27,3 +27,9 @@ export const IMG = {
 };
 
 export const url = (i: { hash: string; ext: any }, width: number = 1200) => ghlImage(i.hash, i.ext, width);
+
+// Videos from GHL (served from storage.googleapis.com)
+export const VIDEOS = {
+  heroPrimary: 'https://storage.googleapis.com/msgsndr/7pnMlJIyNsgtdaD576rT/media/695eb88df4549a3d84fba44e.mp4',
+  heroSecondary: 'https://storage.googleapis.com/msgsndr/7pnMlJIyNsgtdaD576rT/media/695ef8a5a0a4841591294f70.mp4',
+};
