@@ -12,8 +12,9 @@ export default function TLDR({
       </div>
       <ul className="space-y-2">
         {points.map((p, i) => (
-          <li key={i} className="text-sm text-[var(--color-text)] leading-relaxed pl-4 relative before:content-['\\2192'] before:absolute before:left-0 before:text-[var(--color-accent)]">
-            {p}
+          <li key={i} className="text-sm text-[var(--color-text)] leading-relaxed flex gap-2">
+            <span className="text-[var(--color-accent)] font-bold shrink-0">→</span>
+            <span>{p}</span>
           </li>
         ))}
       </ul>
