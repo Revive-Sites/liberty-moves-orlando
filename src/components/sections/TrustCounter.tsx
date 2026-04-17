@@ -36,7 +36,7 @@ export default function TrustCounter() {
   const stats = [
     { icon: Truck, value: 500, suffix: '+', label: 'Orlando moves completed' },
     { icon: Star, value: 5.0, suffix: '★', decimals: 1, label: 'Average Google rating' },
-    { icon: Users, value: 47, suffix: '', label: 'Verified reviews' },
+    { icon: Users, value: 300, suffix: '+', label: 'Verified Google reviews' },
     { icon: Shield, value: 100, suffix: '%', label: 'Licensed & insured' },
   ];
   return (

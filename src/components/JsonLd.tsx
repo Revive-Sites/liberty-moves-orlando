@@ -20,7 +20,7 @@ export function LocalBusinessLd({ page = 'home' }: { page?: string }) {
     paymentAccepted: 'Cash, Check, Credit Card',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: `${SITE.addressCity}`,
+      streetAddress: SITE.addressStreet,
       addressLocality: SITE.addressCity,
       addressRegion: SITE.addressState,
       postalCode: SITE.addressZip,
@@ -43,8 +43,11 @@ export function LocalBusinessLd({ page = 'home' }: { page?: string }) {
       opens: '07:00',
       closes: '19:00',
     }],
-    identifier: { '@type': 'PropertyValue', propertyID: 'USDOT', value: SITE.usdot },
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '47', bestRating: '5', worstRating: '1' },
+    identifier: [
+      { '@type': 'PropertyValue', propertyID: 'USDOT', value: SITE.usdot },
+      { '@type': 'PropertyValue', propertyID: 'FLDACS IM', value: SITE.fldacs },
+    ],
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: String(SITE.rating.toFixed(1)), reviewCount: String(SITE.reviewCount), bestRating: '5', worstRating: '1' },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Moving Services',

@@ -20,7 +20,7 @@ export default function Testimonials() {
             <div className="flex">
               {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="#f59e0b" className="text-[var(--color-accent)]" />)}
             </div>
-            <span className="text-[var(--color-muted)]">5.0 from local Google reviews</span>
+            <span className="text-[var(--color-muted)]">5.0 from 300+ verified Google reviews</span>
           </div>
         </div>
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -19,11 +19,14 @@ export default function Footer() {
             <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 text-white hover:text-[var(--color-accent)]">
               <Mail size={14}/> {SITE.email}
             </a>
-            <div className="flex items-center gap-2 text-white/80">
-              <MapPin size={14}/> {SITE.addressCity}, {SITE.addressState} {SITE.addressZip}
+            <div className="flex items-start gap-2 text-white/80">
+              <MapPin size={14} className="mt-0.5 shrink-0"/>
+              <div>
+                <div>{SITE.addressStreet}</div>
+                <div>{SITE.addressCity}, {SITE.addressState} {SITE.addressZip}</div>
+              </div>
             </div>
-            <div className="text-white/60 text-xs mt-3">USDOT {SITE.usdot}</div>
-            <div className="text-white/60 text-xs">FLDACS IM# pending</div>
+            <div className="text-white/60 text-xs mt-3">USDOT {SITE.usdot} · FLDACS IM{SITE.fldacs.replace('IM', '')}</div>
             <div className="mt-3"><a href="/es" className="text-xs text-white/70 hover:text-[var(--color-accent)]">Español →</a></div>
           </div>
         </div>

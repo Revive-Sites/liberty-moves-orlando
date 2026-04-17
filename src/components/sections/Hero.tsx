@@ -56,10 +56,10 @@ export default function Hero({
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-white/80">
               <div className="flex items-center gap-1.5">
                 <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#f59e0b" className="text-[var(--color-accent)]"/>)}</div>
-                <span className="font-semibold">5.0</span>
-                <span className="text-white/50">(47 reviews)</span>
+                <span className="font-semibold">{SITE.rating.toFixed(1)}</span>
+                <span className="text-white/50">({SITE.reviewCount}+ Google reviews)</span>
               </div>
-              <div className="flex items-center gap-1.5"><Shield size={14} className="text-[var(--color-accent)]"/> USDOT {SITE.usdot}</div>
+              <div className="flex items-center gap-1.5"><Shield size={14} className="text-[var(--color-accent)]"/> USDOT {SITE.usdot} · FLDACS {SITE.fldacs}</div>
               <div className="flex items-center gap-1.5"><Clock size={14} className="text-[var(--color-accent)]"/> Same-day available</div>
             </div>
           </div>

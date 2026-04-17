@@ -21,7 +21,7 @@ export default function Review() {
           </div>
           <p className="text-[var(--color-muted)] text-lg leading-relaxed">Click the button below to leave us a Google review. Takes 30 seconds. Genuinely means a lot.</p>
           <a
-            href="https://g.page/r/liberty-moves-orlando/review"
+            href={SITE.googleReviewUrl}
             className="btn btn-primary mt-8 inline-flex"
             target="_blank" rel="noreferrer"
           >Leave a Google Review</a>
