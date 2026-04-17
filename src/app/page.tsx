@@ -1,6 +1,7 @@
 import Hero from '@/components/sections/Hero';
 import TrustBar from '@/components/sections/TrustBar';
 import TrustCounter from '@/components/sections/TrustCounter';
+import LicenseVerify from '@/components/sections/LicenseVerify';
 import QuoteWizard from '@/components/sections/QuoteWizard';
 import Services from '@/components/sections/Services';
 import WhyUs from '@/components/sections/WhyUs';
@@ -114,6 +115,7 @@ export default function Home() {
       </section>
 
       <WhyUs />
+      <LicenseVerify />
       <QuoteWizard />
       <ReviewsSection minRating={3} />
       <ServiceAreas />

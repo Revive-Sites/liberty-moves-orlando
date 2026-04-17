@@ -26,7 +26,8 @@ export default function Footer() {
                 <div>{SITE.addressCity}, {SITE.addressState} {SITE.addressZip}</div>
               </div>
             </div>
-            <div className="text-white/60 text-xs mt-3">USDOT {SITE.usdot} · FLDACS IM{SITE.fldacs.replace('IM', '')}</div>
+            <div className="text-white/60 text-xs mt-3">USDOT {SITE.usdot} · FLDACS {SITE.fldacs}</div>
+            <a href="https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx" target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline text-xs mt-1 inline-block">Verify any FL mover\u2019s license →</a>
             <div className="mt-3"><a href="/es" className="text-xs text-white/70 hover:text-[var(--color-accent)]">Español →</a></div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import PageHero from '@/components/sections/PageHero';
 import WhyUs from '@/components/sections/WhyUs';
 import Testimonials from '@/components/sections/Testimonials';
+import LicenseVerify from '@/components/sections/LicenseVerify';
 import CTA from '@/components/sections/CTA';
 import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
@@ -25,6 +26,7 @@ export default function WhyChooseUs() {
         subtitle="We’ve built our reputation on six simple promises. Break one and we’ll make it right."
       />
       <WhyUs />
+      <LicenseVerify />
       <Testimonials />
       <CTA />
     </>
