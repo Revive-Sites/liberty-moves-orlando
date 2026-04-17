@@ -3,16 +3,23 @@ import { useEffect, useRef, useState } from 'react';
 import { Star, Truck, Shield, Users } from 'lucide-react';
 
 function AnimatedNumber({ value, suffix = '', decimals = 0 }: { value: number; suffix?: string; decimals?: number }) {
-  const [n, setN] = useState(0);
+  // Start at the final value so SSR + first paint look correct. Re-animate once in view.
+  const [n, setN] = useState(value);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
+  const hydrated = useRef(false);
 
   useEffect(() => {
+    // On client hydration, reset to 0 only if not already animated, then run the count-up once visible.
+    if (hydrated.current) return;
+    hydrated.current = true;
+
     if (!ref.current) return;
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting && !started.current) {
           started.current = true;
+          setN(0);
           const duration = 1500;
           const start = performance.now();
           const tick = (now: number) => {
