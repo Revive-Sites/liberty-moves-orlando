@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'winter-park-orlando')!;
 
 export const metadata = {
-  title: 'Winter Park Movers | Liberty Moves Orlando — Winter Park, FL',
-  description: 'Trusted Winter Park movers serving Orange County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/winter-park-orlando` },
 };
 
-export default function WINTERPARKORLANDOPage() {
+export default function WinterParkOrlandoPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="winter-park-orlando" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'Winter Park Movers', url: `${SITE.url}/winter-park-orlando` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/winter-park-orlando` },
       ]} />
-      <CityPage name="Winter Park" region="Orange County" blurb="Historic neighborhoods, tree-lined streets, and high-value homes — our crews know Winter Park inside and out." />
+      <CityPage city={city} />
     </>
   );
 }

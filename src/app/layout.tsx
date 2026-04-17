@@ -10,23 +10,30 @@ const SITE_URL = 'https://libertymovesorlando.com';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Orlando Moving Company | Liberty Moves Orlando – Local & Long Distance Movers',
+    default: 'Orlando Movers | Liberty Moves Orlando — Local & Long Distance Moving',
     template: '%s | Liberty Moves Orlando',
   },
   description:
-    'Liberty Moves Orlando — trusted local and long-distance movers serving Orlando and all of Central Florida. Licensed, insured (USDOT 3455436). Free quotes, upfront pricing, careful crews.',
+    'Orlando movers with upfront pricing and careful crews. Liberty Moves Orlando — licensed (USDOT 3455436), 5-star rated, serving all of Central Florida. Free quote in minutes.',
+  keywords: ['orlando movers', 'moving company orlando', 'movers orlando fl', 'local movers orlando', 'orlando moving company', 'central florida movers', 'long distance movers orlando', 'packing services orlando'],
   openGraph: {
-    title: 'Orlando Moving Company | Liberty Moves Orlando',
-    description: 'Professional Orlando movers for homes and businesses. Licensed, insured, careful. Free quote.',
+    title: 'Orlando Movers | Liberty Moves Orlando',
+    description: 'Licensed Orlando moving company. Upfront pricing, careful crews, free quotes. Residential, commercial, long-distance, packing.',
     url: SITE_URL,
     siteName: 'Liberty Moves Orlando',
-    images: ['/images/og.jpg'],
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Liberty Moves Orlando — professional moving company' }],
     locale: 'en_US',
     type: 'website',
   },
-  twitter: { card: 'summary_large_image' },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Orlando Movers | Liberty Moves Orlando',
+    description: 'Licensed Orlando moving company. Free quote in minutes.',
+    images: ['/og.png'],
+  },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
   alternates: { canonical: SITE_URL },
+  other: { 'geo.region': 'US-FL', 'geo.placename': 'Orlando', 'geo.position': '28.5383;-81.3792', 'ICBM': '28.5383, -81.3792' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

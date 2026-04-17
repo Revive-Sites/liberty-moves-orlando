@@ -2,57 +2,48 @@
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 
-// Mirror of CITIES from src/lib/site.ts
-const CITIES = [
-  { slug: 'winter-park-orlando', name: 'Winter Park', region: 'Orange County', blurb: 'Historic neighborhoods, tree-lined streets, and high-value homes — our crews know Winter Park inside and out.' },
-  { slug: 'kissimmee-orlando', name: 'Kissimmee', region: 'Osceola County', blurb: 'From downtown Kissimmee to Poinciana — we handle growing-family moves and retirees alike.' },
-  { slug: 'altamonte-springs-orlando', name: 'Altamonte Springs', region: 'Seminole County', blurb: 'Quick access from I-4 and SR-436 means faster moves and lower hourly costs for you.' },
-  { slug: 'lake-mary-orlando', name: 'Lake Mary', region: 'Seminole County', blurb: 'Executive homes and corporate relocations — professional, on-time, and discreet.' },
-  { slug: 'apopka-orlando', name: 'Apopka', region: 'Orange County', blurb: 'The Indoor Foliage Capital — and home to some of our happiest repeat customers.' },
-  { slug: 'oviedo-orlando', name: 'Oviedo', region: 'Seminole County', blurb: 'Family-focused moves with kid- and pet-friendly crews. We get the routine.' },
-  { slug: 'sanford-orlando', name: 'Sanford', region: 'Seminole County', blurb: 'Historic downtown Sanford to the Lake Monroe waterfront — we cover it all.' },
-  { slug: 'windermere-orlando', name: 'Windermere', region: 'Orange County', blurb: 'Luxury-home moves handled with white-glove care. Every piece protected.' },
-  { slug: 'celebration-orlando', name: 'Celebration', region: 'Osceola County', blurb: 'HOA-aware scheduling, elevator reservations, narrow-street trucks — we know the drill.' },
-  { slug: 'st-cloud-orlando', name: 'St. Cloud', region: 'Osceola County', blurb: 'Growing community, growing families. We scale up or down to match your move.' },
-  { slug: 'davenport-orlando', name: 'Davenport', region: 'Polk County', blurb: 'Short-term rental and vacation-home moves — we understand the unique logistics.' },
-  { slug: 'gotha-orlando', name: 'Gotha', region: 'Orange County', blurb: 'Small-town feel, big-city service. Careful handling for estate and antique items.' },
-  { slug: 'montverde-orlando', name: 'Montverde', region: 'Lake County', blurb: 'Hillside homes and long driveways — our crews come prepared.' },
-  { slug: 'winter-garden-orlando', name: 'Winter Garden', region: 'Orange County', blurb: 'Downtown District moves and West Orange Trail neighborhoods — done right.' },
-  { slug: 'college-park-orlando', name: 'College Park', region: 'Orange County', blurb: 'Historic bungalows and modern condos — we move them all with care.' },
-  { slug: 'maitland-movers', name: 'Maitland', region: 'Orange County', blurb: 'Art & culture district moves — plus the lakeside homes tucked along Lake Lily.' },
-  { slug: 'winter-springs-movers', name: 'Winter Springs', region: 'Seminole County', blurb: 'Golf-course communities, gated entries, amenity coordination — covered.' },
-  { slug: 'casselberry-movers', name: 'Casselberry', region: 'Seminole County', blurb: 'Lakefront and lakeside moves with local crews who know every back road.' },
+const SLUGS = [
+  'winter-park-orlando', 'kissimmee-orlando', 'altamonte-springs-orlando', 'lake-mary-orlando',
+  'apopka-orlando', 'oviedo-orlando', 'sanford-orlando', 'windermere-orlando',
+  'celebration-orlando', 'st-cloud-orlando', 'davenport-orlando', 'gotha-orlando',
+  'montverde-orlando', 'winter-garden-orlando', 'college-park-orlando',
+  'maitland-movers', 'winter-springs-movers', 'casselberry-movers',
 ];
 
 const APP = '/Users/reviveagency/liberty-moves-orlando-build/src/app';
 
-for (const c of CITIES) {
-  const dir = join(APP, c.slug);
+for (const slug of SLUGS) {
+  const dir = join(APP, slug);
   await mkdir(dir, { recursive: true });
+  const componentName = slug.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join('') + 'Page';
   const content = `import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === '${slug}')!;
 
 export const metadata = {
-  title: '${c.name} Movers | Liberty Moves Orlando — ${c.name}, FL',
-  description: 'Trusted ${c.name} movers serving ${c.region} and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
-  alternates: { canonical: \`\${SITE.url}/${c.slug}\` },
+  title: \`\${city.name} Movers | Liberty Moves Orlando — Licensed \${city.name} Moving Company\`,
+  description: \`\${city.name}, FL movers with upfront pricing and careful crews. Serving \${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.\`,
+  keywords: [\`\${city.name.toLowerCase()} movers\`, \`\${city.name.toLowerCase()} moving company\`, \`movers in \${city.name.toLowerCase()}\`, 'orlando movers'],
+  alternates: { canonical: \`\${SITE.url}/${slug}\` },
 };
 
-export default function ${c.slug.replace(/[-a-z]/g, s => s === '-' ? '' : s.toUpperCase()).replace(/^./, s => s.toUpperCase())}Page() {
+export default function ${componentName}() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={\`\${city.name} Moving Services\`} slug="${slug}" description={\`Professional moving services in \${city.name}, FL. Local, long-distance, residential, commercial, and packing.\`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: '${c.name} Movers', url: \`\${SITE.url}/${c.slug}\` },
+        { name: \`\${city.name} Movers\`, url: \`\${SITE.url}/${slug}\` },
       ]} />
-      <CityPage name="${c.name}" region="${c.region}" blurb="${c.blurb.replace(/"/g, '\\"')}" />
+      <CityPage city={city} />
     </>
   );
 }
 `;
   await writeFile(join(dir, 'page.tsx'), content);
-  console.log(`✔ ${c.slug}/page.tsx`);
+  console.log(`✔ ${slug}/page.tsx`);
 }
-console.log(`\nGenerated ${CITIES.length} city pages.`);
+console.log(`\nGenerated ${SLUGS.length} city pages.`);

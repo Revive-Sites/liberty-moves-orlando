@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'altamonte-springs-orlando')!;
 
 export const metadata = {
-  title: 'Altamonte Springs Movers | Liberty Moves Orlando — Altamonte Springs, FL',
-  description: 'Trusted Altamonte Springs movers serving Seminole County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/altamonte-springs-orlando` },
 };
 
-export default function ALTAMONTESPRINGSORLANDOPage() {
+export default function AltamonteSpringsOrlandoPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="altamonte-springs-orlando" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'Altamonte Springs Movers', url: `${SITE.url}/altamonte-springs-orlando` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/altamonte-springs-orlando` },
       ]} />
-      <CityPage name="Altamonte Springs" region="Seminole County" blurb="Quick access from I-4 and SR-436 means faster moves and lower hourly costs for you." />
+      <CityPage city={city} />
     </>
   );
 }

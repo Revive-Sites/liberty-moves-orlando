@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'windermere-orlando')!;
 
 export const metadata = {
-  title: 'Windermere Movers | Liberty Moves Orlando — Windermere, FL',
-  description: 'Trusted Windermere movers serving Orange County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/windermere-orlando` },
 };
 
-export default function WINDERMEREORLANDOPage() {
+export default function WindermereOrlandoPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="windermere-orlando" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'Windermere Movers', url: `${SITE.url}/windermere-orlando` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/windermere-orlando` },
       ]} />
-      <CityPage name="Windermere" region="Orange County" blurb="Luxury-home moves handled with white-glove care. Every piece protected." />
+      <CityPage city={city} />
     </>
   );
 }

@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'college-park-orlando')!;
 
 export const metadata = {
-  title: 'College Park Movers | Liberty Moves Orlando — College Park, FL',
-  description: 'Trusted College Park movers serving Orange County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/college-park-orlando` },
 };
 
-export default function COLLEGEPARKORLANDOPage() {
+export default function CollegeParkOrlandoPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="college-park-orlando" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'College Park Movers', url: `${SITE.url}/college-park-orlando` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/college-park-orlando` },
       ]} />
-      <CityPage name="College Park" region="Orange County" blurb="Historic bungalows and modern condos — we move them all with care." />
+      <CityPage city={city} />
     </>
   );
 }

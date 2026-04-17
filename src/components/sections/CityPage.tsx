@@ -1,43 +1,123 @@
+import Link from 'next/link';
 import PageHero from '@/components/sections/PageHero';
 import Services from '@/components/sections/Services';
 import WhyUs from '@/components/sections/WhyUs';
 import Testimonials from '@/components/sections/Testimonials';
 import CTA from '@/components/sections/CTA';
 import FAQ from '@/components/sections/FAQ';
-import { SERVICES } from '@/lib/site';
-import { CheckCircle2 } from 'lucide-react';
+import RelatedCities from '@/components/sections/RelatedCities';
+import TLDR from '@/components/sections/TLDR';
+import { SITE, SERVICES, CITIES, type City } from '@/lib/site';
+import { CheckCircle2, MapPin, Home, DollarSign, Route } from 'lucide-react';
 
-export default function CityPage({
-  name,
-  region,
-  blurb,
-}: { name: string; region: string; blurb: string }) {
+export default function CityPage({ city }: { city: City }) {
+  const { name, region, blurb, zips, neighborhoods, homeTypes, priceRange, distanceFromDowntown, localNote } = city;
+
   const faqs = [
-    { q: `How much does a move cost in ${name}?`, a: `Local ${name} moves are priced hourly: 2-bed homes typically run $600–$1,200; 3–4 bed homes $1,300–$2,500. Final pricing depends on crew size, truck size, and specifics like stairs or long carries. We quote every ${name} move in writing before you book.` },
-    { q: `Do you serve the whole ${region} area?`, a: `Yes — we cover ${name} and every neighborhood across ${region}. Our crews know the area, the HOAs, and the local building requirements.` },
-    { q: `How far in advance should I book a ${name} move?`, a: '2–3 weeks for weekday moves, 3–4 weeks for weekends. End-of-month dates book first. If you’re flexible by a few days, we can almost always find space.' },
-    { q: 'Are you licensed and insured in Florida?', a: 'Yes — USDOT 3455436. Fully licensed, bonded, and insured. COIs for HOAs and buildings available on request.' },
+    { q: `How much does a local move cost in ${name}, FL?`, a: `${name} local moves at Liberty Moves Orlando typically run ${priceRange}. Pricing is based on crew size, truck size, hours worked, and any specialty items. Every quote is in writing and includes pads, wrap, dollies, and basic disassembly/reassembly of furniture. No hidden fees, no surprise fuel charges.` },
+    { q: `Do you serve all of ${name}?`, a: `Yes — we serve every neighborhood in ${name}, including ${neighborhoods.slice(0, 4).join(', ')}, and surrounding ${region}. Our crews are locally based and know the streets, HOAs, gate codes, and building requirements.` },
+    { q: `What areas are near ${name} that you also move?`, a: `We cover all of Central Florida. Nearby areas we frequently move include Orlando proper, ${CITIES.filter((c) => c.region === region && c.slug !== city.slug).slice(0, 4).map((c) => c.name).join(', ')}, and every city along the I-4 corridor.` },
+    { q: `How far in advance should I book a ${name} move?`, a: `2\u20133 weeks ahead is ideal for weekday moves. Weekend and end-of-month dates book first and fill up 3\u20134 weeks out. If you need something sooner, call us \u2014 we can often fit emergency moves within 48\u201372 hours.` },
+    { q: `Are you licensed to move in ${name}?`, a: `Yes \u2014 Liberty Moves Orlando is licensed by the U.S. Department of Transportation (USDOT ${SITE.usdot}), fully bonded and insured with cargo and liability coverage. We provide certificates of insurance for HOAs and buildings on request.` },
+    { q: `Do you move large or specialty items in ${name}?`, a: 'Yes. Pianos (most uprights), gun safes, pool tables, exercise equipment, large aquariums, and heavy outdoor items. Grand pianos and 1,000+ lb safes require a specialty crew \u2014 we\u2019ll tell you up front if we\u2019re the right fit.' },
   ];
+
+  const zipList = zips.join(', ');
+  const nearby = CITIES
+    .filter((c) => c.region === region && c.slug !== city.slug)
+    .slice(0, 3);
 
   return (
     <>
       <PageHero
         eyebrow={`${name} Movers`}
-        title={`Trusted movers in ${name}, FL.`}
-        subtitle={blurb}
+        title={`${name} movers you can actually trust.`}
+        subtitle={`Liberty Moves Orlando is the ${name}, FL moving company local families and businesses call first. Licensed, insured (USDOT ${SITE.usdot}), upfront pricing, careful crews \u2014 serving every neighborhood in ${name}.`}
       />
+
       <section className="section-pad">
-        <div className="container-site max-w-4xl prose-ink">
-          <p>Looking for reliable movers in <strong>{name}</strong>? Liberty Moves Orlando serves every neighborhood in {name} and across {region}, with local crews who know the streets, the HOAs, and the quirks of your building. Whether you’re moving into a {name} home, relocating an office, or heading out on a long-distance move, we handle it with upfront pricing and careful, professional service.</p>
-          <p>We’re a licensed, family-run moving company — USDOT 3455436 — and we’ve built our reputation on showing up when we say we will, pricing what we quote, and treating every {name} family’s belongings like they’re our own. No high-pressure sales, no surprise fees, no rushed crews.</p>
+        <div className="container-site max-w-4xl">
+          <TLDR
+            title={`Moving in ${name}? Start here.`}
+            points={[
+              `Local ${name} moves: ${priceRange}, all-in, no surprise fees`,
+              `Licensed & insured \u2014 USDOT ${SITE.usdot}`,
+              `Same-day service available, 98% of jobs finish in one day`,
+              `All ${name} neighborhoods & zip codes (${zipList})`,
+              `Free, written quote in minutes \u2014 call ${SITE.phoneDisplay}`,
+            ]}
+          />
+
+          <div className="prose-ink">
+            <h2 className="text-2xl md:text-4xl font-extrabold mt-10">Professional moving services in {name}, FL</h2>
+            <p>
+              {name} is one of {region}\u2019s most distinctive communities \u2014 {distanceFromDowntown}, with a character all its own. {blurb} At Liberty Moves Orlando, we\u2019ve moved hundreds of families and businesses in and out of {name}, and we know what makes a {name} move different. {localNote}
+            </p>
+            <p>
+              Whether you\u2019re relocating within {name}, moving here from another city, or heading out of state, we handle the job with the same care we\u2019d expect for our own families. We show up when we say we will, we price what we quote, and we treat every box, couch, and piece of art like it\u2019s ours. That\u2019s the promise on every job, from a one-bedroom apartment to a 5,000-square-foot home.
+            </p>
+
+            <h3 className="text-xl md:text-2xl font-extrabold mt-10">{name} neighborhoods we serve</h3>
+            <p>
+              Our {name} crews work every corner of the city, from the established communities to the newest developments. Neighborhoods we regularly serve include:
+            </p>
+            <ul className="grid sm:grid-cols-2 gap-2 mt-4">
+              {neighborhoods.map((n) => (
+                <li key={n} className="flex items-start gap-2 text-sm">
+                  <MapPin size={16} className="text-[var(--color-accent)] shrink-0 mt-0.5" />
+                  <span>{n}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4">
+              We also serve zip codes <strong>{zipList}</strong> and every address in between. If you\u2019re on the border with another city \u2014 no problem, we cover all of Central Florida.
+            </p>
+
+            <h3 className="text-xl md:text-2xl font-extrabold mt-10">{name} moving costs: what to expect</h3>
+            <p>
+              Moving costs in {name} vary by crew size, truck size, hours worked, and any specialty requirements. For most local moves, expect <strong>{priceRange}</strong>. That\u2019s the all-in price \u2014 we don\u2019t charge separately for pads, shrink wrap, dollies, basic disassembly of furniture, or mileage within the metro area.
+            </p>
+            <p>
+              Larger homes, long-distance moves, packing services, and specialty items (pianos, safes, art) cost more. We provide a written, itemized quote before you book so you know the total before a single box is loaded.
+            </p>
+
+            <h3 className="text-xl md:text-2xl font-extrabold mt-10">{name} homes we specialize in moving</h3>
+            <p><strong>Typical {name} properties:</strong> {homeTypes}.</p>
+            <p>
+              Every home type has its quirks. Historic homes have narrow staircases and small doorways. Luxury estates have long driveways, lakefronts, and valuable art that needs specialty crating. New-construction homes need closing-day timing coordination with builders. Our crews have seen it all and come prepared.
+            </p>
+          </div>
+
+          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="card text-center">
+              <MapPin className="mx-auto text-[var(--color-accent)]" size={26}/>
+              <div className="mt-2 text-xs uppercase tracking-widest text-[var(--color-muted)]">Region</div>
+              <div className="mt-1 font-bold text-[var(--color-primary)]">{region}</div>
+            </div>
+            <div className="card text-center">
+              <Home className="mx-auto text-[var(--color-accent)]" size={26}/>
+              <div className="mt-2 text-xs uppercase tracking-widest text-[var(--color-muted)]">Zip Codes</div>
+              <div className="mt-1 font-bold text-[var(--color-primary)] text-sm">{zipList}</div>
+            </div>
+            <div className="card text-center">
+              <DollarSign className="mx-auto text-[var(--color-accent)]" size={26}/>
+              <div className="mt-2 text-xs uppercase tracking-widest text-[var(--color-muted)]">Local Move</div>
+              <div className="mt-1 font-bold text-[var(--color-primary)] text-sm">{priceRange}</div>
+            </div>
+            <div className="card text-center">
+              <Route className="mx-auto text-[var(--color-accent)]" size={26}/>
+              <div className="mt-2 text-xs uppercase tracking-widest text-[var(--color-muted)]">From Orlando</div>
+              <div className="mt-1 font-bold text-[var(--color-primary)] text-sm">{distanceFromDowntown}</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="pb-16">
+      <section className="pb-12">
         <div className="container-site grid md:grid-cols-3 gap-5">
           {[
             { t: 'Upfront pricing', d: `Your ${name} quote is your price. No surprise fuel, stair, or long-carry fees.` },
-            { t: 'Local knowledge', d: `We know ${name} — gated communities, HOAs, narrow streets, apartment elevators.` },
+            { t: 'Local knowledge', d: `We know ${name} \u2014 gated communities, HOAs, narrow streets, elevators, and gate codes.` },
             { t: 'Same-day moves', d: `98% of local ${name} moves finish same-day, usually with time to spare.` },
           ].map((b) => (
             <div key={b.t} className="card">
@@ -49,11 +129,31 @@ export default function CityPage({
         </div>
       </section>
 
-      <Services services={SERVICES} title={`Moving services in ${name}`} subtitle={`Whatever you need moved, we move it — serving every corner of ${name} and ${region}.`} />
+      <Services services={SERVICES} title={`Moving services in ${name}`} subtitle={`All Liberty Moves Orlando services are available for ${name} residents and businesses.`} />
+
+      {nearby.length > 0 && (
+        <section className="section-pad bg-[var(--color-surface)]">
+          <div className="container-site">
+            <h2 className="text-2xl md:text-4xl font-extrabold">{name} is next to these cities \u2014 we serve them all.</h2>
+            <p className="mt-3 text-[var(--color-muted)] max-w-2xl">Moving between {name} and a neighboring city? We do local moves across {region} every week. Click a nearby city for area-specific info and pricing.</p>
+            <div className="mt-8 grid sm:grid-cols-3 gap-4">
+              {nearby.map((c) => (
+                <Link key={c.slug} href={`/${c.slug}`} className="card group block">
+                  <div className="text-[var(--color-accent)] text-xs font-semibold uppercase tracking-widest">{c.region}</div>
+                  <div className="mt-1 text-xl font-bold text-[var(--color-primary)] group-hover:text-[var(--color-accent)]">{c.name} Movers</div>
+                  <p className="mt-2 text-sm text-[var(--color-muted)]">{c.blurb}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <WhyUs />
       <Testimonials />
       <FAQ items={faqs} />
-      <CTA title={`Ready to move in ${name}?`} subtitle={`We’ll send a written quote within the day. No pressure, no games.`} />
+      <RelatedCities currentSlug={city.slug} count={9} />
+      <CTA title={`Ready to move in ${name}?`} subtitle={`Call, text, or request a quote online. We\u2019ll send a written estimate within the day.`} />
     </>
   );
 }

@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'casselberry-movers')!;
 
 export const metadata = {
-  title: 'Casselberry Movers | Liberty Moves Orlando — Casselberry, FL',
-  description: 'Trusted Casselberry movers serving Seminole County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/casselberry-movers` },
 };
 
-export default function CASSELBERRYMOVERSPage() {
+export default function CasselberryMoversPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="casselberry-movers" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'Casselberry Movers', url: `${SITE.url}/casselberry-movers` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/casselberry-movers` },
       ]} />
-      <CityPage name="Casselberry" region="Seminole County" blurb="Lakefront and lakeside moves with local crews who know every back road." />
+      <CityPage city={city} />
     </>
   );
 }

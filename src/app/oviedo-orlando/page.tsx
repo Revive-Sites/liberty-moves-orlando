@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'oviedo-orlando')!;
 
 export const metadata = {
-  title: 'Oviedo Movers | Liberty Moves Orlando — Oviedo, FL',
-  description: 'Trusted Oviedo movers serving Seminole County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/oviedo-orlando` },
 };
 
-export default function OVIEDOORLANDOPage() {
+export default function OviedoOrlandoPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="oviedo-orlando" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'Oviedo Movers', url: `${SITE.url}/oviedo-orlando` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/oviedo-orlando` },
       ]} />
-      <CityPage name="Oviedo" region="Seminole County" blurb="Family-focused moves with kid- and pet-friendly crews. We get the routine." />
+      <CityPage city={city} />
     </>
   );
 }

@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'celebration-orlando')!;
 
 export const metadata = {
-  title: 'Celebration Movers | Liberty Moves Orlando — Celebration, FL',
-  description: 'Trusted Celebration movers serving Osceola County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/celebration-orlando` },
 };
 
-export default function CELEBRATIONORLANDOPage() {
+export default function CelebrationOrlandoPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="celebration-orlando" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'Celebration Movers', url: `${SITE.url}/celebration-orlando` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/celebration-orlando` },
       ]} />
-      <CityPage name="Celebration" region="Osceola County" blurb="HOA-aware scheduling, elevator reservations, narrow-street trucks — we know the drill." />
+      <CityPage city={city} />
     </>
   );
 }

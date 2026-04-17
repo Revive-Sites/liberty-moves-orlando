@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'montverde-orlando')!;
 
 export const metadata = {
-  title: 'Montverde Movers | Liberty Moves Orlando — Montverde, FL',
-  description: 'Trusted Montverde movers serving Lake County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/montverde-orlando` },
 };
 
-export default function MONTVERDEORLANDOPage() {
+export default function MontverdeOrlandoPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="montverde-orlando" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'Montverde Movers', url: `${SITE.url}/montverde-orlando` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/montverde-orlando` },
       ]} />
-      <CityPage name="Montverde" region="Lake County" blurb="Hillside homes and long driveways — our crews come prepared." />
+      <CityPage city={city} />
     </>
   );
 }

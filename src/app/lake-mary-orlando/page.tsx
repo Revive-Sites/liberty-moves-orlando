@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'lake-mary-orlando')!;
 
 export const metadata = {
-  title: 'Lake Mary Movers | Liberty Moves Orlando — Lake Mary, FL',
-  description: 'Trusted Lake Mary movers serving Seminole County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/lake-mary-orlando` },
 };
 
-export default function LAKEMARYORLANDOPage() {
+export default function LakeMaryOrlandoPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="lake-mary-orlando" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'Lake Mary Movers', url: `${SITE.url}/lake-mary-orlando` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/lake-mary-orlando` },
       ]} />
-      <CityPage name="Lake Mary" region="Seminole County" blurb="Executive homes and corporate relocations — professional, on-time, and discreet." />
+      <CityPage city={city} />
     </>
   );
 }

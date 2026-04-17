@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'st-cloud-orlando')!;
 
 export const metadata = {
-  title: 'St. Cloud Movers | Liberty Moves Orlando — St. Cloud, FL',
-  description: 'Trusted St. Cloud movers serving Osceola County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/st-cloud-orlando` },
 };
 
-export default function STCLOUDORLANDOPage() {
+export default function StCloudOrlandoPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="st-cloud-orlando" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'St. Cloud Movers', url: `${SITE.url}/st-cloud-orlando` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/st-cloud-orlando` },
       ]} />
-      <CityPage name="St. Cloud" region="Osceola County" blurb="Growing community, growing families. We scale up or down to match your move." />
+      <CityPage city={city} />
     </>
   );
 }

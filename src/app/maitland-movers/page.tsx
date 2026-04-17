@@ -1,22 +1,26 @@
 import CityPage from '@/components/sections/CityPage';
-import { LocalBusinessLd, BreadcrumbsLd } from '@/components/JsonLd';
-import { SITE } from '@/lib/site';
+import { LocalBusinessLd, BreadcrumbsLd, ServiceLd } from '@/components/JsonLd';
+import { SITE, CITIES } from '@/lib/site';
+
+const city = CITIES.find((c) => c.slug === 'maitland-movers')!;
 
 export const metadata = {
-  title: 'Maitland Movers | Liberty Moves Orlando — Maitland, FL',
-  description: 'Trusted Maitland movers serving Orange County and all of Central Florida. Licensed (USDOT 3455436), upfront pricing, careful crews. Free quote today.',
+  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
+  keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/maitland-movers` },
 };
 
-export default function MAITLANDMOVERSPage() {
+export default function MaitlandMoversPage() {
   return (
     <>
       <LocalBusinessLd />
+      <ServiceLd name={`${city.name} Moving Services`} slug="maitland-movers" description={`Professional moving services in ${city.name}, FL. Local, long-distance, residential, commercial, and packing.`} />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'Maitland Movers', url: `${SITE.url}/maitland-movers` },
+        { name: `${city.name} Movers`, url: `${SITE.url}/maitland-movers` },
       ]} />
-      <CityPage name="Maitland" region="Orange County" blurb="Art & culture district moves — plus the lakeside homes tucked along Lake Lily." />
+      <CityPage city={city} />
     </>
   );
 }
