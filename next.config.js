@@ -29,15 +29,7 @@ const nextConfig = {
       '/Montverde-Movers',
       '/Winter-Garden-Movers',
     ];
-    const caseAliases = [
-      ['/Contact-Us', '/contact-us'],
-      ['/packing-services', '/Packing-Services'],
-      ['/about-us', '/About-Us'],
-    ];
-    return [
-      ...legacyToHome.map((source) => ({ source, destination: '/', permanent: true })),
-      ...caseAliases.map(([source, destination]) => ({ source, destination, permanent: true })),
-    ];
+    return legacyToHome.map((source) => ({ source, destination: '/', permanent: true }));
   },
 };
 
