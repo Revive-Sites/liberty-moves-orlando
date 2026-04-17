@@ -26,6 +26,7 @@ export const IMG = {
   truckFront: { hash: '697202f5d4fb909b9a06f068', ext: 'png' as const },
 };
 
+export type GhlImage = { hash: string; ext: 'png' | 'jpg' | 'jpeg' | 'webp' };
 export const url = (i: { hash: string; ext: any }, width: number = 1200) => ghlImage(i.hash, i.ext, width);
 
 // Videos from GHL (served from storage.googleapis.com)

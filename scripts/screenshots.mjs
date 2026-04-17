@@ -10,35 +10,30 @@ const sites = [
   { label: 'live-contact', url: 'https://libertymovesorlando.com/contact-us' },
   { label: 'new-vercel', url: 'https://liberty-moves-orlando.vercel.app/' },
   { label: 'new-contact', url: 'https://liberty-moves-orlando.vercel.app/contact-us' },
-  { label: 'new-pricing', url: 'https://liberty-moves-orlando.vercel.app/orlando-moving-cost' },
-  { label: 'new-city', url: 'https://liberty-moves-orlando.vercel.app/winter-park-orlando' },
 ];
 
 const browser = await chromium.launch();
 for (const { label, url } of sites) {
-  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
-  const page = await ctx.newPage();
-  try {
-    await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
-    await page.waitForTimeout(1000);
-    await page.screenshot({ path: `${OUT}/${label}-desktop.png`, fullPage: true });
-    console.log(`✔ ${label}-desktop`);
-  } catch (e) {
-    console.log(`✘ ${label}-desktop: ${e.message}`);
+  for (const vp of [{ w: 1440, h: 900, tag: 'desktop' }, { w: 390, h: 844, tag: 'mobile' }]) {
+    const ctx = await browser.newContext({ viewport: { width: vp.w, height: vp.h } });
+    const page = await ctx.newPage();
+    try {
+      await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 });
+      // Wait extra for GHL form iframe + chat widget to render
+      await page.waitForTimeout(5000);
+      // Scroll to trigger any lazy-loaded iframes
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.waitForTimeout(800);
+      // Full-page screenshot
+      await page.screenshot({ path: `${OUT}/${label}-${vp.tag}.png`, fullPage: true });
+      // Hero-only viewport screenshot for form comparison
+      await page.screenshot({ path: `${OUT}/${label}-${vp.tag}-hero.png`, fullPage: false });
+      console.log(`✔ ${label}-${vp.tag} (+ hero)`);
+    } catch (e) {
+      console.log(`✘ ${label}-${vp.tag}: ${e.message}`);
+    }
+    await ctx.close();
   }
-  await ctx.close();
-
-  const mobileCtx = await browser.newContext({ viewport: { width: 390, height: 844 } });
-  const mobilePage = await mobileCtx.newPage();
-  try {
-    await mobilePage.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
-    await mobilePage.waitForTimeout(1000);
-    await mobilePage.screenshot({ path: `${OUT}/${label}-mobile.png`, fullPage: true });
-    console.log(`✔ ${label}-mobile`);
-  } catch (e) {
-    console.log(`✘ ${label}-mobile: ${e.message}`);
-  }
-  await mobileCtx.close();
 }
 await browser.close();
 console.log(`\nScreenshots saved to ${OUT}`);

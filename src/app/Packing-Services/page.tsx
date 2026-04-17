@@ -22,6 +22,8 @@ export default function Packing() {
       <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Packing Services', url: `${SITE.url}/Packing-Services` }]} />
       <FAQLd items={FAQS} />
       <ServiceDetail
+        heroImage={{ hash: '6982b5e399f1bff20e92e47a', ext: 'jpg' }}
+        sectionImages={{ intro: { hash: '6982b5e399f1bff20e92e47a', ext: 'jpg' }, benefits: { hash: '69816e3d1311f6256add592f', ext: 'jpg' }, close: { hash: '697f84e91fd8279b465f05c8', ext: 'jpg' } }}
         eyebrow="Packing Services"
         title="Professional packing that makes moving day actually easy."
         subtitle="Full-house, partial, or kitchen-only. Top-grade materials, careful crews, and nothing broken on the other side."

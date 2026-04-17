@@ -22,6 +22,8 @@ export default function LongDistance() {
       <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Long Distance Moving', url: `${SITE.url}/long-distance-moving` }]} />
       <FAQLd items={FAQS} />
       <ServiceDetail
+        heroImage={{ hash: '69a585f2320ef42744c0babb', ext: 'png' }}
+        sectionImages={{ intro: { hash: '69a585f2320ef42744c0babb', ext: 'png' }, benefits: { hash: '697200c810cc27051e005094', ext: 'webp' }, close: { hash: '697202f5d4fb909b9a06f068', ext: 'png' } }}
         eyebrow="Long Distance Moving"
         title="Florida to anywhere — direct delivery, no third-party handlers."
         subtitle="Your stuff goes from your old home to your new home on the same truck with the same crew. Transparent pricing, binding estimates."
