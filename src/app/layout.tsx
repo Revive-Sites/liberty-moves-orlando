@@ -7,6 +7,8 @@ import GTM from '@/components/GTM';
 import StickyMobileCTA from '@/components/StickyMobileCTA';
 import FloatingQuoteWidget from '@/components/FloatingQuoteWidget';
 import ExitIntent from '@/components/ExitIntent';
+import ScrollProgress from '@/components/ScrollProgress';
+import SocialProofToast from '@/components/SocialProofToast';
 
 const SITE_URL = 'https://libertymovesorlando.com';
 
@@ -55,11 +57,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GTM />
       </head>
       <body>
+        <ScrollProgress />
         <Header />
         <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
         <StickyMobileCTA />
         <FloatingQuoteWidget />
+        <SocialProofToast />
         <ExitIntent />
         <ChatWidget />
       </body>

@@ -1,40 +1,61 @@
+import Image from 'next/image';
 import PageHero from '@/components/sections/PageHero';
 import CTA from '@/components/sections/CTA';
 import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
-import { Truck, Package, Home } from 'lucide-react';
+import { url } from '@/lib/images';
+
+const GALLERY = [
+  { hash: '69666066aa336fee46b8e00b', ext: 'png' as const, caption: 'Loaded and ready — Orlando local move' },
+  { hash: '6967f14225c12a7e4603b30c', ext: 'jpeg' as const, caption: 'Careful handling on move day' },
+  { hash: '6968ff5644b623c7e5fd8a70', ext: 'png' as const, caption: 'Residential moves across Central Florida' },
+  { hash: '695fb25e6eabe665b924f386', ext: 'jpg' as const, caption: 'Commercial move, weekend scheduling' },
+  { hash: '69a585f2320ef42744c0babb', ext: 'png' as const, caption: 'Long-distance — Orlando to anywhere' },
+  { hash: '6982b5e399f1bff20e92e47a', ext: 'jpg' as const, caption: 'Professional packing service' },
+  { hash: '69816e3d1311f6256add592f', ext: 'jpg' as const, caption: 'Packing materials at cost' },
+  { hash: '697f84e91fd8279b465f05c8', ext: 'jpg' as const, caption: 'Protecting every piece' },
+  { hash: '6966737be2d75bd6ac16fff0', ext: 'jpg' as const, caption: 'Trained crew in action' },
+  { hash: '697201df15885e248f7aa335', ext: 'png' as const, caption: 'Our trucks — clean, branded, ready' },
+  { hash: '697202f5d4fb909b9a06f068', ext: 'png' as const, caption: 'Fleet on the road' },
+  { hash: '697200c810cc27051e005094', ext: 'webp' as const, caption: 'Long-haul equipment' },
+  { hash: '69666061574eb20fd27153f9', ext: 'png' as const, caption: 'Customer homes, handled with care' },
+  { hash: '6967ea1e5ce16c64a01539a8', ext: 'png' as const, caption: 'Loading the truck — every box labeled' },
+  { hash: '6967ea1ec802d94ad6138835', ext: 'png' as const, caption: 'Orlando neighborhood move' },
+  { hash: '696908c7f43f8a25f73b23b2', ext: 'jpeg' as const, caption: 'Residential packing day' },
+  { hash: '69669c829a690c6153f6631e', ext: 'jpg' as const, caption: 'About our crew' },
+  { hash: '696675210475d420a14bbe91', ext: 'png' as const, caption: 'The Liberty Moves team' },
+];
 
 export const metadata = {
-  title: 'Gallery — Liberty Moves Orlando',
-  description: 'See the Liberty Moves Orlando team at work — trucks, crews, and real Orlando moves from quote to delivery.',
+  title: 'Gallery — Liberty Moves Orlando at Work',
+  description: 'Photos of Liberty Moves Orlando crews, trucks, and move days across Central Florida. Licensed, insured, and careful with every customer.',
   alternates: { canonical: `${SITE.url}/gallery` },
 };
-
-const PLACEHOLDERS = [
-  { t: 'Residential Moves', d: 'From 1-bed apartments to 5,000-sq-ft homes.', icon: Home },
-  { t: 'Commercial Moves', d: 'Offices, retail, warehouses — nights and weekends.', icon: Truck },
-  { t: 'Packing Day', d: 'Pro-grade materials, careful wrapping, nothing broken.', icon: Package },
-  { t: 'On the Road', d: 'Long-distance Florida to anywhere in the U.S.', icon: Truck },
-  { t: 'Careful Crews', d: 'Uniformed, background-checked, trained, respectful.', icon: Home },
-  { t: 'Protected Goods', d: 'Pads, shrink wrap, dollies — everything protected.', icon: Package },
-];
 
 export default function Gallery() {
   return (
     <>
       <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Gallery', url: `${SITE.url}/gallery` }]} />
-      <PageHero eyebrow="Gallery" title="See our crews at work across Central Florida." subtitle="We’re refreshing our photo gallery — here’s a preview of what a typical Liberty Moves day looks like." />
+      <PageHero eyebrow="Gallery" title="Real crews. Real trucks. Real Orlando moves." subtitle="Every job gets the same care — whether it\u2019s a studio in College Park or a Windermere estate." />
       <section className="section-pad">
-        <div className="container-site grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PLACEHOLDERS.map((p) => (
-            <div key={p.t} className="card">
-              <div className="aspect-[4/3] bg-gradient-to-br from-[var(--color-primary)]/90 to-[var(--color-primary)] rounded-lg flex items-center justify-center text-white">
-                <p.icon size={48} className="opacity-80" />
+        <div className="container-site">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {GALLERY.map((g, i) => (
+              <div key={`${g.hash}-${i}`} className="group relative aspect-[4/3] rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow">
+                <Image
+                  src={url({ hash: g.hash, ext: g.ext }, 900)}
+                  alt={g.caption}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1729]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"/>
+                <div className="absolute bottom-3 left-3 right-3 text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                  {g.caption}
+                </div>
               </div>
-              <h3 className="mt-5 text-lg font-bold text-[var(--color-primary)]">{p.t}</h3>
-              <p className="mt-1 text-sm text-[var(--color-muted)]">{p.d}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
       <CTA />

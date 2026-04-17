@@ -5,6 +5,8 @@ import DiscountBand from '@/components/sections/DiscountBand';
 import LicenseVerify from '@/components/sections/LicenseVerify';
 import QuoteWizard from '@/components/sections/QuoteWizard';
 import BeforeAfter from '@/components/sections/BeforeAfter';
+import VideoShowcase from '@/components/sections/VideoShowcase';
+import CostCalculator from '@/components/sections/CostCalculator';
 import Services from '@/components/sections/Services';
 import WhyUs from '@/components/sections/WhyUs';
 import ReviewsSection from '@/components/sections/ReviewsSection';
@@ -118,9 +120,10 @@ export default function Home() {
       </section>
 
       <WhyUs />
+      <VideoShowcase />
+      <CostCalculator />
       <BeforeAfter />
       <LicenseVerify />
-      <QuoteWizard />
       <ReviewsSection minRating={3} />
       <ServiceAreas />
 
