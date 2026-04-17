@@ -33,7 +33,7 @@ export default function Hero({
       </div>
 
       <div className="container-site relative py-20 md:py-28 lg:py-32">
-        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-start">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 items-start">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs uppercase tracking-[0.2em] font-bold text-white">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"/> {eyebrow}
@@ -63,8 +63,8 @@ export default function Hero({
             </div>
           </div>
 
-          {/* GHL form embedded — iframe handles cross-domain fine even if direct URL returns 403 */}
-          <div className="lg:justify-self-end w-full max-w-md">
+          {/* GHL form embedded — wider card gives GHL room to lay fields side-by-side */}
+          <div className="lg:justify-self-end w-full max-w-xl">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden ring-1 ring-white/20">
               <div className="bg-[var(--color-accent)] text-white px-6 py-3 flex items-center gap-2">
                 <Zap size={18} className="fill-white"/>
@@ -74,7 +74,7 @@ export default function Hero({
                 </div>
               </div>
               <div className="bg-white">
-                <FormEmbed height={540} formName="Liberty Moves — Hero Quote" />
+                <FormEmbed height={460} formName="Liberty Moves — Hero Quote" />
               </div>
               <div className="bg-[var(--color-surface)] border-t border-[var(--color-border)] px-6 py-2.5 flex items-center justify-center text-xs gap-1 text-[var(--color-muted)]">
                 <Shield size={12} className="text-[var(--color-accent)]"/> Licensed · Insured · USDOT {SITE.usdot} · FLDACS {SITE.fldacs}
