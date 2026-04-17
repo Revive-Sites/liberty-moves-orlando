@@ -1,8 +1,9 @@
 'use client';
 import Link from 'next/link';
-import { Phone, Star, Shield, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Phone, Star, Shield, Clock, ArrowRight, Zap } from 'lucide-react';
 import { SITE } from '@/lib/site';
 import { url, IMG, VIDEOS } from '@/lib/images';
+import FormEmbed from '@/components/FormEmbed';
 
 export default function Hero({
   eyebrow = 'Orlando Moving Company',
@@ -32,7 +33,7 @@ export default function Hero({
       </div>
 
       <div className="container-site relative py-20 md:py-28 lg:py-32">
-        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-start">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs uppercase tracking-[0.2em] font-bold text-white">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"/> {eyebrow}
@@ -62,45 +63,28 @@ export default function Hero({
             </div>
           </div>
 
-          {/* Quote card — links to working form instead of broken iframe */}
+          {/* GHL form embedded — iframe handles cross-domain fine even if direct URL returns 403 */}
           <div className="lg:justify-self-end w-full max-w-md">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden ring-1 ring-white/20">
-              <div className="bg-[var(--color-accent)] text-white px-6 py-4 flex items-center justify-between">
+              <div className="bg-[var(--color-accent)] text-white px-6 py-3 flex items-center gap-2">
+                <Zap size={18} className="fill-white"/>
                 <div>
-                  <div className="text-xs uppercase tracking-widest font-extrabold">Free Quote in Minutes</div>
-                  <div className="text-sm opacity-90">Answered within the hour</div>
-                </div>
-                <div className="text-right">
-                  <div className="text-[10px] uppercase tracking-widest opacity-80">No obligation</div>
-                  <div className="text-[10px] opacity-70">Real person</div>
+                  <div className="text-sm font-extrabold uppercase tracking-wide">Get Your Free Quote</div>
+                  <div className="text-[11px] font-semibold opacity-90">Answered within the hour · No spam</div>
                 </div>
               </div>
-              <div className="p-6">
-                <div className="space-y-2 mb-5 text-sm text-[var(--color-text)]">
-                  {['7 days a week — 7 am to 7 pm', 'Licensed, bonded & insured', 'No-pressure, written estimate', 'Serving all of Central Florida'].map((t) => (
-                    <div key={t} className="flex items-center gap-2">
-                      <CheckCircle2 size={16} className="text-[var(--color-accent)] shrink-0"/>
-                      <span>{t}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link href="/contact-us" className="block w-full bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-extrabold py-4 rounded-lg text-center transition text-lg">
-                  Request a Free Quote →
-                </Link>
-                <a href={SITE.phoneLink} className="mt-2 flex items-center justify-center gap-2 w-full border-2 border-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white text-[var(--color-primary)] font-bold py-4 rounded-lg text-center transition">
-                  <Phone size={18}/>
-                  <span className="text-lg">{SITE.phoneDisplay}</span>
-                </a>
+              <div className="bg-white">
+                <FormEmbed height={620} formName="Liberty Moves — Hero Quote" />
               </div>
               <div className="bg-[var(--color-surface)] border-t border-[var(--color-border)] px-6 py-2.5 flex items-center justify-center text-xs gap-1 text-[var(--color-muted)]">
-                <Shield size={12} className="text-[var(--color-accent)]"/> USDOT {SITE.usdot} · FLDACS {SITE.fldacs}
+                <Shield size={12} className="text-[var(--color-accent)]"/> Licensed · Insured · USDOT {SITE.usdot} · FLDACS {SITE.fldacs}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Big phone bar on desktop — mimics live site */}
+      {/* Big red phone bar — matching live site pattern */}
       <div className="bg-[var(--color-accent)] text-white">
         <div className="container-site py-3 flex flex-wrap items-center justify-center md:justify-between gap-3 text-sm">
           <div className="flex items-center gap-2 font-semibold">
