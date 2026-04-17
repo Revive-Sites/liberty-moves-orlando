@@ -10,6 +10,14 @@ const BLOG_POSTS = [
   'moving-insurance-explained',
   'diy-vs-professional-movers-orlando',
   'moving-with-pets-to-florida',
+  'moving-to-orlando-with-kids',
+  'best-orlando-neighborhoods-for-families',
+  'moving-during-hurricane-season-florida',
+  'how-to-choose-a-moving-company',
+  'office-relocation-planning-guide',
+  'storage-unit-sizes-guide',
+  'furniture-disassembly-guide',
+  'what-movers-wont-move',
 ];
 
 const SPECIALTY = [
@@ -29,6 +37,15 @@ const NEIGHBORHOODS = [
   'thornton-park-movers',
 ];
 
+const ES_PAGES = [
+  'es',
+  'es/residential-moving',
+  'es/commercial-moving',
+  'es/long-distance-moving',
+  'es/Packing-Services',
+  'es/contact-us',
+];
+
 const INBOUND = [
   'moving-to-orlando-from-new-york',
   'moving-to-orlando-from-new-jersey',
@@ -44,7 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const core: MetadataRoute.Sitemap = [
     { url: `${SITE.url}/`, lastModified: now, priority: 1.0, changeFrequency: 'weekly' },
-    { url: `${SITE.url}/es`, lastModified: now, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${SITE.url}/About-Us`, lastModified: now, priority: 0.7 },
     { url: `${SITE.url}/contact-us`, lastModified: now, priority: 0.9 },
     { url: `${SITE.url}/Why-Choose-Us`, lastModified: now, priority: 0.7 },
@@ -61,5 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const posts = BLOG_POSTS.map((slug) => ({ url: `${SITE.url}/blog/${slug}`, lastModified: now, priority: 0.7, changeFrequency: 'monthly' as const }));
   const inbound = INBOUND.map((slug) => ({ url: `${SITE.url}/${slug}`, lastModified: now, priority: 0.85, changeFrequency: 'monthly' as const }));
 
-  return [...core, ...services, ...specialty, ...neighborhoods, ...cities, ...inbound, ...posts];
+  const es = ES_PAGES.map((path) => ({ url: `${SITE.url}/${path}`, lastModified: now, priority: 0.7, changeFrequency: 'monthly' as const }));
+
+  return [...core, ...services, ...specialty, ...neighborhoods, ...cities, ...inbound, ...posts, ...es];
 }
