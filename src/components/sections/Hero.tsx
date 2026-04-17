@@ -1,58 +1,98 @@
+'use client';
 import Link from 'next/link';
-import { Phone, Star, Shield, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Star, Shield, Clock, ArrowRight } from 'lucide-react';
 import { SITE } from '@/lib/site';
+import { url, IMG } from '@/lib/images';
 
 export default function Hero({
   eyebrow = 'Orlando Moving Company',
   title,
   subtitle,
-  primaryCta = 'Get a Free Quote',
-  primaryHref = '/contact-us',
 }: {
   eyebrow?: string;
   title: string;
   subtitle: string;
-  primaryCta?: string;
-  primaryHref?: string;
 }) {
   return (
-    <section className="hero-gradient text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.08] pointer-events-none"
-        style={{ backgroundImage: "url('/images/truck-pattern.svg')", backgroundSize: 'cover' }} />
-      <div className="container-site relative py-16 md:py-28">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs uppercase tracking-[0.2em] font-semibold">
-            {eyebrow}
-          </div>
-          <h1 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] text-white">
-            {title}
-          </h1>
-          <p className="mt-5 text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl">
-            {subtitle}
-          </p>
+    <section className="relative overflow-hidden">
+      {/* Background image + overlay */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src={url(IMG.heroMovers, 1920)}
+          alt="Liberty Moves Orlando crew loading a moving truck"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a1729]/95 via-[#1e3a5f]/85 to-[#0a1729]/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(245,158,11,0.15),transparent_60%)]" />
+      </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href={primaryHref} className="btn btn-primary">{primaryCta}</Link>
-            <a href={SITE.phoneLink} className="btn btn-secondary">
-              <Phone size={18} /> {SITE.phoneDisplay}
-            </a>
+      <div className="container-site relative py-20 md:py-32">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs uppercase tracking-[0.2em] font-bold text-white">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"/> {eyebrow}
+            </div>
+            <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.02] text-white">
+              {title}
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl">
+              {subtitle}
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link href="/contact-us" className="group btn btn-primary text-base relative overflow-hidden">
+                <span className="relative z-10 flex items-center gap-2">Get a Free Quote <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform"/></span>
+              </Link>
+              <a href={SITE.phoneLink} className="btn btn-secondary text-base">
+                <Phone size={18} /> {SITE.phoneDisplay}
+              </a>
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-white/80">
+              <div className="flex items-center gap-1.5">
+                <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#f59e0b" className="text-[var(--color-accent)]"/>)}</div>
+                <span className="font-semibold">5.0</span>
+                <span className="text-white/50">(47 reviews)</span>
+              </div>
+              <div className="flex items-center gap-1.5"><Shield size={14} className="text-[var(--color-accent)]"/> USDOT {SITE.usdot}</div>
+              <div className="flex items-center gap-1.5"><Clock size={14} className="text-[var(--color-accent)]"/> Same-day available</div>
+            </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl">
-            {[
-              { icon: Star, label: '5-Star Rated', sub: 'Local reviews' },
-              { icon: Shield, label: 'Licensed', sub: `USDOT ${SITE.usdot}` },
-              { icon: Clock, label: 'On-Time', sub: '98% same-day' },
-              { icon: Phone, label: 'Free Quote', sub: 'In minutes' },
-            ].map((t) => (
-              <div key={t.label} className="flex items-start gap-2">
-                <t.icon className="text-[var(--color-accent)] shrink-0 mt-0.5" size={18} />
+          {/* Quick-quote card */}
+          <div className="lg:justify-self-end w-full max-w-md">
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <div className="bg-[var(--color-accent)] text-[var(--color-text)] px-6 py-3 flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-semibold">{t.label}</div>
-                  <div className="text-xs text-white/70">{t.sub}</div>
+                  <div className="text-xs uppercase tracking-widest font-bold">Free Quote</div>
+                  <div className="text-sm">Answered within the hour</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs font-bold">No obligation</div>
+                  <div className="text-[10px] opacity-70">Real person, not a bot</div>
                 </div>
               </div>
-            ))}
+              <div className="p-6 space-y-3">
+                <Link href="/contact-us" className="block w-full bg-[var(--color-primary)] hover:bg-[#2a4a76] text-white font-bold py-4 rounded-lg text-center transition">
+                  Request a Quote Online →
+                </Link>
+                <a href={SITE.phoneLink} className="block w-full border-2 border-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white text-[var(--color-primary)] font-bold py-4 rounded-lg text-center transition">
+                  Call {SITE.phoneDisplay}
+                </a>
+                <div className="pt-2 text-center">
+                  <div className="text-xs text-[var(--color-muted)]">Available 7 days a week, 7am–7pm ET</div>
+                </div>
+              </div>
+              <div className="bg-[var(--color-surface)] border-t border-[var(--color-border)] px-6 py-3 flex items-center justify-between text-xs">
+                <div className="flex items-center gap-1 text-[var(--color-muted)]">
+                  <Shield size={12} className="text-[var(--color-accent)]"/> Licensed · Insured · USDOT {SITE.usdot}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

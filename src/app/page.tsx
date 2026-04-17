@@ -1,5 +1,7 @@
 import Hero from '@/components/sections/Hero';
 import TrustBar from '@/components/sections/TrustBar';
+import TrustCounter from '@/components/sections/TrustCounter';
+import QuoteWizard from '@/components/sections/QuoteWizard';
 import Services from '@/components/sections/Services';
 import WhyUs from '@/components/sections/WhyUs';
 import Testimonials from '@/components/sections/Testimonials';
@@ -49,6 +51,7 @@ export default function Home() {
         subtitle="Licensed, insured, and 5-star rated. Upfront pricing, careful crews, and no-surprise service from quote to unload. Serving Orlando and all of Central Florida."
       />
       <TrustBar />
+      <TrustCounter />
 
       <section className="section-pad">
         <div className="container-site max-w-4xl">
@@ -111,6 +114,7 @@ export default function Home() {
       </section>
 
       <WhyUs />
+      <QuoteWizard />
       <Testimonials />
       <ServiceAreas />
 

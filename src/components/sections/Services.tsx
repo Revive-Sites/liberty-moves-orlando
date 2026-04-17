@@ -1,11 +1,13 @@
 import Link from 'next/link';
-import { Home, Building2, Truck, Package, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
+import { url, IMG } from '@/lib/images';
 
-const ICONS: Record<string, any> = {
-  'residential-moving': Home,
-  'commercial-moving': Building2,
-  'long-distance-moving': Truck,
-  'Packing-Services': Package,
+const SERVICE_IMG: Record<string, any> = {
+  'residential-moving': IMG.residential,
+  'commercial-moving': IMG.commercial,
+  'long-distance-moving': IMG.longDistance,
+  'Packing-Services': IMG.packing,
 };
 
 export default function Services({
@@ -26,17 +28,31 @@ export default function Services({
           <p className="mt-4 text-[var(--color-muted)] text-lg">{subtitle}</p>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map((s) => {
-            const Icon = ICONS[s.slug] || Home;
+          {services.map((s, i) => {
+            const img = SERVICE_IMG[s.slug];
             return (
-              <Link key={s.slug} href={`/${s.slug}`} className="card group block">
-                <div className="w-12 h-12 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center mb-4">
-                  <Icon size={22} />
+              <Link key={s.slug} href={`/${s.slug}`} className="group block rounded-2xl overflow-hidden bg-white border border-[var(--color-border)] shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  {img && (
+                    <Image
+                      src={url(img, 800)}
+                      alt={s.title}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1729]/80 via-[#0a1729]/20 to-transparent"/>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="text-[var(--color-accent)] text-xs font-semibold uppercase tracking-widest">Service 0{i + 1}</div>
+                    <h3 className="text-xl font-extrabold text-white">{s.title}</h3>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-[var(--color-primary)]">{s.title}</h3>
-                <p className="text-[var(--color-muted)] text-sm leading-relaxed">{s.blurb}</p>
-                <div className="mt-5 flex items-center gap-1 text-sm font-semibold text-[var(--color-accent)] group-hover:gap-2 transition-all">
-                  Learn more <ArrowRight size={14} />
+                <div className="p-5">
+                  <p className="text-sm text-[var(--color-muted)] leading-relaxed">{s.blurb}</p>
+                  <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-[var(--color-accent)] group-hover:gap-2 transition-all">
+                    See details <ArrowRight size={14} />
+                  </div>
                 </div>
               </Link>
             );

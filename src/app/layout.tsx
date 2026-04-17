@@ -4,6 +4,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ChatWidget from '@/components/ChatWidget';
 import GTM from '@/components/GTM';
+import StickyMobileCTA from '@/components/StickyMobileCTA';
+import FloatingQuoteWidget from '@/components/FloatingQuoteWidget';
 
 const SITE_URL = 'https://libertymovesorlando.com';
 
@@ -50,8 +52,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Header />
-        <main>{children}</main>
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
+        <StickyMobileCTA />
+        <FloatingQuoteWidget />
         <ChatWidget />
       </body>
     </html>
