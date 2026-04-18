@@ -2,11 +2,11 @@ import Image from 'next/image';
 import { Award } from 'lucide-react';
 import { url } from '@/lib/images';
 
-// Partnership / accreditation badges — BBB, Seminole Chamber, Orlando Moving Co
+// Partnership / accreditation badges — visually verified
 const BADGES = [
-  { hash: '696675210475d420a14bbe91', ext: 'png' as const, alt: 'BBB Accredited Business', name: 'BBB Accredited' },
-  { hash: '6967ea1ec802d94ad6138835', ext: 'png' as const, alt: 'Seminole County Chamber of Commerce', name: 'Seminole Chamber' },
-  { hash: '696908c7f43f8a25f73b23b2', ext: 'jpeg' as const, alt: 'Orlando Moving Co partnership', name: 'Orlando Moving Co' },
+  { hash: '697201df15885e248f7aa335', ext: 'png' as const, alt: 'BBB Accredited Business', name: 'BBB Accredited', href: 'https://www.bbb.org' },
+  { hash: '697202f5d4fb909b9a06f068', ext: 'png' as const, alt: 'Seminole County Chamber of Commerce', name: 'Seminole Chamber', href: 'https://seminolebusiness.org' },
+  { hash: '697200c810cc27051e005094', ext: 'webp' as const, alt: 'Orlando Moving Co partnership', name: 'Orlando Moving Co' },
 ];
 
 export default function Partnerships() {
@@ -24,19 +24,26 @@ export default function Partnerships() {
         </div>
 
         <div className="mt-12 grid grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto items-center">
-          {BADGES.map((b) => (
-            <div key={b.hash} className="relative aspect-[4/3] bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-4 md:p-8 flex items-center justify-center hover:shadow-lg transition-shadow">
-              <div className="relative w-full h-full">
-                <Image
-                  src={url({ hash: b.hash, ext: b.ext }, 600)}
-                  alt={b.alt}
-                  fill
-                  sizes="(min-width: 768px) 250px, 33vw"
-                  className="object-contain"
-                />
+          {BADGES.map((b) => {
+            const card = (
+              <div className="relative aspect-[4/3] bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-4 md:p-8 flex items-center justify-center hover:shadow-lg transition-shadow">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={url({ hash: b.hash, ext: b.ext }, 600)}
+                    alt={b.alt}
+                    fill
+                    sizes="(min-width: 768px) 250px, 33vw"
+                    className="object-contain"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+            return b.href ? (
+              <a key={b.hash} href={b.href} target="_blank" rel="noopener noreferrer" aria-label={b.name}>{card}</a>
+            ) : (
+              <div key={b.hash}>{card}</div>
+            );
+          })}
         </div>
       </div>
     </section>
