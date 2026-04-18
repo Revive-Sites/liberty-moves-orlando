@@ -57,9 +57,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GTM />
       </head>
       <body>
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-[var(--color-accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">Skip to content</a>
         <ScrollProgress />
         <Header />
-        <main className="pb-20 md:pb-0">{children}</main>
+        <main id="main" className="pb-20 md:pb-0">{children}</main>
         <Footer />
         <StickyMobileCTA />
         <FloatingQuoteWidget />

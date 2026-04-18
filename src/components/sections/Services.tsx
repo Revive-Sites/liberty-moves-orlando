@@ -50,8 +50,8 @@ export default function Services({
                 </div>
                 <div className="p-5">
                   <p className="text-sm text-[var(--color-muted)] leading-relaxed">{s.blurb}</p>
-                  <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-[var(--color-accent)] group-hover:gap-2 transition-all">
-                    See details <ArrowRight size={14} />
+                  <div className="mt-4 flex items-center gap-1 text-sm font-bold text-[var(--color-accent)] group-hover:gap-2 transition-all">
+                    See details <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform"/>
                   </div>
                 </div>
               </Link>
