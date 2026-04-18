@@ -23,7 +23,7 @@ export default function Commercial() {
       <FAQLd items={FAQS} />
       <ServiceDetail
         heroImage={{ hash: '695fb25e6eabe665b924f386', ext: 'jpg' }}
-        sectionImages={{ intro: { hash: '695fb25e6eabe665b924f386', ext: 'jpg' }, benefits: { hash: '697202f5d4fb909b9a06f068', ext: 'png' }, close: { hash: '697201df15885e248f7aa335', ext: 'png' } }}
+        sectionImages={{ intro: { hash: '695fb25e6eabe665b924f386', ext: 'jpg' }, benefits: { hash: '696908c7f43f8a25f73b23b2', ext: 'jpeg' }, close: { hash: '69666066aa336fee46b8e00b', ext: 'png' } }}
         eyebrow="Commercial Moving"
         title="Office and business moves, done on your schedule."
         subtitle="Zero downtime is the goal. We work nights and weekends so your team comes back Monday to a functioning office."

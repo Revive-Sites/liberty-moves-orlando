@@ -31,7 +31,7 @@ export default function ServiceDetail({
 }) {
   const introImg = sectionImages?.intro || IMG.crewWorking;
   const benefitsImg = sectionImages?.benefits || IMG.movingBox;
-  const closeImg = sectionImages?.close || IMG.truckSide;
+  const closeImg = sectionImages?.close || IMG.truckRamp;
 
   return (
     <>

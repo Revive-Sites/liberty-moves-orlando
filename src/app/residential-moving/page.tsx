@@ -23,7 +23,7 @@ export default function Residential() {
       <FAQLd items={FAQS} />
       <ServiceDetail
         heroImage={{ hash: '6968ff5644b623c7e5fd8a70', ext: 'png' }}
-        sectionImages={{ intro: { hash: '6968ff5644b623c7e5fd8a70', ext: 'png' }, benefits: { hash: '69666066aa336fee46b8e00b', ext: 'png' }, close: { hash: '697201df15885e248f7aa335', ext: 'png' } }}
+        sectionImages={{ intro: { hash: '6968ff5644b623c7e5fd8a70', ext: 'png' }, benefits: { hash: '69666066aa336fee46b8e00b', ext: 'png' }, close: { hash: '696675210475d420a14bbe91', ext: 'png' } }}
         eyebrow="Residential Moving"
         title="Orlando home movers who treat your stuff like it’s theirs."
         subtitle="Apartments, condos, townhomes, single-family — we pack it, move it, and set it back up. In a single day, most of the time."
