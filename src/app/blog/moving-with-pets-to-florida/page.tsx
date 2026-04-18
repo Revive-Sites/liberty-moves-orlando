@@ -30,16 +30,16 @@ export default function Post() {
           <ul>
             <li><strong>Visit the vet.</strong> Get a copy of vaccination records. If moving interstate, get a health certificate (required by most states for cross-border pet transport, valid 10–30 days).</li>
             <li><strong>Update microchip and ID tags.</strong> New address, new phone number, new state. Update before the move — not after.</li>
-            <li><strong>Research Florida vets.</strong> Pick a vet in your new Orlando neighborhood and schedule a \u201cmeet-and-greet\u201d visit for the first week.</li>
+            <li><strong>Research Florida vets.</strong> Pick a vet in your new Orlando neighborhood and schedule a “meet-and-greet” visit for the first week.</li>
             <li><strong>Prepare a pet carrier.</strong> Acclimate them to it 2–3 weeks before the move with short drives and favorite treats.</li>
           </ul>
 
           <h2>Move day logistics</h2>
           <ul>
             <li>Pets should NOT be on the moving truck. Dogs/cats travel in your vehicle or fly separately.</li>
-            <li>Arrange pet boarding or a friend\u2019s house for move-day itself. Movers + stressed pets = a bad combo.</li>
+            <li>Arrange pet boarding or a friend’s house for move-day itself. Movers + stressed pets = a bad combo.</li>
             <li>Pack a pet essentials bag: food, water, bowls, leash, medications, favorite toy, vet records, medications.</li>
-            <li>For road trips to Florida: stop every 2–3 hours for bathroom breaks. Never leave pets unattended in vehicles (Florida heat is lethal fast, even \u201ccool\u201d days reach 100°F inside a car).</li>
+            <li>For road trips to Florida: stop every 2–3 hours for bathroom breaks. Never leave pets unattended in vehicles (Florida heat is lethal fast, even “cool” days reach 100°F inside a car).</li>
           </ul>
 
           <h2>Flying pets to Orlando</h2>
@@ -48,7 +48,7 @@ export default function Post() {
           <h2>Florida-specific considerations</h2>
           <ul>
             <li><strong>Heat and humidity.</strong> Florida summers are brutal. Walk dogs before 8am or after 7pm. Hot pavement burns paws. Shaded backyards, water bowls, and AC are essentials.</li>
-            <li><strong>Fleas, ticks, heartworm.</strong> Florida\u2019s year-round warmth means year-round prevention — not just April–October.</li>
+            <li><strong>Fleas, ticks, heartworm.</strong> Florida’s year-round warmth means year-round prevention — not just April–October.</li>
             <li><strong>Wildlife awareness.</strong> Alligators in ponds and canals (keep pets away from shorelines). Also: toads that are toxic to dogs, fire ants, and occasional coyotes.</li>
             <li><strong>Hurricane season.</strong> Have a pet evacuation plan. Identify pet-friendly hotels inland. Keep a go-bag with vaccination records, food, meds, carrier, water.</li>
           </ul>
@@ -59,7 +59,7 @@ export default function Post() {
             <li>Gradually expand access over 3–5 days.</li>
             <li>Keep feeding times, walk times, and routines the same as before the move. Familiarity helps.</li>
             <li>Schedule that vet visit within the first 10 days — establishes care, updates any prescriptions, gets pet used to new vet.</li>
-            <li>Explore Orlando\u2019s pet-friendly areas: Lake Baldwin Dog Park, Barber Park, Downey Dog Park, and the Winter Park off-leash trails.</li>
+            <li>Explore Orlando’s pet-friendly areas: Lake Baldwin Dog Park, Barber Park, Downey Dog Park, and the Winter Park off-leash trails.</li>
           </ul>
 
           <div className="mt-8 flex flex-wrap gap-3">

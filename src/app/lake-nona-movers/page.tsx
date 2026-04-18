@@ -7,13 +7,13 @@ const city: City = {
   slug: 'lake-nona-movers',
   name: 'Lake Nona',
   region: 'Orange County',
-  blurb: 'Medical City, tech corridor, and master-planned communities — we move Lake Nona\u2019s fast-growing neighborhoods every week.',
+  blurb: 'Medical City, tech corridor, and master-planned communities — we move Lake Nona’s fast-growing neighborhoods every week.',
   zips: ['32827', '32832'],
   neighborhoods: ['Laureate Park', 'Lake Nona Golf & Country Club', 'Isles of Lake Nona', 'Nona Terrace', 'Medical City', 'Village Walk'],
   homeTypes: 'New-construction executive homes, luxury custom homes, townhomes, corporate housing',
   priceRange: '$900–$3,500 for most local moves',
   distanceFromDowntown: '15 miles southeast of downtown Orlando',
-  localNote: 'Lake Nona\u2019s Medical City and tech corridor drive a lot of corporate relocations. Our crews coordinate with relocation departments and new-construction closings daily.',
+  localNote: 'Lake Nona’s Medical City and tech corridor drive a lot of corporate relocations. Our crews coordinate with relocation departments and new-construction closings daily.',
 };
 
 export const metadata = {

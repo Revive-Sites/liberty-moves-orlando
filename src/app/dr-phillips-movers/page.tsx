@@ -13,7 +13,7 @@ const city: City = {
   homeTypes: 'Luxury gated estates, golf-course homes, lakefront properties, high-end condos',
   priceRange: '$1,200–$5,000 for most local moves',
   distanceFromDowntown: '9 miles southwest of downtown Orlando',
-  localNote: 'Dr. Phillips is home to Bay Hill Club and Lodge (host of the Arnold Palmer Invitational) and some of Central Florida\u2019s most prestigious neighborhoods. White-glove handling is standard here.',
+  localNote: 'Dr. Phillips is home to Bay Hill Club and Lodge (host of the Arnold Palmer Invitational) and some of Central Florida’s most prestigious neighborhoods. White-glove handling is standard here.',
 };
 
 export const metadata = {

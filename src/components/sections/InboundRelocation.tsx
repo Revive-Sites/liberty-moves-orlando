@@ -32,7 +32,7 @@ export default function InboundRelocationPage({ origin }: { origin: OriginCity }
     { q: `When should I book my ${origin.city} to Orlando move?`, a: '4–6 weeks ahead is ideal for long-distance moves. Summer and end-of-month dates fill first. If you need sooner, call us — we often accommodate shorter notice for committed movers.' },
     { q: `Do I need to be licensed to move from ${origin.stateCode} to Florida?`, a: 'No — but your mover does. Interstate moves require a USDOT license from the FMCSA. Liberty Moves Orlando is USDOT 3455436 and fully authorized for interstate moves. Verify any interstate mover at safer.fmcsa.dot.gov.' },
     { q: `Can you pack my ${origin.city} home?`, a: 'Yes — full or partial packing is available. For long-distance moves, we strongly recommend professional packing: it reduces damage risk and ensures correct labeling for quick unpacking.' },
-    { q: `What about my car?`, a: 'We can coordinate auto transport with trusted partner carriers if you don\u2019t want to drive your vehicle down. Shipping a car from the ' + origin.stateCode + ' to Florida typically runs $800–$1,500 and takes 3–7 days.' },
+    { q: `What about my car?`, a: 'We can coordinate auto transport with trusted partner carriers if you don’t want to drive your vehicle down. Shipping a car from the ' + origin.stateCode + ' to Florida typically runs $800–$1,500 and takes 3–7 days.' },
   ];
 
   return (
@@ -70,7 +70,7 @@ export default function InboundRelocationPage({ origin }: { origin: OriginCity }
           />
 
           <div className="prose-ink">
-            <h2 className="text-2xl md:text-4xl font-extrabold mt-10">Why Orlando? (If you\u2019re on the fence.)</h2>
+            <h2 className="text-2xl md:text-4xl font-extrabold mt-10">Why Orlando? (If you’re on the fence.)</h2>
             <ul className="mt-4 space-y-2">
               {origin.why.map((w) => (
                 <li key={w} className="flex items-start gap-2"><CheckCircle2 className="text-[var(--color-accent)] shrink-0 mt-0.5" size={20}/><span>{w}</span></li>
@@ -110,7 +110,7 @@ export default function InboundRelocationPage({ origin }: { origin: OriginCity }
             </ul>
 
             <h2 className="text-2xl md:text-4xl font-extrabold mt-10">Ready to get your binding {origin.city}-to-Orlando estimate?</h2>
-            <p>Fill out the quote form or call us. We\u2019ll schedule a quick in-home or video walk-through and send a written, binding price. No surprises, no high-pressure sales.</p>
+            <p>Fill out the quote form or call us. We’ll schedule a quick in-home or video walk-through and send a written, binding price. No surprises, no high-pressure sales.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/contact-us" className="btn btn-primary">Get my binding quote</Link>
               <a href={SITE.phoneLink} className="btn btn-outline">Call {SITE.phoneDisplay}</a>
@@ -121,7 +121,7 @@ export default function InboundRelocationPage({ origin }: { origin: OriginCity }
 
       <FAQ items={faqs} />
       <Testimonials />
-      <CTA title={`Moving from ${origin.city}? Let\u2019s make it easy.`} />
+      <CTA title={`Moving from ${origin.city}? Let’s make it easy.`} />
     </>
   );
 }

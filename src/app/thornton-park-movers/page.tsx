@@ -7,13 +7,13 @@ const city: City = {
   slug: 'thornton-park-movers',
   name: 'Thornton Park',
   region: 'Orange County',
-  blurb: 'Downtown-adjacent historic homes, brick streets, and Lake Eola-district walkability — we\u2019ve done hundreds of Thornton Park moves.',
+  blurb: 'Downtown-adjacent historic homes, brick streets, and Lake Eola-district walkability — we’ve done hundreds of Thornton Park moves.',
   zips: ['32801'],
   neighborhoods: ['Summerlin Avenue corridor', 'Washington Street', 'Lake Eola Heights border', 'Central Boulevard'],
   homeTypes: 'Historic bungalows, craftsman homes, modern condos, downtown lofts',
   priceRange: '$650–$2,200 for most local moves',
   distanceFromDowntown: '1 mile east of downtown Orlando',
-  localNote: 'Thornton Park\u2019s brick streets, historic homes, and proximity to downtown parking zones mean we need to plan truck access carefully. Many moves here also need COIs for downtown condo buildings.',
+  localNote: 'Thornton Park’s brick streets, historic homes, and proximity to downtown parking zones mean we need to plan truck access carefully. Many moves here also need COIs for downtown condo buildings.',
 };
 
 export const metadata = {

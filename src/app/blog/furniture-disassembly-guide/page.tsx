@@ -29,7 +29,7 @@ export default function Post() {
             'Liberty Moves includes disassembly — free for standard items',
           ]} />
 
-          <h2>Tools you\u2019ll actually need</h2>
+          <h2>Tools you’ll actually need</h2>
           <ul>
             <li>Phillips + flathead screwdrivers</li>
             <li>Allen key / hex key set (IKEA, modern furniture)</li>
@@ -55,13 +55,13 @@ export default function Post() {
           <p>Most tables: flip table upside down on a blanket to protect finish. Unscrew legs (usually 4 bolts each). Keep all hardware in one labeled bag taped to the underside of the table. Reassemble: 15 min.</p>
 
           <h2>Dressers + bookcases</h2>
-          <p>Generally don\u2019t need to disassemble unless they\u2019re too wide to fit through doorways. Empty all drawers and pack contents separately. Remove drawers for the move (lighter + easier to handle). Take photos first of any mirror attachments for reassembly.</p>
+          <p>Generally don’t need to disassemble unless they’re too wide to fit through doorways. Empty all drawers and pack contents separately. Remove drawers for the move (lighter + easier to handle). Take photos first of any mirror attachments for reassembly.</p>
 
           <h2>Cribs</h2>
-          <p>Cribs MUST be disassembled — they\u2019re too fragile to move assembled. Save all hardware carefully. Keep the instruction manual if you still have it. If you don\u2019t, search the manufacturer website for reassembly steps. For safety, inspect all hardware before putting baby back in.</p>
+          <p>Cribs MUST be disassembled — they’re too fragile to move assembled. Save all hardware carefully. Keep the instruction manual if you still have it. If you don’t, search the manufacturer website for reassembly steps. For safety, inspect all hardware before putting baby back in.</p>
 
           <h2>IKEA + modern furniture</h2>
-          <p>Keep original Allen keys taped to the item. Label every panel before removing. Take photos of every dowel hole before disassembling. IKEA furniture typically doesn\u2019t love being disassembled/reassembled — if you can move it assembled, do.</p>
+          <p>Keep original Allen keys taped to the item. Label every panel before removing. Take photos of every dowel hole before disassembling. IKEA furniture typically doesn’t love being disassembled/reassembled — if you can move it assembled, do.</p>
 
           <h2>Desks + home office</h2>
           <p>Remove monitor arms, cable management, drawer contents. Photograph cable setups before disconnecting. Most desks disassemble like tables.</p>

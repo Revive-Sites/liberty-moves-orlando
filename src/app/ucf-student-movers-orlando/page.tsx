@@ -44,7 +44,7 @@ export default function StudentMovers() {
           ]} />
           <div className="prose-ink">
             <h2 className="text-2xl md:text-4xl font-extrabold mt-10">Built for UCF semester transitions</h2>
-            <p>The end of each semester, thousands of UCF students have 72 hours to move out of dorms, off-campus apartments, or into new places. It\u2019s chaos — and your lease doesn\u2019t care that finals are that week. Liberty Moves Orlando runs a dedicated student-moves crew in May and December specifically for the UCF rush, with faster scheduling, smaller crews, and pricing built for student budgets.</p>
+            <p>The end of each semester, thousands of UCF students have 72 hours to move out of dorms, off-campus apartments, or into new places. It’s chaos — and your lease doesn’t care that finals are that week. Liberty Moves Orlando runs a dedicated student-moves crew in May and December specifically for the UCF rush, with faster scheduling, smaller crews, and pricing built for student budgets.</p>
             <h2 className="text-2xl md:text-4xl font-extrabold mt-10">What we cover</h2>
             <ul className="mt-4 space-y-1">
               <li>• <strong>Dorm moves:</strong> Tower, Academic Village, Apollo Circle, Lake Claire — we know them all</li>

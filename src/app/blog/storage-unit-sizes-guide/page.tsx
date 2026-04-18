@@ -30,7 +30,7 @@ export default function Post() {
           ]} />
 
           <h2>Orlando storage pricing at a glance</h2>
-          <p>Orlando storage ranges from $50/month for tiny lockers to $400+/month for large climate-controlled garage units. <strong>Climate control adds $30–$60/month</strong> vs non-climate — worth it in Florida\u2019s humidity.</p>
+          <p>Orlando storage ranges from $50/month for tiny lockers to $400+/month for large climate-controlled garage units. <strong>Climate control adds $30–$60/month</strong> vs non-climate — worth it in Florida’s humidity.</p>
 
           <h2>5×5 — The closet</h2>
           <p>25 sq ft. Fits: 10–20 boxes, 1 mattress, a bike, small items. <strong>$50–$90/month</strong> in Orlando.</p>
@@ -65,13 +65,13 @@ export default function Post() {
             <li>Paper + photos (yellowing, sticking)</li>
             <li>Artwork</li>
           </ul>
-          <p>Non-climate is OK for: outdoor tools, lawn equipment, metal furniture you don\u2019t care about.</p>
+          <p>Non-climate is OK for: outdoor tools, lawn equipment, metal furniture you don’t care about.</p>
 
           <h2>How to pick the right size</h2>
           <ul>
             <li><strong>Smaller than you think.</strong> Most people overbuy storage — 25–40% oversize.</li>
             <li><strong>Stack vertically.</strong> 10ft ceilings double your effective space.</li>
-            <li><strong>Leave a walking path.</strong> If you need to access stuff, don\u2019t pack to the doors.</li>
+            <li><strong>Leave a walking path.</strong> If you need to access stuff, don’t pack to the doors.</li>
             <li><strong>Month-to-month contracts.</strong> Never sign annual storage contracts — your needs change.</li>
           </ul>
 

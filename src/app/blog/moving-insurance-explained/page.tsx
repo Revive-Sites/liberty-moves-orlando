@@ -6,8 +6,8 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Moving Insurance Explained — What\u2019s Actually Covered',
-  description: 'Florida moving insurance types explained — Released Value, Full Value Protection, third-party insurance. What\u2019s covered, what\u2019s not, and how to choose.',
+  title: 'Moving Insurance Explained — What’s Actually Covered',
+  description: 'Florida moving insurance types explained — Released Value, Full Value Protection, third-party insurance. What’s covered, what’s not, and how to choose.',
   alternates: { canonical: `${SITE.url}/blog/moving-insurance-explained` },
 };
 
@@ -15,7 +15,7 @@ export default function Post() {
   return (
     <>
       <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Blog', url: `${SITE.url}/blog` }, { name: 'Moving Insurance', url: `${SITE.url}/blog/moving-insurance-explained` }]} />
-      <PageHero eyebrow="Buyer\u2019s Guide · January 2026" title="Moving Insurance, Actually Explained" subtitle="The 3 types of moving protection — Released Value, Full Value, and third-party — and how to pick the right one for your move." />
+      <PageHero eyebrow="Buyer’s Guide · January 2026" title="Moving Insurance, Actually Explained" subtitle="The 3 types of moving protection — Released Value, Full Value, and third-party — and how to pick the right one for your move." />
       <article className="section-pad">
         <div className="container-site max-w-3xl prose-ink">
           <TLDR points={[
@@ -27,21 +27,21 @@ export default function Post() {
           ]} />
 
           <h2>Option 1: Released Value Protection (Free)</h2>
-          <p>This is the default coverage every licensed mover provides at no charge. It\u2019s legally required. The catch: coverage is 60¢ per pound per article. A 50-pound TV that gets destroyed? You\u2019re owed $30. A $3,000 leather sofa weighing 120 lbs? $72. Released Value is technically \u201cinsurance\u201d but it\u2019s really a liability disclaimer. Good for low-value items, useless for valuable ones.</p>
+          <p>This is the default coverage every licensed mover provides at no charge. It’s legally required. The catch: coverage is 60¢ per pound per article. A 50-pound TV that gets destroyed? You’re owed $30. A $3,000 leather sofa weighing 120 lbs? $72. Released Value is technically “insurance” but it’s really a liability disclaimer. Good for low-value items, useless for valuable ones.</p>
 
           <h2>Option 2: Full Value Protection (Paid)</h2>
-          <p>For a fee (typically 1–3% of declared value), the mover is liable for the full replacement cost or repair cost of damaged items. If your $3,000 sofa gets ruined, you get $3,000 (or an equivalent replacement). Most reputable movers offer this — Liberty Moves Orlando does. It\u2019s the right coverage for anything more than a local apartment move.</p>
+          <p>For a fee (typically 1–3% of declared value), the mover is liable for the full replacement cost or repair cost of damaged items. If your $3,000 sofa gets ruined, you get $3,000 (or an equivalent replacement). Most reputable movers offer this — Liberty Moves Orlando does. It’s the right coverage for anything more than a local apartment move.</p>
 
           <h2>Option 3: Third-Party Insurance</h2>
           <p>For extremely high-value items (fine art, antiques over $10k, musical instruments, heirlooms), consider a third-party moving insurance policy. Companies like Baker International, MovingInsurance.com, and Relocation Insurance Group specialize in this. Often cheaper than Full Value Protection for large values and gives you direct claim recourse.</p>
 
-          <h2>What\u2019s NOT covered</h2>
+          <h2>What’s NOT covered</h2>
           <ul>
-            <li><strong>Self-packed boxes.</strong> If you packed it, the mover isn\u2019t liable. This is the #1 damage claim denial reason. If an item matters, let pros pack it.</li>
+            <li><strong>Self-packed boxes.</strong> If you packed it, the mover isn’t liable. This is the #1 damage claim denial reason. If an item matters, let pros pack it.</li>
             <li><strong>Pre-existing damage.</strong> Walk through with foreman, note any existing damage on inventory before loading.</li>
-            <li><strong>Acts of nature.</strong> Hurricanes, floods, earthquakes (not the mover\u2019s fault).</li>
+            <li><strong>Acts of nature.</strong> Hurricanes, floods, earthquakes (not the mover’s fault).</li>
             <li><strong>Normal wear.</strong> Small nicks to items that already had nicks.</li>
-            <li><strong>Items of \u201cextraordinary value\u201d not declared.</strong> Items over $100/lb (like jewelry, watches, high-end art) must be declared in writing before the move — otherwise standard coverage caps apply.</li>
+            <li><strong>Items of “extraordinary value” not declared.</strong> Items over $100/lb (like jewelry, watches, high-end art) must be declared in writing before the move — otherwise standard coverage caps apply.</li>
           </ul>
 
           <h2>Making a claim</h2>

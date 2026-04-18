@@ -48,7 +48,7 @@ export default function SocialProofToast() {
   const ev = EVENTS[idx];
 
   return (
-    <div className={`fixed bottom-4 left-4 z-40 max-w-sm transition-all duration-400 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+    <div className={`hidden md:block fixed top-24 right-4 z-30 max-w-sm transition-all duration-400 ${show ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
       <div className="bg-white rounded-xl shadow-2xl border border-[var(--color-border)] p-3 flex items-start gap-3">
         <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0">
           <CheckCircle2 className="text-emerald-600" size={20} />

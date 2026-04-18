@@ -34,27 +34,27 @@ export default function Post() {
 
           <h2>Monitoring before your move</h2>
           <ul>
-            <li><strong>5 days out:</strong> Check NOAA\u2019s National Hurricane Center (nhc.noaa.gov) and the Central Florida weather forecast.</li>
+            <li><strong>5 days out:</strong> Check NOAA’s National Hurricane Center (nhc.noaa.gov) and the Central Florida weather forecast.</li>
             <li><strong>3 days out:</strong> If anything is in the Gulf or Atlantic that could impact Florida, call your mover to discuss.</li>
             <li><strong>48 hours out:</strong> Decision time. If a named storm is within 72 hours of landfall anywhere near Florida, reschedule.</li>
             <li><strong>24 hours out:</strong> Too late to start a move if a storm is bearing down. Shelter-in-place instead.</li>
           </ul>
 
           <h2>What to do if you must move during an active threat</h2>
-          <p>Sometimes the move date can\u2019t shift — closing day, lease expiration, PCS order. In that case:</p>
+          <p>Sometimes the move date can’t shift — closing day, lease expiration, PCS order. In that case:</p>
           <ul>
             <li>Start earlier in the day — finish before weather worsens</li>
             <li>Skip non-essentials — take the essentials, leave decor for later</li>
             <li>Pack everything that could be damaged by water in plastic first</li>
-            <li>Secure the truck at destination; don\u2019t leave it loaded overnight</li>
+            <li>Secure the truck at destination; don’t leave it loaded overnight</li>
             <li>Get everything inside and out of yards before any wind arrives</li>
           </ul>
 
           <h2>Rescheduling rules at most movers</h2>
-          <p>Reputable Florida movers don\u2019t charge for weather-forced reschedules when a state or local emergency is declared. Liberty Moves Orlando specifically: free rescheduling when a named storm is within 72 hours of projected Florida landfall. No fees, no fights.</p>
+          <p>Reputable Florida movers don’t charge for weather-forced reschedules when a state or local emergency is declared. Liberty Moves Orlando specifically: free rescheduling when a named storm is within 72 hours of projected Florida landfall. No fees, no fights.</p>
 
           <h2>What to pack first (for hurricane-zone moves)</h2>
-          <p>If there\u2019s any hurricane risk during your move window, prioritize packing items that can\u2019t be replaced:</p>
+          <p>If there’s any hurricane risk during your move window, prioritize packing items that can’t be replaced:</p>
           <ul>
             <li>Important documents (passports, birth certs, tax records) — waterproof bag, in your car</li>
             <li>Irreplaceable photos, heirlooms, art — first in the truck or first in your car</li>
@@ -63,7 +63,7 @@ export default function Post() {
           </ul>
 
           <h2>Insurance considerations</h2>
-          <p>Most mover insurance (Released Value + Full Value Protection) does NOT cover "acts of God" — including hurricanes. If your truck is damaged by a storm in transit, you\u2019re often on your own. Read more in our <Link href="/blog/moving-insurance-explained" className="underline">moving insurance guide</Link>.</p>
+          <p>Most mover insurance (Released Value + Full Value Protection) does NOT cover "acts of God" — including hurricanes. If your truck is damaged by a storm in transit, you’re often on your own. Read more in our <Link href="/blog/moving-insurance-explained" className="underline">moving insurance guide</Link>.</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/contact-us" className="btn btn-primary">Book a safe move date</Link>

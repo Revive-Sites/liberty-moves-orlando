@@ -4,7 +4,7 @@ import TrustCounter from '@/components/sections/TrustCounter';
 import DiscountBand from '@/components/sections/DiscountBand';
 import LicenseVerify from '@/components/sections/LicenseVerify';
 import QuoteWizard from '@/components/sections/QuoteWizard';
-import BeforeAfter from '@/components/sections/BeforeAfter';
+import InstagramReel from '@/components/sections/InstagramReel';
 import VideoShowcase from '@/components/sections/VideoShowcase';
 import CostCalculator from '@/components/sections/CostCalculator';
 import Services from '@/components/sections/Services';
@@ -122,7 +122,7 @@ export default function Home() {
       <WhyUs />
       <VideoShowcase />
       <CostCalculator />
-      <BeforeAfter />
+      <InstagramReel />
       <LicenseVerify />
       <ReviewsSection minRating={3} />
       <ServiceAreas />

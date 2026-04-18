@@ -46,8 +46,8 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
         <div className="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center mx-auto">
           <CheckCircle2 className="text-emerald-600" size={32} />
         </div>
-        <h3 className="mt-4 text-xl font-extrabold text-[var(--color-primary)]">Got it — we\u2019ll be in touch.</h3>
-        <p className="mt-2 text-sm text-[var(--color-muted)]">A real person from our team will reply with your quote within the hour during business hours (7am\u20137pm, 7 days a week).</p>
+        <h3 className="mt-4 text-xl font-extrabold text-[var(--color-primary)]">Got it — we’ll be in touch.</h3>
+        <p className="mt-2 text-sm text-[var(--color-muted)]">A real person from our team will reply with your quote within the hour during business hours (7am–7pm, 7 days a week).</p>
         <a href={SITE.phoneLink} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--color-accent)]">
           <Phone size={14}/> Or call us now at {SITE.phoneDisplay}
         </a>

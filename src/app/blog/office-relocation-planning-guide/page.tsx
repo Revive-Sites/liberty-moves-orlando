@@ -87,7 +87,7 @@ export default function Post() {
             <li><strong>Underestimating IT.</strong> Network and phone are 70% of office-move failures.</li>
             <li><strong>Not getting COIs to landlords early.</strong> Last-minute COIs delay elevator access.</li>
             <li><strong>Letting staff pack their own PCs.</strong> Standardize — IT handles all tech.</li>
-            <li><strong>Moving into a half-finished space.</strong> If the new office isn\u2019t ready, delay.</li>
+            <li><strong>Moving into a half-finished space.</strong> If the new office isn’t ready, delay.</li>
             <li><strong>Skipping the professional mover.</strong> Commercial moves are not a DIY job.</li>
           </ul>
 

@@ -64,7 +64,7 @@ export default function ExitIntent() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-accent)]/20 border border-[var(--color-accent)]/40 text-xs uppercase tracking-[0.2em] font-bold text-[var(--color-accent)]">
               <Gift size={12}/> Before you go...
             </div>
-            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold leading-tight">Lock in <span className="text-[var(--color-accent)]">$100 off</span> your Orlando move.</h2>
+            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold leading-tight text-white">Lock in <span className="text-[var(--color-accent)]">$100 off</span> your Orlando move.</h2>
             <p className="mt-3 text-white/80 text-sm">Get your free quote in the next 24 hours and we’ll apply a $100 first-time customer discount. No coupon code. No catch.</p>
           </div>
         </div>

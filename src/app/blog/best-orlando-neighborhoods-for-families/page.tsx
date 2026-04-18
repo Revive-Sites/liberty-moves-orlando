@@ -31,11 +31,11 @@ export default function Post() {
 
           <h2>1. Oviedo (Seminole County)</h2>
           <p><strong>Median home: $475k · Avg school rating: 9/10 · Commute to downtown: 30 min</strong></p>
-          <p>Consistently rated one of Florida\u2019s best family cities. Seminole County schools are top-tier statewide. Quiet, family-oriented, low crime. Drawback: commute to downtown Orlando is slow during rush hour.</p>
+          <p>Consistently rated one of Florida’s best family cities. Seminole County schools are top-tier statewide. Quiet, family-oriented, low crime. Drawback: commute to downtown Orlando is slow during rush hour.</p>
 
           <h2>2. Windermere (Orange County)</h2>
           <p><strong>Median home: $950k · Avg school rating: 9/10 · Commute: 25 min</strong></p>
-          <p>Luxury lakefront neighborhood with excellent schools (Windermere HS top-rated). Tiger Woods lives here. Gated, safe, highly desirable. Price tag matches — among Central Florida\u2019s most expensive.</p>
+          <p>Luxury lakefront neighborhood with excellent schools (Windermere HS top-rated). Tiger Woods lives here. Gated, safe, highly desirable. Price tag matches — among Central Florida’s most expensive.</p>
 
           <h2>3. Lake Mary (Seminole County)</h2>
           <p><strong>Median home: $525k · Avg school rating: 9/10 · Commute: 25 min</strong></p>

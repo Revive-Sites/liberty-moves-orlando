@@ -8,7 +8,7 @@ export const SITE = {
   phoneDisplay: '(407) 641-2887',
   officePhone: '407-729-9108',
   officePhoneLink: 'tel:+14077299108',
-  email: 'libertymovesorlando@gmail.com',
+  email: 'info@libertymoves.com',
   addressStreet: '3641 S Saint Lucie Dr',
   addressCity: 'Casselberry',
   addressState: 'FL',

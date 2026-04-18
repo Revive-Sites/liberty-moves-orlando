@@ -29,10 +29,10 @@ export default function Post() {
           <h2>8 weeks before move day</h2>
           <ul>
             <li>Research Orlando movers — get 3 written quotes</li>
-            <li>Verify each mover\u2019s USDOT (safer.fmcsa.dot.gov) and FLDACS IM# for intrastate FL moves</li>
+            <li>Verify each mover’s USDOT (safer.fmcsa.dot.gov) and FLDACS IM# for intrastate FL moves</li>
             <li>Create a move folder: estimates, receipts, inventory</li>
             <li>If you have kids: schedule school transfers now</li>
-            <li>Start purging closets — every item you don\u2019t move saves you money</li>
+            <li>Start purging closets — every item you don’t move saves you money</li>
           </ul>
 
           <h2>6 weeks before</h2>
@@ -40,7 +40,7 @@ export default function Post() {
             <li>Book your chosen mover — weekends fill first</li>
             <li>Order moving boxes (or schedule pickup from mover)</li>
             <li>Begin packing non-essentials: out-of-season clothes, books, decor</li>
-            <li>Start using up pantry food and cleaning products — don\u2019t move them</li>
+            <li>Start using up pantry food and cleaning products — don’t move them</li>
           </ul>
 
           <h2>4 weeks before</h2>
@@ -58,13 +58,13 @@ export default function Post() {
             <li>Arrange care/boarding for pets during move day</li>
             <li>Confirm mover arrival time and payment method</li>
             <li>Get any medications refilled — 90-day supply if possible</li>
-            <li>Dispose of: hazmat (propane, paint, gasoline), plants going out of state, frozen food you won\u2019t use</li>
+            <li>Dispose of: hazmat (propane, paint, gasoline), plants going out of state, frozen food you won’t use</li>
           </ul>
 
           <h2>Week of the move</h2>
           <ul>
             <li>Confirm mover 48 hours ahead</li>
-            <li>Pack an \u201cessentials box\u201d: toiletries, 2 days of clothes, chargers, medications, important documents, snacks, pet supplies</li>
+            <li>Pack an “essentials box”: toiletries, 2 days of clothes, chargers, medications, important documents, snacks, pet supplies</li>
             <li>Defrost freezer 24 hours before move</li>
             <li>Take photos of electronics cable setups before disconnecting</li>
             <li>Withdraw cash for tips ($20–$40 per mover is typical Orlando tip on a move day)</li>
@@ -82,7 +82,7 @@ export default function Post() {
 
           <h2>First week after move</h2>
           <ul>
-            <li>Update Florida driver\u2019s license within 30 days (if moving from out of state)</li>
+            <li>Update Florida driver’s license within 30 days (if moving from out of state)</li>
             <li>Register vehicle in Florida within 30 days</li>
             <li>Update voter registration</li>
             <li>Meet neighbors — Orlando neighborhoods are friendly</li>

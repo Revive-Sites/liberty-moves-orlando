@@ -13,7 +13,7 @@ const city: City = {
   homeTypes: 'New-urbanism single-family, condos, townhomes, lakefront homes',
   priceRange: '$700–$2,400 for most local moves',
   distanceFromDowntown: '5 miles northeast of downtown Orlando',
-  localNote: 'Baldwin Park\u2019s walkable layout and tight streets mean we coordinate truck staging carefully. Many buildings have parking restrictions we handle for you.',
+  localNote: 'Baldwin Park’s walkable layout and tight streets mean we coordinate truck staging carefully. Many buildings have parking restrictions we handle for you.',
 };
 
 export const metadata = {

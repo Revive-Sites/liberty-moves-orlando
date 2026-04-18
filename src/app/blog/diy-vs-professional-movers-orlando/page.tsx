@@ -27,7 +27,7 @@ export default function Post() {
           ]} />
 
           <h2>The honest DIY cost breakdown</h2>
-          <p>That \u201c$19.99/day\u201d U-Haul billboard is marketing. The real cost of a DIY 2-bedroom local Orlando move:</p>
+          <p>That “$19.99/day” U-Haul billboard is marketing. The real cost of a DIY 2-bedroom local Orlando move:</p>
           <ul>
             <li>Truck rental (16-ft, in-town, 1 day): $30 base + 99¢/mile + fuel → <strong>$80–$150</strong></li>
             <li>Environmental + rental insurance: <strong>$25–$40</strong></li>
@@ -42,7 +42,7 @@ export default function Post() {
             <li>Your time: 12–16 hours ($300–$500 at your hourly rate)</li>
             <li>Risk of injury (most common: back strain, pinched fingers)</li>
             <li>Risk of damage to truck or apartment (lost deposits, liability)</li>
-            <li>Risk of damaged/lost items (your homeowner\u2019s insurance probably doesn\u2019t cover DIY moves)</li>
+            <li>Risk of damaged/lost items (your homeowner’s insurance probably doesn’t cover DIY moves)</li>
           </ul>
           <p>Real all-in DIY cost for a 2-bedroom Orlando move: <strong>$350–$700</strong> + 12–16 hours of your time + real injury/damage risk.</p>
 
@@ -50,7 +50,7 @@ export default function Post() {
           <p>A 2-bedroom Orlando move with Liberty Moves Orlando: <strong>$650–$1,100 all in</strong>. Includes truck, 2–3 movers, pads, wrap, dollies, tape, basic disassembly. Crew uniformed, insured, and professional.</p>
 
           <h2>The real gap</h2>
-          <p>For most 2-bedroom Orlando moves, the gap between DIY and pro is $300–$500 — and you save 8–12 hours of your time plus all the injury/damage risk. If your time is worth more than $25/hour (which most people\u2019s is), pros are the rational choice.</p>
+          <p>For most 2-bedroom Orlando moves, the gap between DIY and pro is $300–$500 — and you save 8–12 hours of your time plus all the injury/damage risk. If your time is worth more than $25/hour (which most people’s is), pros are the rational choice.</p>
 
           <h2>When DIY actually makes sense</h2>
           <ul>
@@ -66,9 +66,9 @@ export default function Post() {
             <li>Any 2-bedroom or larger</li>
             <li>Long distance (over 50 miles)</li>
             <li>Stairs, walk-ups, or elevator coordination</li>
-            <li>Any item worth over $500 you\u2019d cry over losing</li>
+            <li>Any item worth over $500 you’d cry over losing</li>
             <li>Pianos, safes, pool tables, fine art, antiques</li>
-            <li>You\u2019re older, pregnant, injured, or just don\u2019t want to</li>
+            <li>You’re older, pregnant, injured, or just don’t want to</li>
           </ul>
 
           <div className="mt-8 flex flex-wrap gap-3">

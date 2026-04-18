@@ -1,15 +1,19 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, Heart } from 'lucide-react';
 import { SITE, CITIES, SERVICES } from '@/lib/site';
+import { url, IMG } from '@/lib/images';
 
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-[var(--color-primary)] text-white mt-20">
-      <div className="container-site py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="container-site py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr] gap-10">
         <div>
-          <div className="font-display font-extrabold text-xl">Liberty Moves Orlando</div>
-          <p className="mt-3 text-white/80 text-sm leading-relaxed">
+          <div className="bg-white rounded-xl p-4 inline-block">
+            <Image src={url(IMG.logo, 400)} alt="Liberty Moves Orlando" width={160} height={44} className="h-11 w-auto object-contain"/>
+          </div>
+          <p className="mt-4 text-white/80 text-sm leading-relaxed">
             Licensed & insured Orlando movers. Local, long-distance, residential and commercial.
           </p>
           <div className="mt-4 space-y-2 text-sm">
@@ -27,7 +31,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="text-white/60 text-xs mt-3">USDOT {SITE.usdot} · FLDACS {SITE.fldacs}</div>
-            <a href="https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx" target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline text-xs mt-1 inline-block">Verify any FL mover\u2019s license →</a>
+            <a href="https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx" target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline text-xs mt-1 inline-block">Verify any FL mover’s license →</a>
             <div className="mt-3"><a href="/es" className="text-xs text-white/70 hover:text-[var(--color-accent)]">Español →</a></div>
           </div>
         </div>
@@ -70,10 +74,20 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/60">
-          <div>© {year} Liberty Moves Orlando. All rights reserved.</div>
-          <div>Built by <a href="https://thereviveagency.com" className="hover:text-[var(--color-accent)]">The Revive Agency</a></div>
+      <div className="border-t border-white/10 bg-[#0a1729]">
+        <div className="container-site py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+          <div className="text-white/60 text-xs">© {year} Liberty Moves Orlando, LLC. All rights reserved.</div>
+          <a
+            href="https://reviveagency.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[var(--color-accent)]/50 rounded-full px-4 py-2 text-white text-sm font-medium transition"
+          >
+            <span className="text-white/80">Built with</span>
+            <Heart size={14} className="text-[var(--color-accent)] fill-[var(--color-accent)] animate-pulse group-hover:scale-125 transition-transform" />
+            <span className="text-white/80">by</span>
+            <span className="font-bold text-white group-hover:text-[var(--color-accent)]">Revive Agency</span>
+          </a>
         </div>
       </div>
     </footer>

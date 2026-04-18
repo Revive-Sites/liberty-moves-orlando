@@ -21,7 +21,7 @@ export default function FloatingQuoteWidget() {
   }, []);
 
   return (
-    <div className={`hidden md:block fixed bottom-6 right-6 z-50 transition-all duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+    <div className={`hidden md:block fixed bottom-6 left-6 z-40 transition-all duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
       {!open ? (
         <button
           onClick={() => { setOpen(true); setPulse(false); }}

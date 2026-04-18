@@ -30,7 +30,7 @@ export default function Post() {
           ]} />
 
           <h2>Pick the school district first, the house second</h2>
-          <p>In Orlando, school district determines everything — home price, your weekly routine, your kid\u2019s friends. The four big districts families relocate into:</p>
+          <p>In Orlando, school district determines everything — home price, your weekly routine, your kid’s friends. The four big districts families relocate into:</p>
           <ul>
             <li><strong>Seminole County Public Schools</strong> — consistently top-rated statewide. Oviedo, Lake Mary, Winter Springs, Sanford.</li>
             <li><strong>Orange County Public Schools</strong> — larger district with huge variance. Dr. Phillips, Windermere, Winter Park, Lake Nona all excellent.</li>
@@ -38,10 +38,10 @@ export default function Post() {
             <li><strong>Lake County</strong> — smaller, rural feel. Mount Dora, Eustis, Montverde Academy (private).</li>
           </ul>
 
-          <h2>Transfer your kid\u2019s school records</h2>
+          <h2>Transfer your kid’s school records</h2>
           <ol>
             <li>Request official records from current school 60 days out (transcripts, immunizations, IEP/504 plans if applicable).</li>
-            <li>Contact your new school directly — principal\u2019s office, not just the district website.</li>
+            <li>Contact your new school directly — principal’s office, not just the district website.</li>
             <li>Florida requires up-to-date immunizations (blue form 680) and physical exam (yellow form 3040) — bookmark the FL DOH websites.</li>
             <li>Submit enrollment forms to new school 30+ days ahead.</li>
             <li>Request a school tour before the first day if possible — reduces first-day anxiety.</li>
@@ -63,7 +63,7 @@ export default function Post() {
             <li><strong>Find their "thing" fast.</strong> Sign up for sports/arts/clubs week 1 — friendships form in activities, not classrooms.</li>
             <li><strong>Keep one ritual from the old city.</strong> Friday pizza, Sunday pancakes — whatever was a tradition. Continuity matters.</li>
             <li><strong>Talk to teachers.</strong> Let them know the kid is new. Good teachers will check in.</li>
-            <li><strong>Give it a semester.</strong> Real adjustment takes 3–4 months. Don\u2019t panic in month 1.</li>
+            <li><strong>Give it a semester.</strong> Real adjustment takes 3–4 months. Don’t panic in month 1.</li>
           </ul>
 
           <h2>Kid-friendly Orlando (beyond theme parks)</h2>
