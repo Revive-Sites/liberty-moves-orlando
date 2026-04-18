@@ -3,8 +3,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
-import { SITE } from '@/lib/site';
+import { SITE, CITIES } from '@/lib/site';
 import { url, IMG } from '@/lib/images';
+
+const EXTRA_AREAS = [
+  { slug: 'lake-nona-movers', name: 'Lake Nona' },
+  { slug: 'dr-phillips-movers', name: 'Dr. Phillips' },
+  { slug: 'baldwin-park-movers', name: 'Baldwin Park' },
+  { slug: 'thornton-park-movers', name: 'Thornton Park' },
+];
 
 const SERVICES_MENU = [
   { label: 'Residential Moving', href: '/residential-moving', desc: 'Homes, apartments, condos' },
@@ -19,19 +26,10 @@ const SERVICES_MENU = [
   { label: 'Storage + Moving', href: '/storage-moving-orlando', desc: 'Climate-controlled storage' },
 ];
 
+// Unified: all CITIES + neighborhood pages — same list used in body ServiceAreas
 const AREAS_MENU = [
-  { label: 'Winter Park', href: '/winter-park-orlando' },
-  { label: 'Lake Mary', href: '/lake-mary-orlando' },
-  { label: 'Kissimmee', href: '/kissimmee-orlando' },
-  { label: 'Windermere', href: '/windermere-orlando' },
-  { label: 'Altamonte Springs', href: '/altamonte-springs-orlando' },
-  { label: 'Oviedo', href: '/oviedo-orlando' },
-  { label: 'Sanford', href: '/sanford-orlando' },
-  { label: 'Lake Nona', href: '/lake-nona-movers' },
-  { label: 'Dr. Phillips', href: '/dr-phillips-movers' },
-  { label: 'Winter Garden', href: '/winter-garden-orlando' },
-  { label: 'Celebration', href: '/celebration-orlando' },
-  { label: 'Baldwin Park', href: '/baldwin-park-movers' },
+  ...CITIES.map((c) => ({ label: c.name, href: `/${c.slug}` })),
+  ...EXTRA_AREAS.map((a) => ({ label: a.name, href: `/${a.slug}` })),
 ];
 
 const RESOURCES_MENU = [
