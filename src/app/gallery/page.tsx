@@ -32,7 +32,7 @@ export default function Gallery() {
   return (
     <>
       <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Gallery', url: `${SITE.url}/gallery` }]} />
-      <PageHero eyebrow="Gallery" title="Real crews. Real trucks. Real Orlando moves." subtitle="Every job gets the same care — whether it\u2019s a studio in College Park or a Windermere estate." />
+      <PageHero eyebrow="Gallery" title="Real crews. Real trucks. Real Orlando moves." subtitle="Every job gets the same care — whether it’s a studio in College Park or a Windermere estate." />
       <section className="section-pad">
         <div className="container-site">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

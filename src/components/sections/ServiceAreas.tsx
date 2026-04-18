@@ -2,6 +2,18 @@ import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { CITIES } from '@/lib/site';
 
+const EXTRA_AREAS = [
+  { slug: 'lake-nona-movers', name: 'Lake Nona' },
+  { slug: 'dr-phillips-movers', name: 'Dr. Phillips' },
+  { slug: 'baldwin-park-movers', name: 'Baldwin Park' },
+  { slug: 'thornton-park-movers', name: 'Thornton Park' },
+];
+
+const ALL_AREAS = [
+  ...CITIES.map((c) => ({ slug: c.slug, name: c.name })),
+  ...EXTRA_AREAS,
+];
+
 export default function ServiceAreas() {
   return (
     <section className="section-pad bg-[var(--color-surface)]">
@@ -14,7 +26,7 @@ export default function ServiceAreas() {
           </p>
         </div>
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-          {CITIES.map((c) => (
+          {ALL_AREAS.map((c) => (
             <Link key={c.slug} href={`/${c.slug}`}
               className="group flex items-center justify-between gap-2 bg-white border border-[var(--color-border)] rounded-lg px-4 py-3 hover:border-[var(--color-accent)] hover:shadow-sm transition">
               <div className="flex items-center gap-2 min-w-0">

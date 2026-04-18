@@ -30,7 +30,7 @@ export default function VideoShowcase() {
             </div>
             <h2 className="mt-2 text-3xl md:text-5xl font-extrabold leading-tight">This is what move day looks like with us.</h2>
             <p className="mt-4 text-white/80 leading-relaxed">
-              Real crews. Real trucks. Real Orlando moves. Uniformed team, truck pulled up on time, pads and wrap out in three minutes. By the time you\u2019re done, the beds are made.
+              Real crews. Real trucks. Real Orlando moves. Uniformed team, truck pulled up on time, pads and wrap out in three minutes. By the time you’re done, the beds are made.
             </p>
             <ul className="mt-6 space-y-2 text-sm">
               {[

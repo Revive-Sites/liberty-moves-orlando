@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 
-// Revive OS Supabase edge function that handles OAuth + GHL contact creation
 const REVIVE_LEAD_FN = 'https://trqqskzmqzhwdjpbeqrq.supabase.co/functions/v1/liberty-moves-lead';
 
 type QuoteInput = {
   firstName?: string;
+  lastName?: string;
   phone?: string;
   email?: string;
   moveDate?: string;
@@ -28,7 +28,6 @@ export async function POST(req: Request) {
 
   const attempts: Array<{ channel: string; detail?: string }> = [];
 
-  // Primary — Revive OS edge function (handles OAuth + creates GHL contact)
   try {
     const r = await fetch(REVIVE_LEAD_FN, {
       method: 'POST',
@@ -44,7 +43,6 @@ export async function POST(req: Request) {
     attempts.push({ channel: 'ghl', detail: e.message });
   }
 
-  // Fallback — optional generic webhook relay
   const RELAY_URL = process.env.LEAD_RELAY_URL;
   if (RELAY_URL) {
     try {
@@ -60,7 +58,6 @@ export async function POST(req: Request) {
     }
   }
 
-  // Last resort — log so nothing is lost
   console.warn('[api/quote] LEAD RECEIVED but all delivery paths failed:', JSON.stringify({ input, attempts }));
   return NextResponse.json({ ok: true, channel: 'log-fallback', attempts });
 }

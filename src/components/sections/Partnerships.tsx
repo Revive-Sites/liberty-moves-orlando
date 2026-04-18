@@ -24,9 +24,9 @@ export default function Partnerships() {
           <div className="inline-flex items-center gap-2 text-[var(--color-accent)] text-sm font-bold uppercase tracking-[0.2em]">
             <Award size={14}/> Recognitions & Community Partnerships
           </div>
-          <h2 className="mt-2 text-2xl md:text-4xl font-extrabold">Trusted by Central Florida\u2019s business community.</h2>
+          <h2 className="mt-2 text-2xl md:text-4xl font-extrabold">Trusted by Central Florida’s business community.</h2>
           <p className="mt-3 text-[var(--color-muted)] max-w-2xl mx-auto">
-            Accredited, active, and proudly part of Orlando. These aren\u2019t just logos — they\u2019re accountability.
+            Accredited, active, and proudly part of Orlando. These aren’t just logos — they’re accountability.
           </p>
         </div>
 
