@@ -6,6 +6,7 @@ import LicenseVerify from '@/components/sections/LicenseVerify';
 import QuoteWizard from '@/components/sections/QuoteWizard';
 import VideoShowcase from '@/components/sections/VideoShowcase';
 import CostCalculator from '@/components/sections/CostCalculator';
+import Partnerships from '@/components/sections/Partnerships';
 import Services from '@/components/sections/Services';
 import WhyUs from '@/components/sections/WhyUs';
 import ReviewsSection from '@/components/sections/ReviewsSection';
@@ -123,6 +124,7 @@ export default function Home() {
       <CostCalculator />
       <LicenseVerify />
       <ReviewsSection minRating={3} />
+      <Partnerships />
       <ServiceAreas />
 
       <section className="section-pad">

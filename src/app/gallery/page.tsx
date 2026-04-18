@@ -5,6 +5,7 @@ import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 import { url } from '@/lib/images';
 
+// Only actual move/crew photos — badges moved to Partnerships section on home page
 const GALLERY = [
   { hash: '69666066aa336fee46b8e00b', ext: 'png' as const, caption: 'Loaded and ready — Orlando local move' },
   { hash: '6967f14225c12a7e4603b30c', ext: 'jpeg' as const, caption: 'Careful handling on move day' },
@@ -17,13 +18,7 @@ const GALLERY = [
   { hash: '6966737be2d75bd6ac16fff0', ext: 'jpg' as const, caption: 'Trained crew in action' },
   { hash: '697201df15885e248f7aa335', ext: 'png' as const, caption: 'Our trucks — clean, branded, ready' },
   { hash: '697202f5d4fb909b9a06f068', ext: 'png' as const, caption: 'Fleet on the road' },
-  { hash: '697200c810cc27051e005094', ext: 'webp' as const, caption: 'Long-haul equipment' },
-  { hash: '69666061574eb20fd27153f9', ext: 'png' as const, caption: 'Customer homes, handled with care' },
   { hash: '6967ea1e5ce16c64a01539a8', ext: 'png' as const, caption: 'Loading the truck — every box labeled' },
-  { hash: '6967ea1ec802d94ad6138835', ext: 'png' as const, caption: 'Orlando neighborhood move' },
-  { hash: '696908c7f43f8a25f73b23b2', ext: 'jpeg' as const, caption: 'Residential packing day' },
-  { hash: '69669c829a690c6153f6631e', ext: 'jpg' as const, caption: 'About our crew' },
-  { hash: '696675210475d420a14bbe91', ext: 'png' as const, caption: 'The Liberty Moves team' },
 ];
 
 export const metadata = {
@@ -36,7 +31,7 @@ export default function Gallery() {
   return (
     <>
       <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Gallery', url: `${SITE.url}/gallery` }]} />
-      <PageHero eyebrow="Gallery" title="Real crews. Real trucks. Real Orlando moves." subtitle="Every job gets the same care — whether it’s a studio in College Park or a Windermere estate." />
+      <PageHero eyebrow="Gallery" title="Real crews. Real trucks. Real Orlando moves." subtitle="Every job gets the same care — whether it\u2019s a studio in College Park or a Windermere estate." />
       <section className="section-pad">
         <div className="container-site">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
