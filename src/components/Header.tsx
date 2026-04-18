@@ -36,6 +36,7 @@ const AREAS_MENU = [
 
 const RESOURCES_MENU = [
   { label: 'Orlando Moving Cost Guide', href: '/orlando-moving-cost' },
+  { label: 'Cost Calculator', href: '/orlando-moving-cost-calculator' },
   { label: 'Moving Tips Blog', href: '/blog' },
   { label: 'FAQs', href: '/faqs' },
   { label: 'Gallery', href: '/gallery' },
@@ -46,11 +47,7 @@ const RESOURCES_MENU = [
 function Dropdown({ label, items, cols = 2 }: { label: string; items: Array<{ label: string; href: string; desc?: string }>; cols?: number }) {
   const [open, setOpen] = useState(false);
   return (
-    <div
-      className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
+    <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <button className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-[var(--color-text)] hover:text-[var(--color-primary)] rounded-md transition">
         {label} <ChevronDown size={14} className={`transition-transform ${open ? 'rotate-180' : ''}`}/>
       </button>
@@ -64,6 +61,34 @@ function Dropdown({ label, items, cols = 2 }: { label: string; items: Array<{ la
           ))}
         </div>
       </div>
+    </div>
+  );
+}
+
+function MobileSection({ title, items, initialOpen = false }: { title: string; items: Array<{ label: string; href: string; desc?: string }>; initialOpen?: boolean }) {
+  const [open, setOpen] = useState(initialOpen);
+  return (
+    <div className="border-b border-[var(--color-border)]">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between py-3 px-2 text-xs uppercase tracking-widest text-[var(--color-accent)] font-bold"
+      >
+        {title}
+        <ChevronDown size={14} className={`transition-transform ${open ? 'rotate-180' : ''}`}/>
+      </button>
+      {open && (
+        <div className="pb-2">
+          {items.map((s) => (
+            <Link
+              key={s.href}
+              href={s.href}
+              className="block py-2 px-4 text-sm text-[var(--color-text)] hover:text-[var(--color-accent)]"
+            >
+              {s.label}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -106,25 +131,18 @@ export default function Header() {
 
       {open && (
         <div className="lg:hidden border-t border-[var(--color-border)] bg-white max-h-[80vh] overflow-y-auto">
-          <div className="container-site py-4 flex flex-col gap-1">
-            <Link href="/" className="py-3 px-2 text-sm font-semibold border-b border-[var(--color-border)]" onClick={() => setOpen(false)}>Home</Link>
-            <Link href="/About-Us" className="py-3 px-2 text-sm font-semibold border-b border-[var(--color-border)]" onClick={() => setOpen(false)}>About</Link>
-            <div className="py-3 px-2 text-xs uppercase tracking-widest text-[var(--color-accent)] font-bold">Services</div>
-            {SERVICES_MENU.map((s) => (
-              <Link key={s.href} href={s.href} className="py-2 px-4 text-sm text-[var(--color-text)] border-b border-[var(--color-border)]/50" onClick={() => setOpen(false)}>{s.label}</Link>
-            ))}
-            <div className="py-3 px-2 text-xs uppercase tracking-widest text-[var(--color-accent)] font-bold mt-2">Service Areas</div>
-            {AREAS_MENU.slice(0, 8).map((s) => (
-              <Link key={s.href} href={s.href} className="py-2 px-4 text-sm text-[var(--color-text)] border-b border-[var(--color-border)]/50" onClick={() => setOpen(false)}>{s.label}</Link>
-            ))}
-            <div className="py-3 px-2 text-xs uppercase tracking-widest text-[var(--color-accent)] font-bold mt-2">Resources</div>
-            {RESOURCES_MENU.map((s) => (
-              <Link key={s.href} href={s.href} className="py-2 px-4 text-sm text-[var(--color-text)] border-b border-[var(--color-border)]/50" onClick={() => setOpen(false)}>{s.label}</Link>
-            ))}
-            <Link href="/contact-us" className="btn btn-primary mt-4" onClick={() => setOpen(false)}>Get a Free Quote →</Link>
-            <a href={SITE.phoneLink} className="flex items-center justify-center gap-2 mt-2 py-3 border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-bold rounded-lg">
-              <Phone size={16}/> {SITE.phoneDisplay}
-            </a>
+          <div className="container-site py-3">
+            <Link href="/" className="block py-3 px-2 text-sm font-semibold border-b border-[var(--color-border)]" onClick={() => setOpen(false)}>Home</Link>
+            <Link href="/About-Us" className="block py-3 px-2 text-sm font-semibold border-b border-[var(--color-border)]" onClick={() => setOpen(false)}>About</Link>
+            <MobileSection title="Services" items={SERVICES_MENU} />
+            <MobileSection title="Service Areas" items={AREAS_MENU} />
+            <MobileSection title="Resources" items={RESOURCES_MENU} />
+            <div className="pt-4 space-y-2">
+              <Link href="/contact-us" className="btn btn-primary w-full" onClick={() => setOpen(false)}>Get a Free Quote →</Link>
+              <a href={SITE.phoneLink} className="flex items-center justify-center gap-2 py-3 border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-bold rounded-lg">
+                <Phone size={16}/> {SITE.phoneDisplay}
+              </a>
+            </div>
           </div>
         </div>
       )}

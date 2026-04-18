@@ -3,17 +3,14 @@ import { useEffect, useRef, useState } from 'react';
 import { Star, Truck, Shield, Users } from 'lucide-react';
 
 function AnimatedNumber({ value, suffix = '', decimals = 0 }: { value: number; suffix?: string; decimals?: number }) {
-  // Start at the final value so SSR + first paint look correct. Re-animate once in view.
   const [n, setN] = useState(value);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
   const hydrated = useRef(false);
 
   useEffect(() => {
-    // On client hydration, reset to 0 only if not already animated, then run the count-up once visible.
     if (hydrated.current) return;
     hydrated.current = true;
-
     if (!ref.current) return;
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -41,22 +38,25 @@ function AnimatedNumber({ value, suffix = '', decimals = 0 }: { value: number; s
 
 export default function TrustCounter() {
   const stats = [
-    { icon: Truck, value: 500, suffix: '+', label: 'Orlando moves completed' },
-    { icon: Star, value: 5.0, suffix: '★', decimals: 1, label: 'Average Google rating' },
-    { icon: Users, value: 300, suffix: '+', label: 'Verified Google reviews' },
-    { icon: Shield, value: 100, suffix: '%', label: 'Licensed & insured' },
+    { icon: Truck, value: 500, suffix: '+', label: 'Orlando moves completed', color: 'from-[#1e3a5f] to-[#0f2344]' },
+    { icon: Star, value: 5.0, suffix: '★', decimals: 1, label: 'Average Google rating', color: 'from-[#dc2626] to-[#b91c1c]' },
+    { icon: Users, value: 300, suffix: '+', label: 'Verified Google reviews', color: 'from-[#1e3a5f] to-[#0f2344]' },
+    { icon: Shield, value: 100, suffix: '%', label: 'Licensed & insured', color: 'from-[#dc2626] to-[#b91c1c]' },
   ];
   return (
     <section className="bg-[var(--color-surface)] border-y border-[var(--color-border)]">
-      <div className="container-site py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
+      <div className="container-site py-12 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <s.icon className="mx-auto text-[var(--color-accent)]" size={24}/>
-              <div className="mt-3 text-4xl md:text-5xl font-extrabold text-[var(--color-primary)] tabular-nums">
+            <div key={s.label} className="group relative overflow-hidden bg-white border border-[var(--color-border)] rounded-2xl p-5 md:p-6 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <div className={`absolute -top-8 -right-8 w-24 h-24 rounded-full bg-gradient-to-br ${s.color} opacity-10 group-hover:opacity-20 transition-opacity`}/>
+              <div className={`relative w-11 h-11 rounded-xl bg-gradient-to-br ${s.color} text-white flex items-center justify-center shadow-md`}>
+                <s.icon size={20}/>
+              </div>
+              <div className="mt-4 text-3xl md:text-5xl font-extrabold text-[var(--color-primary)] tabular-nums leading-none">
                 <AnimatedNumber value={s.value} suffix={s.suffix} decimals={s.decimals || 0} />
               </div>
-              <div className="mt-1 text-xs md:text-sm text-[var(--color-muted)] font-medium">{s.label}</div>
+              <div className="mt-2 text-xs md:text-sm text-[var(--color-muted)] font-semibold">{s.label}</div>
             </div>
           ))}
         </div>
