@@ -1,0 +1,8 @@
+# robots.txt — managed by Revive OS
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+Sitemap: https://liberty-moves-orlando.vercel.app/sitemap.xml
