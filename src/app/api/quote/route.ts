@@ -2,6 +2,12 @@ import { NextResponse } from 'next/server';
 
 const REVIVE_LEAD_FN = 'https://trqqskzmqzhwdjpbeqrq.supabase.co/functions/v1/liberty-moves-lead';
 
+// Supabase publishable/anon key — required by the edge gateway, even for public functions.
+// Prefer env var; fall back to embedded publishable key (this is the anon key, safe to expose).
+const SUPABASE_ANON_KEY =
+  process.env.SUPABASE_ANON_KEY ||
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRycXFza3ptcXpod2RqcGJlcXJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI4NzIzMDIsImV4cCI6MjA4ODQ0ODMwMn0.PGRopuNCstbCn01NRYDZ1RjtFnkXHPPqIZ4zDbYn0X8';
+
 type QuoteInput = {
   firstName?: string;
   lastName?: string;
@@ -31,7 +37,11 @@ export async function POST(req: Request) {
   try {
     const r = await fetch(REVIVE_LEAD_FN, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
       body: JSON.stringify(input),
     });
     const data = await r.json().catch(() => ({}));
