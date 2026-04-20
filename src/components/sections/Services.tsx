@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { url, IMG } from '@/lib/images';
 
 const SERVICE_IMG: Record<string, any> = {
+  'local-movers': IMG.localMovers,
   'residential-moving': IMG.residential,
   'commercial-moving': IMG.commercial,
   'long-distance-moving': IMG.longDistance,
@@ -29,19 +30,17 @@ export default function Services({
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {services.map((s, i) => {
-            const img = SERVICE_IMG[s.slug];
+            const img = SERVICE_IMG[s.slug] || IMG.crewWorking;
             return (
               <Link key={s.slug} href={`/${s.slug}`} className="group block rounded-2xl overflow-hidden bg-white border border-[var(--color-border)] shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  {img && (
-                    <Image
-                      src={url(img, 800)}
-                      alt={s.title}
-                      fill
-                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                  )}
+                  <Image
+                    src={url(img, 800)}
+                    alt={s.title}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a1729]/80 via-[#0a1729]/20 to-transparent"/>
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <div className="text-[var(--color-accent)] text-xs font-semibold uppercase tracking-widest">Service 0{i + 1}</div>

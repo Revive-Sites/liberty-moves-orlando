@@ -12,6 +12,7 @@ export const IMG = {
   logo: { hash: '6980d4cc1fd8276091bc0ec6', ext: 'png' as const },
   heroTruck: { hash: '69666066aa336fee46b8e00b', ext: 'png' as const },
   heroMovers: { hash: '6967f14225c12a7e4603b30c', ext: 'jpeg' as const },
+  localMovers: { hash: '6966737be2d75bd6ac16fff0', ext: 'jpg' as const }, // local crew working
   residential: { hash: '6968ff5644b623c7e5fd8a70', ext: 'png' as const },
   commercial: { hash: '695fb25e6eabe665b924f386', ext: 'jpg' as const }, // wooden crate / specialty move
   longDistance: { hash: '69a585f2320ef42744c0babb', ext: 'png' as const }, // storage/long-haul mover

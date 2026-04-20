@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { ArrowRight, Home, Building2, Truck, Package } from 'lucide-react';
+import { ArrowRight, Home, Building2, Truck, Package, MapPin } from 'lucide-react';
 import { SERVICES } from '@/lib/site';
 
 const ICONS: Record<string, any> = {
+  'local-movers': MapPin,
   'residential-moving': Home,
   'commercial-moving': Building2,
   'long-distance-moving': Truck,
