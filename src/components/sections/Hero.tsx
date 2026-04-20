@@ -1,4 +1,5 @@
 'use client';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Phone, Star, Shield, Clock, ArrowRight, Zap } from 'lucide-react';
 import { SITE } from '@/lib/site';
@@ -14,10 +15,34 @@ export default function Hero({
   title: string;
   subtitle: string;
 }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    // Force playback — Chrome/Safari sometimes defer autoplay even with muted+playsInline,
+    // especially after a fresh deploy invalidates the Media Engagement Index for the domain.
+    const tryPlay = () => {
+      v.play().catch(() => { /* autoplay rejected — poster remains visible */ });
+    };
+    if (v.readyState >= 2) tryPlay();
+    v.addEventListener('loadeddata', tryPlay);
+    // Start playback on first user interaction as a last resort
+    const onFirstTouch = () => { tryPlay(); document.removeEventListener('touchstart', onFirstTouch); document.removeEventListener('click', onFirstTouch); };
+    document.addEventListener('touchstart', onFirstTouch, { once: true, passive: true });
+    document.addEventListener('click', onFirstTouch, { once: true });
+    return () => {
+      v.removeEventListener('loadeddata', tryPlay);
+      document.removeEventListener('touchstart', onFirstTouch);
+      document.removeEventListener('click', onFirstTouch);
+    };
+  }, []);
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
