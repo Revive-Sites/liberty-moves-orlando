@@ -5,8 +5,31 @@
   <link>https://liberty-moves-orlando.vercel.app/blog</link>
   <description>Latest posts from Liberty Moves Orlando</description>
   <language>en</language>
-  <lastBuildDate>Sun, 19 Apr 2026 04:50:05 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 20 Apr 2026 23:13:26 GMT</lastBuildDate>
   <atom:link href="https://liberty-moves-orlando.vercel.app/feed.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title>Revive OS Publish Test — 2026-04-20 23:13 UTC</title>
+    <link>https://liberty-moves-orlando.vercel.app/blog/revive-os-publish-test-2026-04-20-23-13-utc</link>
+    <guid isPermaLink="true">https://liberty-moves-orlando.vercel.app/blog/revive-os-publish-test-2026-04-20-23-13-utc</guid>
+    <description></description>
+    <author>Revive Agency</author>
+    <pubDate>Mon, 20 Apr 2026 23:13:25 GMT</pubDate>
+    
+    <content:encoded><![CDATA[# Revive OS Publish Test — 2026-04-20 23:13 UTC
 
+This post was created through Revive OS end-to-end — Blog Manager UI → publish-blog-to-site edge function → GitHub commit → Vercel deploy.
+
+## What this proves
+
+- Employees can write and ship blog posts directly through Revive OS
+- The publish pipeline honors `clients.github_repo` so any connected repo works
+- Vercel auto-deploys new blog posts within seconds
+
+## The test
+
+If you are reading this on reviveagency.io, the full pipeline is verified live.
+
+— Posted automatically by E2E test]]></content:encoded>
+  </item>
 </channel>
 </rss>
