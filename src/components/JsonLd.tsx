@@ -60,7 +60,13 @@ export function LocalBusinessLd({ page = 'home' }: { page?: string }) {
     },
     knowsAbout: ['moving', 'relocation', 'packing', 'long distance moving', 'commercial moving', 'residential moving', 'Orlando moving'],
     slogan: 'Moved with care. Delivered with confidence.',
-    sameAs: [],
+    sameAs: [
+      SITE.social.facebook,
+      SITE.social.instagram,
+      SITE.social.google,
+      SITE.social.bbb,
+      SITE.social.yelp,
+    ],
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }

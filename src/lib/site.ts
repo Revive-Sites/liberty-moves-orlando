@@ -30,6 +30,13 @@ export const SITE = {
     formIframeSrc: 'https://link.reviveagency.io/widget/form/RjsFjWPKvuPNDGutFGkb',
   },
   gtm: 'GTM-WWLX2D3Q',
+  social: {
+    facebook: 'https://www.facebook.com/LibertyMovesOrlando/',
+    instagram: 'https://www.instagram.com/libertymovesorlando/',
+    google: 'https://share.google/aY4A57lnhFndH4pEd',
+    bbb: 'https://www.bbb.org/us/fl/casselberry/profile/movers/liberty-moves-orlando-llc-0733-90762990',
+    yelp: 'https://www.yelp.com/biz/liberty-moves-orlando-2',
+  },
 } as const;
 
 export type City = {

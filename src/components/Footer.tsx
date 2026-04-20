@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Heart } from 'lucide-react';
+import { Phone, Mail, MapPin, Heart, Facebook, Instagram, Star, Award } from 'lucide-react';
 import { SITE, CITIES, SERVICES } from '@/lib/site';
 import { url, IMG } from '@/lib/images';
 
@@ -33,6 +33,24 @@ export default function Footer() {
             <div className="text-white/60 text-xs mt-3">USDOT {SITE.usdot} · FLDACS {SITE.fldacs}</div>
             <a href="https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx" target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline text-xs mt-1 inline-block">Verify any FL mover’s license →</a>
             <div className="mt-3"><a href="/es" className="text-xs text-white/70 hover:text-[var(--color-accent)]">Español →</a></div>
+          </div>
+
+          <div className="mt-5">
+            <div className="text-white/70 text-xs uppercase tracking-wider font-bold mb-2">Follow Us</div>
+            <div className="flex items-center gap-2">
+              <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#1877F2] flex items-center justify-center transition">
+                <Facebook size={16} className="text-white"/>
+              </a>
+              <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] flex items-center justify-center transition">
+                <Instagram size={16} className="text-white"/>
+              </a>
+              <a href={SITE.social.google} target="_blank" rel="noopener noreferrer" aria-label="Google Reviews" className="w-9 h-9 rounded-full bg-white/10 hover:bg-amber-500 flex items-center justify-center transition" title="300+ Google reviews">
+                <Star size={16} className="text-white" fill="currentColor"/>
+              </a>
+              <a href={SITE.social.bbb} target="_blank" rel="noopener noreferrer" aria-label="BBB A+ Accredited" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#004c8b] flex items-center justify-center transition" title="BBB A+ Accredited">
+                <Award size={16} className="text-white"/>
+              </a>
+            </div>
           </div>
         </div>
 
