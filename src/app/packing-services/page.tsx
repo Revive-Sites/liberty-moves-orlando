@@ -12,14 +12,14 @@ const FAQS = [
 export const metadata = {
   title: 'Packing Services Orlando | Professional Packers & Supplies',
   description: 'Professional packing in Orlando — full-house, partial, or kitchen-only. Top-grade materials, careful handling, no-damage guarantee.',
-  alternates: { canonical: `${SITE.url}/Packing-Services` },
+  alternates: { canonical: `${SITE.url}/packing-services` },
 };
 
 export default function Packing() {
   return (
     <>
       <LocalBusinessLd />
-      <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Packing Services', url: `${SITE.url}/Packing-Services` }]} />
+      <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Packing Services', url: `${SITE.url}/packing-services` }]} />
       <FAQLd items={FAQS} />
       <ServiceDetail
         heroImage={{ hash: '6982b5e399f1bff20e92e47a', ext: 'jpg' }}

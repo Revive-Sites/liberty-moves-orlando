@@ -7,7 +7,7 @@ const SERVICE_IMG: Record<string, any> = {
   'residential-moving': IMG.residential,
   'commercial-moving': IMG.commercial,
   'long-distance-moving': IMG.longDistance,
-  'Packing-Services': IMG.packing,
+  'packing-services': IMG.packing,
 };
 
 export default function Services({

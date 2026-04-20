@@ -44,7 +44,7 @@ export default function Footer() {
                 <Link href={`/${s.slug}`} className="text-white/90 hover:text-[var(--color-accent)]">{s.title}</Link>
               </li>
             ))}
-            <li><Link href="/Why-Choose-Us" className="text-white/90 hover:text-[var(--color-accent)]">Why Choose Us</Link></li>
+            <li><Link href="/why-choose-us" className="text-white/90 hover:text-[var(--color-accent)]">Why Choose Us</Link></li>
           </ul>
         </div>
 
@@ -62,7 +62,7 @@ export default function Footer() {
         <div>
           <div className="font-display font-bold text-sm uppercase tracking-wider text-white/70">Company</div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/About-Us" className="text-white/90 hover:text-[var(--color-accent)]">About</Link></li>
+            <li><Link href="/about" className="text-white/90 hover:text-[var(--color-accent)]">About</Link></li>
             <li><Link href="/gallery" className="text-white/90 hover:text-[var(--color-accent)]">Gallery</Link></li>
             <li><Link href="/faqs" className="text-white/90 hover:text-[var(--color-accent)]">FAQs</Link></li>
             <li><Link href="/blog" className="text-white/90 hover:text-[var(--color-accent)]">Blog</Link></li>

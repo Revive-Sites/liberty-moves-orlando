@@ -22,7 +22,7 @@ export default function Hero({
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           poster={url(IMG.heroMovers, 1920)}
           className="w-full h-full object-cover"
         >

@@ -10,7 +10,7 @@ export const metadata = {
   title: 'Why Choose Liberty Moves Orlando — Orlando’s Trusted Movers',
   description:
     'Why families and businesses pick Liberty Moves Orlando: upfront pricing, licensed (USDOT 3455436), careful crews, and on-time service across Central Florida.',
-  alternates: { canonical: `${SITE.url}/Why-Choose-Us` },
+  alternates: { canonical: `${SITE.url}/why-choose-us` },
 };
 
 export default function WhyChooseUs() {
@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
     <>
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'Why Choose Us', url: `${SITE.url}/Why-Choose-Us` },
+        { name: 'Why Choose Us', url: `${SITE.url}/why-choose-us` },
       ]} />
       <PageHero
         eyebrow="Why Liberty Moves"

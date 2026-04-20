@@ -29,7 +29,16 @@ const nextConfig = {
       '/Montverde-Movers',
       '/Winter-Garden-Movers',
     ];
-    return legacyToHome.map((source) => ({ source, destination: '/', permanent: true }));
+    const slugLowercase = [
+      { source: '/About-Us', destination: '/about' },
+      { source: '/Packing-Services', destination: '/packing-services' },
+      { source: '/Why-Choose-Us', destination: '/why-choose-us' },
+      { source: '/es/Packing-Services', destination: '/es/packing-services' },
+    ];
+    return [
+      ...legacyToHome.map((source) => ({ source, destination: '/', permanent: true })),
+      ...slugLowercase.map((r) => ({ ...r, permanent: true })),
+    ];
   },
 };
 

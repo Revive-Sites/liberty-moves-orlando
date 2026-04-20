@@ -17,7 +17,7 @@ const SERVICES_MENU = [
   { label: 'Residential Moving', href: '/residential-moving', desc: 'Homes, apartments, condos' },
   { label: 'Commercial Moving', href: '/commercial-moving', desc: 'Offices, retail, warehouses' },
   { label: 'Long-Distance', href: '/long-distance-moving', desc: 'Florida → anywhere in the U.S.' },
-  { label: 'Packing Services', href: '/Packing-Services', desc: 'Full or partial packing' },
+  { label: 'Packing Services', href: '/packing-services', desc: 'Full or partial packing' },
   { label: 'Piano Movers', href: '/piano-movers-orlando', desc: 'Uprights, grands, specialty' },
   { label: 'Apartment Movers', href: '/apartment-movers-orlando', desc: 'Walk-ups + elevator coordination' },
   { label: 'Senior Movers', href: '/senior-movers-orlando', desc: 'Downsizing, retirement transitions' },
@@ -38,7 +38,7 @@ const RESOURCES_MENU = [
   { label: 'Moving Tips Blog', href: '/blog' },
   { label: 'FAQs', href: '/faqs' },
   { label: 'Gallery', href: '/gallery' },
-  { label: 'Why Choose Us', href: '/Why-Choose-Us' },
+  { label: 'Why Choose Us', href: '/why-choose-us' },
   { label: 'Leave a Review', href: '/review' },
 ];
 
@@ -109,7 +109,7 @@ export default function Header() {
 
         <nav className="hidden lg:flex items-center gap-1">
           <Link href="/" className="px-3 py-2 text-sm font-semibold text-[var(--color-text)] hover:text-[var(--color-primary)] rounded-md transition">Home</Link>
-          <Link href="/About-Us" className="px-3 py-2 text-sm font-semibold text-[var(--color-text)] hover:text-[var(--color-primary)] rounded-md transition">About</Link>
+          <Link href="/about" className="px-3 py-2 text-sm font-semibold text-[var(--color-text)] hover:text-[var(--color-primary)] rounded-md transition">About</Link>
           <Dropdown label="Services" items={SERVICES_MENU} cols={2} />
           <Dropdown label="Service Areas" items={AREAS_MENU} cols={3} />
           <Dropdown label="Resources" items={RESOURCES_MENU} cols={1} />
@@ -131,7 +131,7 @@ export default function Header() {
         <div className="lg:hidden border-t border-[var(--color-border)] bg-white max-h-[80vh] overflow-y-auto">
           <div className="container-site py-3">
             <Link href="/" className="block py-3 px-2 text-sm font-semibold border-b border-[var(--color-border)]" onClick={() => setOpen(false)}>Home</Link>
-            <Link href="/About-Us" className="block py-3 px-2 text-sm font-semibold border-b border-[var(--color-border)]" onClick={() => setOpen(false)}>About</Link>
+            <Link href="/about" className="block py-3 px-2 text-sm font-semibold border-b border-[var(--color-border)]" onClick={() => setOpen(false)}>About</Link>
             <MobileSection title="Services" items={SERVICES_MENU} />
             <MobileSection title="Service Areas" items={AREAS_MENU} />
             <MobileSection title="Resources" items={RESOURCES_MENU} />

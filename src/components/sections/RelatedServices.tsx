@@ -6,7 +6,7 @@ const ICONS: Record<string, any> = {
   'residential-moving': Home,
   'commercial-moving': Building2,
   'long-distance-moving': Truck,
-  'Packing-Services': Package,
+  'packing-services': Package,
 };
 
 export default function RelatedServices({ currentSlug }: { currentSlug?: string }) {

@@ -233,18 +233,18 @@ export const SERVICES = [
   { slug: 'residential-moving', title: 'Residential Moving', blurb: 'Homes, apartments, condos — full-service local moves done in a single day.' },
   { slug: 'commercial-moving', title: 'Commercial Moving', blurb: 'Offices, retail, warehouses. Weekend moves to keep your business open.' },
   { slug: 'long-distance-moving', title: 'Long-Distance Moving', blurb: 'Florida to anywhere in the country. Dedicated trucks, transparent pricing.' },
-  { slug: 'Packing-Services', title: 'Packing Services', blurb: 'Professional packing and materials. We pack it, we move it, we’re responsible.' },
+  { slug: 'packing-services', title: 'Packing Services', blurb: 'Professional packing and materials. We pack it, we move it, we’re responsible.' },
 ];
 
 export const NAV_PRIMARY = [
   { href: '/', label: 'Home' },
-  { href: '/About-Us', label: 'About' },
+  { href: '/about', label: 'About' },
   { href: '/residential-moving', label: 'Residential' },
   { href: '/commercial-moving', label: 'Commercial' },
   { href: '/long-distance-moving', label: 'Long Distance' },
-  { href: '/Packing-Services', label: 'Packing' },
+  { href: '/packing-services', label: 'Packing' },
   { href: '/orlando-moving-cost', label: 'Pricing' },
-  { href: '/Why-Choose-Us', label: 'Why Us' },
+  { href: '/why-choose-us', label: 'Why Us' },
   { href: '/faqs', label: 'FAQs' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact-us', label: 'Contact' },

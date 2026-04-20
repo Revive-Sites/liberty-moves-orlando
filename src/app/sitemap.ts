@@ -47,7 +47,7 @@ const ES_PAGES = [
   'es/residential-moving',
   'es/commercial-moving',
   'es/long-distance-moving',
-  'es/Packing-Services',
+  'es/packing-services',
   'es/contact-us',
 ];
 
@@ -66,9 +66,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const core: MetadataRoute.Sitemap = [
     { url: `${SITE.url}/`, lastModified: now, priority: 1.0, changeFrequency: 'weekly' },
-    { url: `${SITE.url}/About-Us`, lastModified: now, priority: 0.7 },
+    { url: `${SITE.url}/about`, lastModified: now, priority: 0.7 },
     { url: `${SITE.url}/contact-us`, lastModified: now, priority: 0.9 },
-    { url: `${SITE.url}/Why-Choose-Us`, lastModified: now, priority: 0.7 },
+    { url: `${SITE.url}/why-choose-us`, lastModified: now, priority: 0.7 },
     { url: `${SITE.url}/faqs`, lastModified: now, priority: 0.6 },
     { url: `${SITE.url}/gallery`, lastModified: now, priority: 0.5 },
     { url: `${SITE.url}/blog`, lastModified: now, priority: 0.8, changeFrequency: 'weekly' },

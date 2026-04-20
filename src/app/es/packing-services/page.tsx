@@ -12,14 +12,14 @@ const FAQS = [
 export const metadata = {
   title: 'Servicios de Empaque Orlando | Empacadores Profesionales',
   description: 'Empaque profesional en Orlando — casa completa, parcial o solo cocina. Materiales de alta calidad, manejo cuidadoso, garantía sin daños.',
-  alternates: { canonical: `${SITE.url}/es/Packing-Services`, languages: { 'en-US': `${SITE.url}/Packing-Services`, 'es': `${SITE.url}/es/Packing-Services` } },
+  alternates: { canonical: `${SITE.url}/es/packing-services`, languages: { 'en-US': `${SITE.url}/packing-services`, 'es': `${SITE.url}/es/packing-services` } },
 };
 
 export default function PackingES() {
   return (
     <>
       <LocalBusinessLd />
-      <BreadcrumbsLd items={[{ name: 'Inicio', url: `${SITE.url}/es` }, { name: 'Servicios de Empaque', url: `${SITE.url}/es/Packing-Services` }]} />
+      <BreadcrumbsLd items={[{ name: 'Inicio', url: `${SITE.url}/es` }, { name: 'Servicios de Empaque', url: `${SITE.url}/es/packing-services` }]} />
       <FAQLd items={FAQS} />
       <ServiceDetailES
         eyebrow="Servicios de Empaque"

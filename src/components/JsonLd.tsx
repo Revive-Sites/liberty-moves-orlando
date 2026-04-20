@@ -55,7 +55,7 @@ export function LocalBusinessLd({ page = 'home' }: { page?: string }) {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Residential Moving', url: `${SITE.url}/residential-moving` } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Moving', url: `${SITE.url}/commercial-moving` } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Long Distance Moving', url: `${SITE.url}/long-distance-moving` } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Packing Services', url: `${SITE.url}/Packing-Services` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Packing Services', url: `${SITE.url}/packing-services` } },
       ],
     },
     knowsAbout: ['moving', 'relocation', 'packing', 'long distance moving', 'commercial moving', 'residential moving', 'Orlando moving'],

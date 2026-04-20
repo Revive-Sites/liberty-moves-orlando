@@ -71,7 +71,7 @@ export default function Post() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/contact-us" className="btn btn-primary">Quote my move (disassembly included)</Link>
-            <Link href="/Packing-Services" className="btn btn-outline">Packing services →</Link>
+            <Link href="/packing-services" className="btn btn-outline">Packing services →</Link>
           </div>
         </div>
       </article>

@@ -51,7 +51,7 @@ export default function Post() {
           <p>Packing a 3-bedroom home professionally runs 8–16 labor hours on top of your standard move. At Liberty Moves Orlando that’s $400–$1,200 depending on crew size. Materials (boxes, paper, bubble wrap, specialty boxes) run another $150–$400. Full-service packing eliminates your damage risk because we’re liable for items we pack — self-packed boxes are not covered.</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/Packing-Services" className="btn btn-primary">See our packing services</Link>
+            <Link href="/packing-services" className="btn btn-primary">See our packing services</Link>
             <Link href="/contact-us" className="btn btn-outline">Get a quote</Link>
           </div>
         </div>

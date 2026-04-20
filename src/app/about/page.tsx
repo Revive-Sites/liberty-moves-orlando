@@ -9,7 +9,7 @@ export const metadata = {
   title: 'About Liberty Moves Orlando — Family-Owned Moving Company',
   description:
     'Meet the team behind Liberty Moves Orlando. A family-run, licensed moving company serving Orlando and Central Florida with honest pricing and careful crews.',
-  alternates: { canonical: `${SITE.url}/About-Us` },
+  alternates: { canonical: `${SITE.url}/about` },
 };
 
 export default function About() {
@@ -17,7 +17,7 @@ export default function About() {
     <>
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
-        { name: 'About', url: `${SITE.url}/About-Us` },
+        { name: 'About', url: `${SITE.url}/about` },
       ]} />
       <PageHero
         eyebrow="About Us"
