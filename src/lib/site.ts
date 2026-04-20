@@ -229,6 +229,7 @@ export const CITIES: City[] = [
 ];
 
 export const SERVICES = [
+  { slug: 'local-movers', title: 'Local Movers', blurb: 'Same-week moves across Orlando and Central Florida. Hourly rates, upfront pricing, uniformed crews.' },
   { slug: 'residential-moving', title: 'Residential Moving', blurb: 'Homes, apartments, condos — full-service local moves done in a single day.' },
   { slug: 'commercial-moving', title: 'Commercial Moving', blurb: 'Offices, retail, warehouses. Weekend moves to keep your business open.' },
   { slug: 'long-distance-moving', title: 'Long-Distance Moving', blurb: 'Florida to anywhere in the country. Dedicated trucks, transparent pricing.' },
