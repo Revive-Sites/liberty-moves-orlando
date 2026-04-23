@@ -20,7 +20,7 @@ export default function StickyMobileCTA() {
           <a href={SITE.phoneLink} className="flex items-center justify-center gap-2 py-3 rounded-lg bg-[var(--color-primary)] text-white font-bold text-sm">
             <Phone size={16} /> Call Now
           </a>
-          <Link href="/contact-us" className="flex items-center justify-center gap-2 py-3 rounded-lg bg-[var(--color-accent)] text-[var(--color-text)] font-bold text-sm">
+          <Link href="/contact-us" className="flex items-center justify-center gap-2 py-3 rounded-lg bg-[var(--color-accent)] text-white font-bold text-sm">
             <MessageSquareText size={16} /> Free Quote
           </Link>
         </div>

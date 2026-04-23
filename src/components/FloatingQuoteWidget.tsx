@@ -25,7 +25,7 @@ export default function FloatingQuoteWidget() {
       {!open ? (
         <button
           onClick={() => { setOpen(true); setPulse(false); }}
-          className={`flex items-center gap-3 bg-[var(--color-accent)] text-[var(--color-text)] font-bold pl-4 pr-5 py-3 rounded-full shadow-2xl hover:shadow-[0_20px_40px_rgba(245,158,11,0.5)] hover:scale-105 transition-all ${pulse ? 'animate-pulse-soft' : ''}`}
+          className={`flex items-center gap-3 bg-[var(--color-accent)] text-white font-bold pl-4 pr-5 py-3 rounded-full shadow-2xl hover:shadow-[0_20px_40px_rgba(245,158,11,0.5)] hover:scale-105 transition-all ${pulse ? 'animate-pulse-soft' : ''}`}
           aria-label="Open quote widget"
         >
           <div className="relative">
@@ -46,7 +46,7 @@ export default function FloatingQuoteWidget() {
             </button>
           </div>
           <div className="p-4 space-y-3">
-            <Link href="/contact-us" className="flex items-center justify-between bg-[var(--color-accent)] text-[var(--color-text)] font-bold px-4 py-3 rounded-lg hover:translate-x-0.5 transition-transform">
+            <Link href="/contact-us" className="flex items-center justify-between bg-[var(--color-accent)] text-white font-bold px-4 py-3 rounded-lg hover:translate-x-0.5 transition-transform">
               Fill out a quick form <ArrowRight size={16}/>
             </Link>
             <a href={SITE.phoneLink} className="flex items-center justify-between bg-[var(--color-primary)] text-white font-bold px-4 py-3 rounded-lg hover:translate-x-0.5 transition-transform">

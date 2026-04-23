@@ -84,8 +84,8 @@ export default function SpanishHome() {
 
             <div className="lg:justify-self-end w-full max-w-md">
               <div className="bg-white rounded-2xl shadow-2xl overflow-hidden ring-1 ring-white/20">
-                <div className="bg-[var(--color-accent)] text-[var(--color-text)] px-6 py-3 flex items-center gap-2">
-                  <Zap size={18} className="fill-[var(--color-text)]"/>
+                <div className="bg-[var(--color-accent)] text-white px-6 py-3 flex items-center gap-2">
+                  <Zap size={18} className="fill-white"/>
                   <div>
                     <div className="text-sm font-extrabold uppercase tracking-wide">Cotización Gratis</div>
                     <div className="text-[11px] font-semibold opacity-80">Respuesta en menos de una hora</div>

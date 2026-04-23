@@ -40,7 +40,7 @@ export default function QuoteWizard() {
         <div className="mt-10 flex items-center justify-center gap-2 text-xs uppercase tracking-widest text-white/60">
           {[1, 2, 3, 4].map((n) => (
             <div key={n} className="flex items-center gap-2">
-              <div className={`w-7 h-7 rounded-full flex items-center justify-center font-bold transition ${step >= n ? 'bg-[var(--color-accent)] text-[var(--color-text)]' : 'bg-white/10 text-white/40'}`}>
+              <div className={`w-7 h-7 rounded-full flex items-center justify-center font-bold transition ${step >= n ? 'bg-[var(--color-accent)] text-white' : 'bg-white/10 text-white/40'}`}>
                 {step > n ? <CheckCircle2 size={14}/> : n}
               </div>
               {n < 4 && <div className={`w-12 h-0.5 transition ${step > n ? 'bg-[var(--color-accent)]' : 'bg-white/10'}`}/>}

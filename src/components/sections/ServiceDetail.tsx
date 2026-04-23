@@ -105,7 +105,7 @@ export default function ServiceDetail({
         <div className="container-site py-16 md:py-24 text-white">
           <div className="max-w-2xl">
             <div className="text-[var(--color-accent)] text-xs font-bold uppercase tracking-[0.2em]">Ready when you are</div>
-            <h2 className="mt-2 text-3xl md:text-5xl font-extrabold">Tell us about your move. We’ll handle the rest.</h2>
+            <h2 className="mt-2 text-3xl md:text-5xl font-extrabold text-white">Tell us about your move. We’ll handle the rest.</h2>
             <p className="mt-4 text-white/80">Free, written quote within the day. Call, text, or request online.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote →</Link>
