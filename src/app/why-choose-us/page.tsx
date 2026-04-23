@@ -21,7 +21,7 @@ export default function WhyChooseUs() {
         { name: 'Why Choose Us', url: `${SITE.url}/why-choose-us` },
       ]} />
       <PageHero
-        eyebrow="Why Liberty Moves"
+        eyebrow="Why Liberty Moves Orlando"
         title="The reasons Orlando families keep calling back."
         subtitle="We’ve built our reputation on six simple promises. Break one and we’ll make it right."
       />

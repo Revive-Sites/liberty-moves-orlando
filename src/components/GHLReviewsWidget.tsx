@@ -36,7 +36,7 @@ const REVIEWS: Review[] = [
     initial: 'C',
     rating: 5,
     date: 'Jun 2024',
-    text: 'Great experience with Liberty Moves! They were communicative during the whole process — from booking all the way through the move. My two movers called the morning of to let me know their ETA and they showed up right on time. They treated all of my items with care and wrapped my furniture to protect it from damage. Very quick — finished the move in less than 3 hours.',
+    text: 'Great experience with Liberty Moves Orlando! They were communicative during the whole process — from booking all the way through the move. My two movers called the morning of to let me know their ETA and they showed up right on time. They treated all of my items with care and wrapped my furniture to protect it from damage. Very quick — finished the move in less than 3 hours.',
   },
   {
     name: 'Steve S.',

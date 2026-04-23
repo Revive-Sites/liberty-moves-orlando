@@ -13,7 +13,7 @@ export default function Review() {
   return (
     <>
       <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Leave a Review', url: `${SITE.url}/review` }]} />
-      <PageHero eyebrow="Reviews" title="Thank you for choosing Liberty Moves." subtitle="A few nice words on Google helps more Orlando families find a mover they can trust." />
+      <PageHero eyebrow="Reviews" title="Thank you for choosing Liberty Moves Orlando." subtitle="A few nice words on Google helps more Orlando families find a mover they can trust." />
       <section className="section-pad">
         <div className="container-site max-w-xl text-center">
           <div className="flex justify-center gap-1 mb-6">

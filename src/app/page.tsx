@@ -20,7 +20,7 @@ import { SERVICES, SITE } from '@/lib/site';
 import { DollarSign, Clock, Shield, Truck } from 'lucide-react';
 
 const HOME_FAQS = [
-  { q: 'How much do movers cost in Orlando?', a: 'Local Orlando moves at Liberty Moves typically run $600–$2,500 depending on home size and crew. A 2-bed apartment averages $650–$1,100. A 3–4 bed home runs $1,200–$2,400. Long-distance moves are priced by weight + distance and quoted with a binding written estimate. See our complete Orlando moving cost guide for detailed tables.' },
+  { q: 'How much do movers cost in Orlando?', a: 'Local Orlando moves at Liberty Moves Orlando typically run $600–$2,500 depending on home size and crew. A 2-bed apartment averages $650–$1,100. A 3–4 bed home runs $1,200–$2,400. Long-distance moves are priced by weight + distance and quoted with a binding written estimate. See our complete Orlando moving cost guide for detailed tables.' },
   { q: 'Are you licensed and insured to move in Florida?', a: 'Yes. Liberty Moves Orlando is licensed by the U.S. Department of Transportation (USDOT 3455436) with full cargo and liability coverage. We provide certificates of insurance for HOAs and buildings on request, usually same-day.' },
   { q: 'How far in advance should I book Orlando movers?', a: '2–3 weeks ahead for weekday moves, 3–4 weeks for weekends. End-of-month dates fill first. Need to move sooner? Call us — we can often fit same-day or next-day emergency moves.' },
   { q: 'Do you offer same-day or last-minute moves in Orlando?', a: 'Yes — subject to crew availability. 98% of our local Orlando jobs finish same-day. For next-day or emergency moves, call 407-641-2887 and we’ll tell you honestly whether we can fit you in.' },
@@ -96,7 +96,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <div className="text-[var(--color-accent)] text-sm font-semibold uppercase tracking-[0.2em]">Pricing</div>
             <h2 className="mt-2 text-3xl md:text-5xl font-extrabold">What Orlando movers actually cost.</h2>
-            <p className="mt-4 text-[var(--color-muted)] text-lg">We publish pricing because every homeowner asks. Here’s what typical Orlando moves run at Liberty Moves — no sales call required.</p>
+            <p className="mt-4 text-[var(--color-muted)] text-lg">We publish pricing because every homeowner asks. Here’s what typical Orlando moves run at Liberty Moves Orlando — no sales call required.</p>
           </div>
 
           <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-4">

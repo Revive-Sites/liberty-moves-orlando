@@ -104,7 +104,7 @@ export default function Post() {
         <h2 className="text-2xl md:text-3xl font-extrabold mt-10">Choose a Licensed Moving Company That Protects Every Item</h2>
         <p>Hiring certified packers protects your belongings at every stage, from the first box sealed to the last item unloaded. Every material choice, loading decision, and wrapping technique follows a deliberate system focused entirely on getting your items to their destination without damage.</p>
         <p>Liberty Moves has served families and businesses across the Southeast and all 48 states for over ten years, operating as a fully licensed, bonded, and insured moving company staffed by direct employees who hold every move to the same standard.</p>
-        <p>Ready to move with real protection? Call (877) 877-2251 or start your free quote at libertymoves.com .</p>
+        <p>Ready to move with real protection? Call (877) 877-2251 or start your free quote at libertymovesorlando.com .</p>
         <h2 className="text-2xl md:text-3xl font-extrabold mt-10">FAQs</h2>
         <ol className="list-decimal pl-6 space-y-2">
           <li>What materials do professional packers use to protect fragile items? Professional packers use reinforced bubble wrap, specialized dish packs, foam padding, and custom cartons built to cushion fragile items and prevent shifting during every stage of transit.</li>
