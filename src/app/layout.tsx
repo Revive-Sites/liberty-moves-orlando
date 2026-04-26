@@ -9,6 +9,7 @@ import FloatingQuoteWidget from '@/components/FloatingQuoteWidget';
 import ExitIntent from '@/components/ExitIntent';
 import ScrollProgress from '@/components/ScrollProgress';
 import SocialProofToast from '@/components/SocialProofToast';
+import FloatingBoxes from '@/components/FloatingBoxes';
 
 const SITE_URL = 'https://libertymovesorlando.com';
 
@@ -58,9 +59,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-[var(--color-accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">Skip to content</a>
+        <FloatingBoxes />
         <ScrollProgress />
         <Header />
-        <main id="main" className="pb-20 md:pb-0">{children}</main>
+        <main id="main" className="pb-20 md:pb-0 relative z-10">{children}</main>
         <Footer />
         <StickyMobileCTA />
         <FloatingQuoteWidget />

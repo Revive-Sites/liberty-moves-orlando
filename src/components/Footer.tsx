@@ -7,7 +7,7 @@ import { url, IMG } from '@/lib/images';
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-[var(--color-primary)] text-white mt-20">
+    <footer className="relative z-10 bg-[var(--color-primary)] text-white mt-20">
       <div className="container-site py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr] gap-10">
         <div>
           <div className="bg-white rounded-xl p-4 inline-block">
