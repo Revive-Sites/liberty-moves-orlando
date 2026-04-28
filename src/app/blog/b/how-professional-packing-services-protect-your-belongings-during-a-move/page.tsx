@@ -27,7 +27,7 @@ export default function Post() {
       <section className="pt-8">
         <div className="container-site max-w-3xl">
           <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-lg">
-            <Image src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/7pnMlJIyNsgtdaD576rT/media/6980d4cc1fd8276091bc0ec6.png" alt="How Professional Packing Services Protect Your Belongings During a Move" fill sizes="(min-width: 768px) 768px, 100vw" className="object-cover" priority />
+            <Image src="/images/stock/packing-alt.jpg" alt="Professionally stretch-wrapped furniture protected with padding and moving straps" fill sizes="(min-width: 768px) 768px, 100vw" className="object-cover" priority />
           </div>
         </div>
       </section>
