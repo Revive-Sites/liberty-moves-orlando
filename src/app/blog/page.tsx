@@ -4,6 +4,8 @@ import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 import Link from 'next/link';
 import { Calendar, ArrowRight } from 'lucide-react';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export const metadata = {
   title: 'Orlando Moving Tips & Guides — Liberty Moves Orlando Blog',
@@ -11,7 +13,32 @@ export const metadata = {
   alternates: { canonical: `${SITE.url}/blog` },
 };
 
-const POSTS = [
+type Post = { slug: string; title: string; excerpt: string; date: string; category: string; isoDate?: string };
+
+function loadGeneratedPosts(): Post[] {
+  try {
+    const dir = path.join(process.cwd(), 'src/data/generated-blog-posts');
+    if (!fs.existsSync(dir)) return [];
+    return fs
+      .readdirSync(dir)
+      .filter((f) => f.endsWith('.json'))
+      .map((f) => {
+        const data = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf-8'));
+        return {
+          slug: `b/${data.slug}`,
+          title: data.title,
+          excerpt: data.excerpt || data.metaDescription || '',
+          date: data.date || '',
+          category: data.category || 'Guide',
+          isoDate: data.isoDate,
+        } as Post;
+      });
+  } catch {
+    return [];
+  }
+}
+
+const STATIC_POSTS: Post[] = [
   { slug: 'b/how-professional-packing-services-protect-your-belongings-during-a-move', title: 'How Professional Packing Services Protect Your Belongings During a Move', excerpt: 'Why pro packing dramatically reduces move-day damage — materials, methods, liability differences.', date: 'April 2026', category: 'Packing' },
   { slug: 'b/what-makes-liberty-moves-orlando-different-why-every-resident-deserves-the-best-in-2026', title: 'What Makes Liberty Moves Orlando Different in 2026', excerpt: 'Why Orlando residents keep choosing Liberty Moves — transparent pricing, real crews, real accountability.', date: 'March 2026', category: 'Company' },
   { slug: 'b/orlando-movers-the-real-difference-between-licensed-and-unlicensed', title: 'Orlando Movers: The Real Difference Between Licensed and Unlicensed', excerpt: 'What licensing actually protects you from — and the FLDACS/USDOT lookup tools you should use.', date: 'March 2026', category: 'Buyer Guide' },
@@ -35,15 +62,25 @@ const POSTS = [
   { slug: 'what-movers-wont-move', title: "What Movers Won't Move (and Why)", excerpt: 'Non-allowables list — hazmat, firearms, food, plants, valuables.', date: 'January 2026', category: 'Buyer Guide' },
 ];
 
+function dateRank(p: Post): number {
+  if (p.isoDate) return new Date(p.isoDate).getTime();
+  const t = Date.parse(p.date);
+  return Number.isNaN(t) ? 0 : t;
+}
+
 export default function Blog() {
+  const generated = loadGeneratedPosts();
+  const staticSlugs = new Set(STATIC_POSTS.map((p) => p.slug));
+  const merged = [...generated.filter((p) => !staticSlugs.has(p.slug)), ...STATIC_POSTS].sort((a, b) => dateRank(b) - dateRank(a));
+
   return (
     <>
       <BreadcrumbsLd items={[{ name: 'Home', url: SITE.url }, { name: 'Blog', url: `${SITE.url}/blog` }]} />
-      <PageHero eyebrow="Blog" title="Orlando moving guides that actually help." subtitle="21 guides answering the questions Orlando homeowners actually ask. Written by people who move houses for a living — not SEO writers." />
+      <PageHero eyebrow="Blog" title="Orlando moving guides that actually help." subtitle={`${merged.length} guides answering the questions Orlando homeowners actually ask. Written by people who move houses for a living — not SEO writers.`} />
       <section className="section-pad">
         <div className="container-site max-w-4xl">
           <div className="grid gap-6">
-            {POSTS.map((p) => (
+            {merged.map((p) => (
               <Link key={p.slug} href={`/blog/${p.slug}`} className="card group block">
                 <div className="flex items-center gap-3 text-xs text-[var(--color-muted)]">
                   <Calendar size={12}/> {p.date}
