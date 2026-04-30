@@ -2,8 +2,10 @@ import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const URL = 'http://localhost:3000/blog/b/moving-with-kids-in-orlando-how-to-make-the-transition-easier-for-the-whole-fami';
-const OUT_DIR = path.join(process.cwd(), 'test-results', 'kids-blog');
+const SLUG = process.env.BLOG_SLUG || 'moving-with-kids-in-orlando-how-to-make-the-transition-easier-for-the-whole-fami';
+const PORT = process.env.PORT || '3001';
+const URL = `http://localhost:${PORT}/blog/b/${SLUG}`;
+const OUT_DIR = path.join(process.cwd(), 'test-results', SLUG.slice(0, 40));
 fs.mkdirSync(OUT_DIR, { recursive: true });
 
 const browser = await chromium.launch();
