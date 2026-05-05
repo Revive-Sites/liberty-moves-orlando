@@ -1,5 +1,4 @@
 import PageHero from '@/components/sections/PageHero';
-import QuoteForm from '@/components/QuoteForm';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
@@ -69,7 +68,13 @@ export default function Contact() {
                 <div className="text-sm font-extrabold uppercase tracking-wide">Request a Free Quote</div>
                 <div className="text-xs opacity-90">Answered within the hour · Licensed USDOT {SITE.usdot} · FLDACS {SITE.fldacs}</div>
               </div>
-              <QuoteForm />
+              <iframe
+                src="https://app.contact.liveswitch.com/form"
+                style={{ width: '100%', height: '600px', border: 'none' }}
+                title="Contact Form"
+                loading="lazy"
+                allow="camera *; microphone *; autoplay *"
+              />
             </div>
           </div>
         </div>
