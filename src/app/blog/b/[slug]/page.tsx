@@ -9,6 +9,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { Metadata } from 'next';
 
+export const revalidate = 60;
+export const dynamicParams = true;
+
 interface GeneratedPost {
   slug: string;
   title: string;
