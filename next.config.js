@@ -5,10 +5,12 @@ const nextConfig = {
   // the dynamic /blog/b/[slug] route. Without this, Next.js's file tracer
   // misses JSON files added between builds because the path is constructed
   // at runtime — leading to 404s on newly-published posts even though they
-  // exist in git.
-  outputFileTracingIncludes: {
-    '/blog/b/[slug]': ['./src/data/generated-blog-posts/**/*.json'],
-    '/blog': ['./src/data/generated-blog-posts/**/*.json'],
+  // exist in git. In Next.js 14 this lives under experimental.
+  experimental: {
+    outputFileTracingIncludes: {
+      '/blog/b/[slug]': ['./src/data/generated-blog-posts/**/*.json'],
+      '/blog': ['./src/data/generated-blog-posts/**/*.json'],
+    },
   },
   images: {
     remotePatterns: [
