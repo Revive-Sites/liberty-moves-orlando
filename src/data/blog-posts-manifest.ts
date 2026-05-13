@@ -1,11 +1,7 @@
 // Static manifest of all blog posts. By importing each JSON file directly,
 // we guarantee they are bundled into every consuming serverless function.
-// fs.readFileSync / fs.readdirSync against the data dir is unreliable on
-// Vercel for files added between builds — webpack's static analysis is.
-//
-// New posts: add an import line below + an entry in BLOG_POSTS.
 
-import apartmentChecklist from './generated-blog-posts/the-30-day-orlando-apartment-move-checklist.json';
+import apartmentChecklist from './generated-blog-posts/orlando-apartment-move-checklist-30-day-plan.json';
 import movingWithKids from './generated-blog-posts/moving-with-kids-in-orlando-how-to-make-the-transition-easier-for-the-whole-fami.json';
 import whyLiberty from './generated-blog-posts/why-liberty-moves-orlando-is-one-of-the-top-movers-in-lake-mary.json';
 
