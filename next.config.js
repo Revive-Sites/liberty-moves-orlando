@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Ensure all blog JSON files are bundled into the serverless function for
+  // the dynamic /blog/b/[slug] route. Without this, Next.js's file tracer
+  // misses JSON files added between builds because the path is constructed
+  // at runtime — leading to 404s on newly-published posts even though they
+  // exist in git.
+  outputFileTracingIncludes: {
+    '/blog/b/[slug]': ['./src/data/generated-blog-posts/**/*.json'],
+    '/blog': ['./src/data/generated-blog-posts/**/*.json'],
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'assets.cdn.filesafe.space' },

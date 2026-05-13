@@ -29,9 +29,14 @@ interface GeneratedPost {
   contentBlocks?: string[];
 }
 
+// Static dir reference helps Next.js's file tracer include every JSON file
+// in this directory in the serverless bundle. Without it, new files added
+// between builds are missing from the bundle even though they're in git.
+const POSTS_DIR = path.join(process.cwd(), 'src/data/generated-blog-posts');
+
 function loadPost(slug: string): GeneratedPost | null {
   try {
-    const file = path.join(process.cwd(), 'src/data/generated-blog-posts', `${slug}.json`);
+    const file = path.join(POSTS_DIR, `${slug}.json`);
     if (!fs.existsSync(file)) return null;
     return JSON.parse(fs.readFileSync(file, 'utf-8')) as GeneratedPost;
   } catch {
@@ -41,10 +46,9 @@ function loadPost(slug: string): GeneratedPost | null {
 
 export async function generateStaticParams() {
   try {
-    const dir = path.join(process.cwd(), 'src/data/generated-blog-posts');
-    if (!fs.existsSync(dir)) return [];
+    if (!fs.existsSync(POSTS_DIR)) return [];
     return fs
-      .readdirSync(dir)
+      .readdirSync(POSTS_DIR)
       .filter((f) => f.endsWith('.json'))
       .map((f) => ({ slug: f.replace(/\.json$/, '') }));
   } catch {
