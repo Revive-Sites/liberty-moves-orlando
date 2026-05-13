@@ -5,8 +5,6 @@ import RelatedPosts from '@/components/RelatedPosts';
 import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 import { notFound } from 'next/navigation';
-import fs from 'node:fs';
-import path from 'node:path';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -29,26 +27,29 @@ interface GeneratedPost {
   contentBlocks?: string[];
 }
 
-// Static dir reference helps Next.js's file tracer include every JSON file
-// in this directory in the serverless bundle. Without it, new files added
-// between builds are missing from the bundle even though they're in git.
-const POSTS_DIR = path.join(process.cwd(), 'src/data/generated-blog-posts');
-
-function loadPost(slug: string): GeneratedPost | null {
+// Dynamic import with a static prefix — webpack creates code-split chunks for
+// every matching JSON file at build time, so all posts are reliably bundled
+// into the serverless function. fs.readFileSync(process.cwd(), ...) is NOT
+// reliably traced by Next.js for files added between builds.
+async function loadPost(slug: string): Promise<GeneratedPost | null> {
   try {
-    const file = path.join(POSTS_DIR, `${slug}.json`);
-    if (!fs.existsSync(file)) return null;
-    return JSON.parse(fs.readFileSync(file, 'utf-8')) as GeneratedPost;
+    const mod = await import(`@/data/generated-blog-posts/${slug}.json`);
+    return (mod.default ?? mod) as GeneratedPost;
   } catch {
     return null;
   }
 }
 
 export async function generateStaticParams() {
+  // Filesystem read is safe at build time (Node runtime, full FS access).
+  // Only the runtime serverless function needed the dynamic-import fix above.
+  const fs = await import('node:fs');
+  const path = await import('node:path');
   try {
-    if (!fs.existsSync(POSTS_DIR)) return [];
+    const dir = path.join(process.cwd(), 'src/data/generated-blog-posts');
+    if (!fs.existsSync(dir)) return [];
     return fs
-      .readdirSync(POSTS_DIR)
+      .readdirSync(dir)
       .filter((f) => f.endsWith('.json'))
       .map((f) => ({ slug: f.replace(/\.json$/, '') }));
   } catch {
@@ -62,7 +63,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = loadPost(slug);
+  const post = await loadPost(slug);
   if (!post) return { title: 'Post not found' };
   return {
     title: `${post.title} — Liberty Moves Orlando`,
@@ -85,7 +86,7 @@ export default async function Post({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = loadPost(slug);
+  const post = await loadPost(slug);
   if (!post) notFound();
 
   const body =
