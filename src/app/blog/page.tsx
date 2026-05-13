@@ -4,8 +4,7 @@ import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 import Link from 'next/link';
 import { Calendar, ArrowRight } from 'lucide-react';
-import fs from 'node:fs';
-import path from 'node:path';
+import { listBlogPosts } from '@/data/blog-posts-manifest';
 
 export const metadata = {
   title: 'Orlando Moving Tips & Guides — Liberty Moves Orlando Blog',
@@ -21,26 +20,14 @@ export const revalidate = 60;
 type Post = { slug: string; title: string; excerpt: string; date: string; category: string; isoDate?: string };
 
 function loadGeneratedPosts(): Post[] {
-  try {
-    const dir = path.join(process.cwd(), 'src/data/generated-blog-posts');
-    if (!fs.existsSync(dir)) return [];
-    return fs
-      .readdirSync(dir)
-      .filter((f) => f.endsWith('.json'))
-      .map((f) => {
-        const data = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf-8'));
-        return {
-          slug: `b/${data.slug}`,
-          title: data.title,
-          excerpt: data.excerpt || data.metaDescription || '',
-          date: data.date || '',
-          category: data.category || 'Guide',
-          isoDate: data.isoDate,
-        } as Post;
-      });
-  } catch {
-    return [];
-  }
+  return listBlogPosts().map((data) => ({
+    slug: `b/${data.slug}`,
+    title: data.title,
+    excerpt: data.excerpt || data.metaDescription || '',
+    date: data.date || '',
+    category: data.category || 'Guide',
+    isoDate: data.isoDate,
+  }));
 }
 
 const STATIC_POSTS: Post[] = [

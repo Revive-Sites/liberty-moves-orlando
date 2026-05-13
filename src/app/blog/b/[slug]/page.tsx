@@ -6,55 +6,13 @@ import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { getBlogPost, listBlogPosts } from '@/data/blog-posts-manifest';
 
 export const revalidate = 60;
 export const dynamicParams = true;
 
-interface GeneratedPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  metaDescription?: string;
-  category: string;
-  readTime: string;
-  date: string;
-  isoDate: string;
-  author: string;
-  tags: string[];
-  heroImage?: string;
-  heroImageAlt?: string;
-  contentHtml?: string;
-  contentBlocks?: string[];
-}
-
-// Dynamic import with a static prefix — webpack creates code-split chunks for
-// every matching JSON file at build time, so all posts are reliably bundled
-// into the serverless function. fs.readFileSync(process.cwd(), ...) is NOT
-// reliably traced by Next.js for files added between builds.
-async function loadPost(slug: string): Promise<GeneratedPost | null> {
-  try {
-    const mod = await import(`@/data/generated-blog-posts/${slug}.json`);
-    return (mod.default ?? mod) as GeneratedPost;
-  } catch {
-    return null;
-  }
-}
-
 export async function generateStaticParams() {
-  // Filesystem read is safe at build time (Node runtime, full FS access).
-  // Only the runtime serverless function needed the dynamic-import fix above.
-  const fs = await import('node:fs');
-  const path = await import('node:path');
-  try {
-    const dir = path.join(process.cwd(), 'src/data/generated-blog-posts');
-    if (!fs.existsSync(dir)) return [];
-    return fs
-      .readdirSync(dir)
-      .filter((f) => f.endsWith('.json'))
-      .map((f) => ({ slug: f.replace(/\.json$/, '') }));
-  } catch {
-    return [];
-  }
+  return listBlogPosts().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -63,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = await loadPost(slug);
+  const post = getBlogPost(slug);
   if (!post) return { title: 'Post not found' };
   return {
     title: `${post.title} — Liberty Moves Orlando`,
@@ -86,7 +44,7 @@ export default async function Post({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await loadPost(slug);
+  const post = getBlogPost(slug);
   if (!post) notFound();
 
   const body =
