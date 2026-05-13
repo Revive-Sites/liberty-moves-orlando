@@ -5,7 +5,7 @@
 //
 // New posts: add an import line below + an entry in BLOG_POSTS.
 
-import apartmentChecklist from './generated-blog-posts/apartment-moving-checklist-orlando-30-days.json';
+import apartmentChecklist from './generated-blog-posts/the-30-day-orlando-apartment-move-checklist.json';
 import movingWithKids from './generated-blog-posts/moving-with-kids-in-orlando-how-to-make-the-transition-easier-for-the-whole-fami.json';
 import whyLiberty from './generated-blog-posts/why-liberty-moves-orlando-is-one-of-the-top-movers-in-lake-mary.json';
 
