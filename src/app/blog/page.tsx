@@ -13,6 +13,11 @@ export const metadata = {
   alternates: { canonical: `${SITE.url}/blog` },
 };
 
+// ISR so the index regenerates on data-only changes — Vercel's incremental
+// build cache otherwise reuses the stale static output when the page source
+// hasn't changed.
+export const revalidate = 60;
+
 type Post = { slug: string; title: string; excerpt: string; date: string; category: string; isoDate?: string };
 
 function loadGeneratedPosts(): Post[] {
