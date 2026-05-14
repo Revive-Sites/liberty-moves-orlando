@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <div className="font-display font-bold text-sm uppercase tracking-wider text-white/70">Service Areas</div>
+          <div className="font-display font-bold text-sm uppercase tracking-wider text-white/70 text-center">Service Areas</div>
           <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
             {CITIES.slice(0, 12).map(c => (
               <li key={c.slug}>
