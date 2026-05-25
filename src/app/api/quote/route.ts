@@ -18,6 +18,16 @@ type QuoteInput = {
   destination?: string;
   moveSize?: string;
   details?: string;
+  // Attribution — captured client-side from URL params + _gcl_aw cookie.
+  gclid?: string;
+  fbclid?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_content?: string;
+  utm_term?: string;
+  landing_page?: string;
+  referrer?: string;
 };
 
 export async function POST(req: Request) {

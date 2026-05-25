@@ -5,6 +5,31 @@ import { SITE } from '@/lib/site';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
+/** Capture Google Ads gclid + UTMs from URL params and the _gcl_aw cookie set by the
+ * Google Ads conversion linker. We read at submit time (not on mount) so that
+ * SPA navigations after landing don't erase the params we captured earlier. */
+function getAttribution(): Record<string, string> {
+  if (typeof window === 'undefined') return {};
+  const out: Record<string, string> = {};
+  const params = new URLSearchParams(window.location.search);
+  for (const k of ['gclid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']) {
+    const v = params.get(k);
+    if (v) out[k] = v;
+  }
+  // _gcl_aw cookie format: "GCL.<timestamp>.<gclid>" — set by the conversion linker
+  // and persists for 90 days. Falls back to this when the URL no longer has gclid.
+  if (!out.gclid) {
+    const m = document.cookie.match(/(?:^|;\s*)_gcl_aw=([^;]+)/);
+    if (m) {
+      const parts = decodeURIComponent(m[1]).split('.');
+      if (parts.length >= 3) out.gclid = parts.slice(2).join('.');
+    }
+  }
+  out.landing_page = window.location.pathname + window.location.search;
+  if (document.referrer) out.referrer = document.referrer;
+  return out;
+}
+
 export default function QuoteForm({ compact = false }: { compact?: boolean }) {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -16,7 +41,7 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
 
     const form = e.currentTarget;
     const data = new FormData(form);
-    const payload = Object.fromEntries(data.entries());
+    const payload = { ...Object.fromEntries(data.entries()), ...getAttribution() };
 
     try {
       const res = await fetch('/api/quote', {
