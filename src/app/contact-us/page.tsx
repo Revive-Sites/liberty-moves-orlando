@@ -1,7 +1,7 @@
 import PageHero from '@/components/sections/PageHero';
 import QuoteForm from '@/components/QuoteForm';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import { BreadcrumbsLd } from '@/components/JsonLd';
+import { BreadcrumbsLd, LocalBusinessLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
@@ -14,6 +14,7 @@ export const metadata = {
 export default function Contact() {
   return (
     <>
+      <LocalBusinessLd />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
         { name: 'Contact', url: `${SITE.url}/contact-us` },

@@ -2,7 +2,7 @@ import PageHero from '@/components/sections/PageHero';
 import WhyUs from '@/components/sections/WhyUs';
 import LicenseVerify from '@/components/sections/LicenseVerify';
 import CTA from '@/components/sections/CTA';
-import { BreadcrumbsLd } from '@/components/JsonLd';
+import { BreadcrumbsLd, LocalBusinessLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
@@ -15,6 +15,7 @@ export const metadata = {
 export default function About() {
   return (
     <>
+      <LocalBusinessLd />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
         { name: 'About', url: `${SITE.url}/about` },

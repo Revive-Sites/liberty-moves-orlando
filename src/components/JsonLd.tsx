@@ -12,8 +12,8 @@ export function LocalBusinessLd({ page = 'home' }: { page?: string }) {
     url: SITE.url,
     telephone: `+1-${SITE.phone}`,
     email: SITE.email,
-    image: SITE.logo,
-    logo: SITE.logo,
+    image: SITE.logo.startsWith('http') ? SITE.logo : `${SITE.url}${SITE.logo}`,
+    logo: SITE.logo.startsWith('http') ? SITE.logo : `${SITE.url}${SITE.logo}`,
     description: 'Licensed and insured Orlando moving company. Local, long-distance, residential, commercial, and packing services across Central Florida.',
     priceRange: '$$',
     currenciesAccepted: 'USD',
@@ -31,6 +31,7 @@ export function LocalBusinessLd({ page = 'home' }: { page?: string }) {
       latitude: GEO.lat,
       longitude: GEO.lng,
     },
+    hasMap: SITE.social?.google || `https://www.google.com/maps/search/?api=1&query=${GEO.lat},${GEO.lng}`,
     serviceArea: {
       '@type': 'GeoCircle',
       geoMidpoint: { '@type': 'GeoCoordinates', latitude: GEO.lat, longitude: GEO.lng },
