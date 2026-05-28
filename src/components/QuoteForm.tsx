@@ -55,9 +55,32 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
       }
       setStatus('success');
       form.reset();
-      // Push to dataLayer for GTM tracking
+      // Push to dataLayer for GTM tracking. Include attribution so the GTM
+      // tag for the Google Ads conversion can populate enhanced-conversion
+      // fields and pass the gclid through automatically.
       if (typeof window !== 'undefined' && (window as any).dataLayer) {
-        (window as any).dataLayer.push({ event: 'lead_submitted', form: 'quote' });
+        const attribution = getAttribution();
+        (window as any).dataLayer.push({
+          event: 'lead_submitted',
+          form: 'quote',
+          gclid: attribution.gclid || null,
+          fbclid: attribution.fbclid || null,
+          utm_source: attribution.utm_source || null,
+          utm_medium: attribution.utm_medium || null,
+          utm_campaign: attribution.utm_campaign || null,
+          utm_term: attribution.utm_term || null,
+          utm_content: attribution.utm_content || null,
+          // Enhanced conversions — hashed by GTM tag automatically if enabled.
+          user_data: {
+            email_address: payload.email || undefined,
+            phone_number: payload.phone || undefined,
+            address: {
+              first_name: payload.firstName || undefined,
+              last_name: payload.lastName || undefined,
+              postal_code: payload.origin || undefined,
+            },
+          },
+        });
       }
     } catch (err: any) {
       setStatus('error');
