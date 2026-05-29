@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     images: ['/og.png'],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
+  verification: { google: '1NNg1-Mjv6CW2LEXufKDcFDaNSfwFhoSdy50tDP3_gI' },
   alternates: {
     canonical: SITE_URL,
     languages: { 'en-US': SITE_URL, 'es': `${SITE_URL}/es` },
