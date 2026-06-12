@@ -1,5 +1,6 @@
 'use client';
 import { useState, FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import { CheckCircle2, Loader2, Phone, AlertCircle } from 'lucide-react';
 import { SITE } from '@/lib/site';
 
@@ -31,6 +32,7 @@ function getAttribution(): Record<string, string> {
 }
 
 export default function QuoteForm({ compact = false }: { compact?: boolean }) {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -82,6 +84,10 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
           },
         });
       }
+      // Send the lead to the thank-you page. The dataLayer push above runs
+      // first (synchronously), so the GTM / Google Ads conversion tag fires
+      // before this client-side navigation begins.
+      router.push('/thank-you');
     } catch (err: any) {
       setStatus('error');
       setErrorMsg(err.message || 'Could not submit — please call us at ' + SITE.phoneDisplay);
