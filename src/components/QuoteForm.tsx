@@ -5,6 +5,68 @@ import { CheckCircle2, Loader2, Phone, AlertCircle } from 'lucide-react';
 import { SITE } from '@/lib/site';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
+type Lang = 'en' | 'es';
+
+/** Bilingual copy. Spanish pages reuse the same form so every lead flows
+ * through /api/quote and gets redirected to the thank-you page. */
+const COPY: Record<Lang, {
+  thankYouPath: string;
+  firstName: string; lastName: string; phone: string; email: string;
+  moveDate: string; moveSize: string; sizeSelect: string;
+  sizeOpts: { v: string; l: string }[];
+  origin: string; destination: string;
+  details: string; detailsPlaceholder: string;
+  submit: string; submitting: string;
+  successTitle: string; successBody: string; callNow: string;
+  errorFallback: string; disclaimer: string;
+}> = {
+  en: {
+    thankYouPath: '/thank-you',
+    firstName: 'First Name *', lastName: 'Last Name *', phone: 'Phone *', email: 'Email *',
+    moveDate: 'Move Date *', moveSize: 'Move Size', sizeSelect: 'Select size...',
+    sizeOpts: [
+      { v: 'studio', l: 'Studio / 1 bedroom' },
+      { v: '2br_apt', l: '2 bedroom apt' },
+      { v: '2br_home', l: '2 bedroom home' },
+      { v: '3br_home', l: '3 bedroom home' },
+      { v: '4br_home', l: '4+ bedroom home' },
+      { v: 'office', l: 'Office / Commercial' },
+      { v: 'other', l: 'Other' },
+    ],
+    origin: 'Origin Address / ZIP *', destination: 'Destination Address / ZIP *',
+    details: 'Details about your move',
+    detailsPlaceholder: 'Anything we should know? Specialty items, stairs, elevators, timeline...',
+    submit: 'Request a Free Estimate', submitting: 'Sending...',
+    successTitle: 'Got it — we’ll be in touch.',
+    successBody: 'A real person from our team will reply with your quote within the hour during business hours (7am–7pm, 7 days a week).',
+    callNow: 'Or call us now at',
+    errorFallback: 'Could not submit — please call us at',
+    disclaimer: 'By submitting, you agree to be contacted by Liberty Moves Orlando. We never share your info.',
+  },
+  es: {
+    thankYouPath: '/es/thank-you',
+    firstName: 'Nombre *', lastName: 'Apellido *', phone: 'Teléfono *', email: 'Correo electrónico *',
+    moveDate: 'Fecha de mudanza *', moveSize: 'Tamaño de mudanza', sizeSelect: 'Seleccione tamaño...',
+    sizeOpts: [
+      { v: 'studio', l: 'Estudio / 1 habitación' },
+      { v: '2br_apt', l: 'Apartamento 2 habitaciones' },
+      { v: '2br_home', l: 'Casa 2 habitaciones' },
+      { v: '3br_home', l: 'Casa 3 habitaciones' },
+      { v: '4br_home', l: 'Casa 4+ habitaciones' },
+      { v: 'office', l: 'Oficina / Comercial' },
+      { v: 'other', l: 'Otro' },
+    ],
+    origin: 'Dirección de origen / Código postal *', destination: 'Dirección de destino / Código postal *',
+    details: 'Detalles sobre su mudanza',
+    detailsPlaceholder: '¿Algo que debamos saber? Artículos especiales, escaleras, ascensores, fecha límite...',
+    submit: 'Solicitar estimado gratis', submitting: 'Enviando...',
+    successTitle: '¡Listo! Nos pondremos en contacto.',
+    successBody: 'Una persona real de nuestro equipo le responderá con su cotización dentro de una hora en horario laboral (7am–7pm, los 7 días de la semana).',
+    callNow: 'O llámenos ahora al',
+    errorFallback: 'No se pudo enviar — por favor llámenos al',
+    disclaimer: 'Al enviar, usted acepta ser contactado por Liberty Moves Orlando. Nunca compartimos su información.',
+  },
+};
 
 /** Capture Google Ads gclid + UTMs from URL params and the _gcl_aw cookie set by the
  * Google Ads conversion linker. We read at submit time (not on mount) so that
@@ -31,8 +93,9 @@ function getAttribution(): Record<string, string> {
   return out;
 }
 
-export default function QuoteForm({ compact = false }: { compact?: boolean }) {
+export default function QuoteForm({ compact = false, lang = 'en' }: { compact?: boolean; lang?: Lang }) {
   const router = useRouter();
+  const t = COPY[lang];
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -87,10 +150,10 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
       // Send the lead to the thank-you page. The dataLayer push above runs
       // first (synchronously), so the GTM / Google Ads conversion tag fires
       // before this client-side navigation begins.
-      router.push('/thank-you');
+      router.push(t.thankYouPath);
     } catch (err: any) {
       setStatus('error');
-      setErrorMsg(err.message || 'Could not submit — please call us at ' + SITE.phoneDisplay);
+      setErrorMsg(err.message || `${t.errorFallback} ${SITE.phoneDisplay}`);
     }
   }
 
@@ -100,10 +163,10 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
         <div className="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center mx-auto">
           <CheckCircle2 className="text-emerald-600" size={32} />
         </div>
-        <h3 className="mt-4 text-xl font-extrabold text-[var(--color-primary)]">Got it — we’ll be in touch.</h3>
-        <p className="mt-2 text-sm text-[var(--color-muted)]">A real person from our team will reply with your quote within the hour during business hours (7am–7pm, 7 days a week).</p>
+        <h3 className="mt-4 text-xl font-extrabold text-[var(--color-primary)]">{t.successTitle}</h3>
+        <p className="mt-2 text-sm text-[var(--color-muted)]">{t.successBody}</p>
         <a href={SITE.phoneLink} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--color-accent)]">
-          <Phone size={14}/> Or call us now at {SITE.phoneDisplay}
+          <Phone size={14}/> {t.callNow} {SITE.phoneDisplay}
         </a>
       </div>
     );
@@ -116,60 +179,56 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
     <form onSubmit={onSubmit} className={compact ? 'p-5 space-y-3' : 'p-6 space-y-4'} noValidate>
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label className={labelCls} htmlFor="firstName">First Name *</label>
+          <label className={labelCls} htmlFor="firstName">{t.firstName}</label>
           <input id="firstName" name="firstName" required className={inputCls} placeholder="Jane" autoComplete="given-name" />
         </div>
         <div>
-          <label className={labelCls} htmlFor="lastName">Last Name *</label>
+          <label className={labelCls} htmlFor="lastName">{t.lastName}</label>
           <input id="lastName" name="lastName" required className={inputCls} placeholder="Doe" autoComplete="family-name" />
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className={labelCls} htmlFor="phone">Phone *</label>
+          <label className={labelCls} htmlFor="phone">{t.phone}</label>
           <input id="phone" name="phone" required type="tel" className={inputCls} placeholder="407-555-0100" autoComplete="tel" />
         </div>
         <div>
-          <label className={labelCls} htmlFor="email">Email *</label>
+          <label className={labelCls} htmlFor="email">{t.email}</label>
           <input id="email" name="email" required type="email" className={inputCls} placeholder="you@example.com" autoComplete="email" />
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className={labelCls} htmlFor="moveDate">Move Date *</label>
+          <label className={labelCls} htmlFor="moveDate">{t.moveDate}</label>
           <input id="moveDate" name="moveDate" required type="date" className={inputCls} />
         </div>
         <div>
-          <label className={labelCls} htmlFor="moveSize">Move Size</label>
+          <label className={labelCls} htmlFor="moveSize">{t.moveSize}</label>
           <select id="moveSize" name="moveSize" className={inputCls} defaultValue="">
-            <option value="">Select size...</option>
-            <option value="studio">Studio / 1 bedroom</option>
-            <option value="2br_apt">2 bedroom apt</option>
-            <option value="2br_home">2 bedroom home</option>
-            <option value="3br_home">3 bedroom home</option>
-            <option value="4br_home">4+ bedroom home</option>
-            <option value="office">Office / Commercial</option>
-            <option value="other">Other</option>
+            <option value="">{t.sizeSelect}</option>
+            {t.sizeOpts.map((o) => (
+              <option key={o.v} value={o.v}>{o.l}</option>
+            ))}
           </select>
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className={labelCls} htmlFor="origin">Origin Address / ZIP *</label>
+          <label className={labelCls} htmlFor="origin">{t.origin}</label>
           <input id="origin" name="origin" required className={inputCls} placeholder="32789" autoComplete="address-level2" />
         </div>
         <div>
-          <label className={labelCls} htmlFor="destination">Destination Address / ZIP *</label>
+          <label className={labelCls} htmlFor="destination">{t.destination}</label>
           <input id="destination" name="destination" required className={inputCls} placeholder="32801" />
         </div>
       </div>
 
       <div>
-        <label className={labelCls} htmlFor="details">Details about your move</label>
-        <textarea id="details" name="details" rows={compact ? 2 : 3} className={inputCls + ' resize-none'} placeholder="Anything we should know? Specialty items, stairs, elevators, timeline..." />
+        <label className={labelCls} htmlFor="details">{t.details}</label>
+        <textarea id="details" name="details" rows={compact ? 2 : 3} className={inputCls + ' resize-none'} placeholder={t.detailsPlaceholder} />
       </div>
 
       <button
@@ -177,19 +236,19 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
         disabled={status === 'submitting'}
         className="w-full bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] disabled:opacity-60 text-white font-extrabold py-3.5 rounded-lg transition-all flex items-center justify-center gap-2 text-base"
       >
-        {status === 'submitting' ? <><Loader2 size={18} className="animate-spin"/> Sending...</> : <>Request a Free Estimate</>}
+        {status === 'submitting' ? <><Loader2 size={18} className="animate-spin"/> {t.submitting}</> : <>{t.submit}</>}
       </button>
 
       {status === 'error' && (
         <div className="flex items-start gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
           <AlertCircle size={16} className="shrink-0 mt-0.5"/>
           <div>
-            {errorMsg || 'Submission failed.'} You can always reach us at <a href={SITE.phoneLink} className="underline font-bold">{SITE.phoneDisplay}</a>.
+            {errorMsg || 'Submission failed.'} <a href={SITE.phoneLink} className="underline font-bold">{SITE.phoneDisplay}</a>.
           </div>
         </div>
       )}
 
-      <p className="text-[10px] text-[var(--color-muted)] text-center">By submitting, you agree to be contacted by Liberty Moves Orlando. We never share your info.</p>
+      <p className="text-[10px] text-[var(--color-muted)] text-center">{t.disclaimer}</p>
     </form>
   );
 }

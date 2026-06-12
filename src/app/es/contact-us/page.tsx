@@ -1,5 +1,5 @@
 import PageHero from '@/components/sections/PageHero';
-import FormEmbed from '@/components/FormEmbed';
+import QuoteForm from '@/components/QuoteForm';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
@@ -38,7 +38,15 @@ export default function Contact() {
               <div className="text-xs text-[var(--color-muted)] mt-6">USDOT {SITE.usdot} · FLDACS {SITE.fldacs}</div>
             </div>
           </div>
-          <div><FormEmbed height={720} formName="Liberty Moves Orlando — Cotización"/></div>
+          <div>
+            <div className="bg-white rounded-2xl border border-[var(--color-border)] shadow-lg overflow-hidden">
+              <div className="bg-[var(--color-accent)] text-white px-6 py-3">
+                <div className="text-sm font-extrabold uppercase tracking-wide">Solicite una cotización gratis</div>
+                <div className="text-xs opacity-90">Respuesta en menos de una hora · Con licencia USDOT {SITE.usdot} · FLDACS {SITE.fldacs}</div>
+              </div>
+              <QuoteForm lang="es" />
+            </div>
+          </div>
         </div>
       </section>
     </>

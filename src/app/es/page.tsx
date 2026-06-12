@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Star, Shield, Clock, ArrowRight, CheckCircle2, Zap } from 'lucide-react';
 import { LocalBusinessLd, WebsiteLd, FAQLd } from '@/components/JsonLd';
-import FormEmbed from '@/components/FormEmbed';
+import QuoteForm from '@/components/QuoteForm';
 import TrustCounter from '@/components/sections/TrustCounter';
 import CTA from '@/components/sections/CTA';
 import FAQ from '@/components/sections/FAQ';
@@ -92,7 +92,7 @@ export default function SpanishHome() {
                   </div>
                 </div>
                 <div className="bg-white">
-                  <FormEmbed height={530} formName="Liberty Moves — Cotización"/>
+                  <QuoteForm compact lang="es" />
                 </div>
                 <div className="bg-[var(--color-surface)] border-t border-[var(--color-border)] px-6 py-2.5 flex items-center justify-center text-xs gap-1 text-[var(--color-muted)]">
                   <Shield size={12} className="text-[var(--color-accent)]"/> Con licencia · Asegurados · USDOT {SITE.usdot}
