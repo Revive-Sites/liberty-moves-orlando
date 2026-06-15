@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import PageHero from '@/components/sections/PageHero';
+import LeadCapture from '@/components/sections/LeadCapture';
 import Testimonials from '@/components/sections/Testimonials';
 import ServiceAreas from '@/components/sections/ServiceAreas';
 import CTA from '@/components/sections/CTA';
@@ -36,6 +37,8 @@ export default function ServiceDetail({
   return (
     <>
       <PageHero eyebrow={eyebrow} title={title} subtitle={subtitle} />
+
+      <LeadCapture title={`Get your free ${eyebrow.toLowerCase()} quote`} />
 
       {/* Intro + big photo */}
       <section className="section-pad">
