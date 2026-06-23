@@ -6,6 +6,7 @@ import howToChoose from './generated-blog-posts/how-to-choose-the-best-moving-co
 import apartmentChecklist from './generated-blog-posts/orlando-apartment-move-checklist-30-day-plan.json';
 import whyLiberty from './generated-blog-posts/why-liberty-moves-orlando-is-one-of-the-top-movers-in-lake-mary.json';
 import movingWithKids from './generated-blog-posts/moving-with-kids-in-orlando-how-to-make-the-transition-easier-for-the-whole-fami.json';
+import apartmentMoving from './generated-blog-posts/apartment-moving-in-orlando-what-nobody-tells-you-before-move-in-day.json';
 
 export interface BlogPost {
   slug: string;
@@ -30,6 +31,7 @@ const ALL: BlogPost[] = [
   apartmentChecklist as BlogPost,
   whyLiberty as BlogPost,
   movingWithKids as BlogPost,
+  apartmentMoving as BlogPost,
 ];
 
 export const BLOG_POSTS: Record<string, BlogPost> = Object.fromEntries(

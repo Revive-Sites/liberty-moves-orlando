@@ -9,6 +9,7 @@ const nextConfig = {
   experimental: {
     outputFileTracingIncludes: {
       '/blog/b/[slug]': ['./src/data/generated-blog-posts/**/*.json'],
+      '/blog/[slug]': ['./src/data/generated-blog-posts/**/*.json'],
       '/blog': ['./src/data/generated-blog-posts/**/*.json'],
     },
   },
@@ -46,9 +47,23 @@ const nextConfig = {
       { source: '/Why-Choose-Us', destination: '/why-choose-us' },
       { source: '/es/Packing-Services', destination: '/es/packing-services' },
     ];
+    // OS native blog posts moved off /blog/b/ to the clean /blog/<slug> route
+    // (Revive OS #50: drop the /b/). Permanent edge redirects so the already-
+    // indexed /blog/b/<slug> URLs consolidate to the clean ones. Only the JSON-
+    // driven posts are listed here; the 5 hand-authored /blog/b/<x> pages are
+    // intentionally left untouched.
+    const blogBToClean = [
+      'the-real-cost-of-hiring-the-wrong-movers-in-orlando-and-how-to-avoid-it',
+      'how-to-choose-the-best-moving-company-in-orlando-without-getting-burned-by',
+      'orlando-apartment-move-checklist-30-day-plan',
+      'why-liberty-moves-orlando-is-one-of-the-top-movers-in-lake-mary',
+      'moving-with-kids-in-orlando-how-to-make-the-transition-easier-for-the-whole-fami',
+      'apartment-moving-in-orlando-what-nobody-tells-you-before-move-in-day',
+    ];
     return [
       ...legacyToHome.map((source) => ({ source, destination: '/', permanent: true })),
       ...slugLowercase.map((r) => ({ ...r, permanent: true })),
+      ...blogBToClean.map((s) => ({ source: `/blog/b/${s}`, destination: `/blog/${s}`, permanent: true })),
     ];
   },
 };
