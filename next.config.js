@@ -74,12 +74,15 @@ const nextConfig = {
       'how-to-choose-a-moving-company',
     ];
     // Old/inbound short blog-post slugs that were never routed here, but whose
-    // article content DOES exist under the canonical long /blog/b/<slug> URL.
-    // Redirect each to its real article rather than blanket-dumping to /blog.
+    // article content now lives at the canonical clean /blog/<long-slug> URL
+    // (these posts moved off /blog/b/ — Revive OS: drop the /b/). Redirect each
+    // to its real article rather than blanket-dumping to /blog.
     const shortSlugToRealPost = [
-      { source: '/blog/what-makes-liberty-moves-different', destination: '/blog/b/what-makes-liberty-moves-orlando-different-why-every-resident-deserves-the-best-in-2026' },
-      { source: '/blog/licensed-vs-unlicensed-orlando-movers', destination: '/blog/b/orlando-movers-the-real-difference-between-licensed-and-unlicensed' },
-      { source: '/blog/how-professional-packing-services-protect-your-belongings', destination: '/blog/b/how-professional-packing-services-protect-your-belongings-during-a-move' },
+      { source: '/blog/what-makes-liberty-moves-different', destination: '/blog/what-makes-liberty-moves-orlando-different-why-every-resident-deserves-the-best-in-2026' },
+      { source: '/blog/licensed-vs-unlicensed-orlando-movers', destination: '/blog/orlando-movers-the-real-difference-between-licensed-and-unlicensed' },
+      { source: '/blog/how-professional-packing-services-protect-your-belongings', destination: '/blog/how-professional-packing-services-protect-your-belongings-during-a-move' },
+      { source: '/blog/why-hire-local-orlando-movers', destination: '/blog/how-hiring-local-movers-makes-relocation-quick-and-easy' },
+      { source: '/blog/long-distance-moving-services-guide', destination: '/blog/what-you-need-to-know-about-long-distance-moving-services' },
     ];
     return [
       ...legacyToHome.map((source) => ({ source, destination: '/', permanent: true })),
@@ -88,6 +91,12 @@ const nextConfig = {
       ...realPageRedirects.map((r) => ({ ...r, permanent: true })),
       ...legacyGhlBlogBToClean.map((s) => ({ source: `/blog/b/${s}`, destination: `/blog/${s}`, permanent: true })),
       ...shortSlugToRealPost.map((r) => ({ ...r, permanent: true })),
+      // Catch-all: every legacy /blog/b/<slug> now 301s to the clean /blog/<slug>
+      // canonical. Listed LAST so the specific clean-source redirects above (the
+      // short-slug → real-article ones) still match first. This consolidates all
+      // already-indexed /blog/b/* link equity onto the no-/b/ canonical URLs and
+      // supersedes the old dynamic src/app/blog/b/[slug] redirect page.
+      { source: '/blog/b/:slug*', destination: '/blog/:slug*', permanent: true },
     ];
   },
 };

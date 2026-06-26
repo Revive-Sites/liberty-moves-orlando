@@ -11,17 +11,17 @@ import { Phone } from 'lucide-react';
 export const metadata = {
   title: "Orlando Movers: The Real Difference Between Licensed and Unlicensed",
   description: "Picking a mover based on price alone is one of the most expensive mistakes Orlando residents make.",
-  alternates: { canonical: `${SITE.url}/blog/b/orlando-movers-the-real-difference-between-licensed-and-unlicensed` },
+  alternates: { canonical: `${SITE.url}/blog/orlando-movers-the-real-difference-between-licensed-and-unlicensed` },
 };
 
 export default function Post() {
   return (
     <>
-      <BlogPostingLd slug="b/orlando-movers-the-real-difference-between-licensed-and-unlicensed" title="Orlando Movers: The Real Difference Between Licensed and Unlicensed" description="Picking a mover based on price alone is one of the most expensive mistakes Orlando residents make." date="2026-03-13" />
+      <BlogPostingLd slug="orlando-movers-the-real-difference-between-licensed-and-unlicensed" title="Orlando Movers: The Real Difference Between Licensed and Unlicensed" description="Picking a mover based on price alone is one of the most expensive mistakes Orlando residents make." date="2026-03-13" />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
         { name: 'Blog', url: `${SITE.url}/blog` },
-        { name: "Orlando Movers: The Real Difference Between Licensed and Unl", url: `${SITE.url}/blog/b/orlando-movers-the-real-difference-between-licensed-and-unlicensed` },
+        { name: "Orlando Movers: The Real Difference Between Licensed and Unl", url: `${SITE.url}/blog/orlando-movers-the-real-difference-between-licensed-and-unlicensed` },
       ]} />
       <PageHero eyebrow="Buyer Guide · March 2026" title="Orlando Movers: The Real Difference Between Licensed and Unlicensed" />
       <section className="pt-8">

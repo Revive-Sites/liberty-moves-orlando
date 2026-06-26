@@ -11,17 +11,17 @@ import { Phone } from 'lucide-react';
 export const metadata = {
   title: "How Hiring Local Movers Makes Relocation Quick and Easy",
   description: "Local movers bring structure and efficiency to every step. Trained crews pack with care, load with strategy, and manage transportation without delays.",
-  alternates: { canonical: `${SITE.url}/blog/b/how-hiring-local-movers-makes-relocation-quick-and-easy` },
+  alternates: { canonical: `${SITE.url}/blog/how-hiring-local-movers-makes-relocation-quick-and-easy` },
 };
 
 export default function Post() {
   return (
     <>
-      <BlogPostingLd slug="b/how-hiring-local-movers-makes-relocation-quick-and-easy" title="How Hiring Local Movers Makes Relocation Quick and Easy" description="Local movers bring structure and efficiency to every step. Trained crews pack with care, load with strategy, and manage transportation without delays." date="2026-02-20" />
+      <BlogPostingLd slug="how-hiring-local-movers-makes-relocation-quick-and-easy" title="How Hiring Local Movers Makes Relocation Quick and Easy" description="Local movers bring structure and efficiency to every step. Trained crews pack with care, load with strategy, and manage transportation without delays." date="2026-02-20" />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
         { name: 'Blog', url: `${SITE.url}/blog` },
-        { name: "How Hiring Local Movers Makes Relocation Quick and Easy", url: `${SITE.url}/blog/b/how-hiring-local-movers-makes-relocation-quick-and-easy` },
+        { name: "How Hiring Local Movers Makes Relocation Quick and Easy", url: `${SITE.url}/blog/how-hiring-local-movers-makes-relocation-quick-and-easy` },
       ]} />
       <PageHero eyebrow="Local · February 2026" title="How Hiring Local Movers Makes Relocation Quick and Easy" />
       <section className="pt-8">

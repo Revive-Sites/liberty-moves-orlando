@@ -11,17 +11,17 @@ import { Phone } from 'lucide-react';
 export const metadata = {
   title: "How Professional Packing Services Protect Your Belongings During a Move",
   description: "Professional packing services go far beyond placing items into boxes. Certified packers follow a trained, systematic approach that protects every belonging through loading, transit, and final delivery.",
-  alternates: { canonical: `${SITE.url}/blog/b/how-professional-packing-services-protect-your-belongings-during-a-move` },
+  alternates: { canonical: `${SITE.url}/blog/how-professional-packing-services-protect-your-belongings-during-a-move` },
 };
 
 export default function Post() {
   return (
     <>
-      <BlogPostingLd slug="b/how-professional-packing-services-protect-your-belongings-during-a-move" title="How Professional Packing Services Protect Your Belongings During a Move" description="Professional packing services go far beyond placing items into boxes. Certified packers follow a trained, systematic approach that protects every belonging through loading, transit, and final delivery." date="2026-04-10" />
+      <BlogPostingLd slug="how-professional-packing-services-protect-your-belongings-during-a-move" title="How Professional Packing Services Protect Your Belongings During a Move" description="Professional packing services go far beyond placing items into boxes. Certified packers follow a trained, systematic approach that protects every belonging through loading, transit, and final delivery." date="2026-04-10" />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
         { name: 'Blog', url: `${SITE.url}/blog` },
-        { name: "How Professional Packing Services Protect Your Belongings Du", url: `${SITE.url}/blog/b/how-professional-packing-services-protect-your-belongings-during-a-move` },
+        { name: "How Professional Packing Services Protect Your Belongings Du", url: `${SITE.url}/blog/how-professional-packing-services-protect-your-belongings-during-a-move` },
       ]} />
       <PageHero eyebrow="Packing · April 2026" title="How Professional Packing Services Protect Your Belongings During a Move" />
       <section className="pt-8">

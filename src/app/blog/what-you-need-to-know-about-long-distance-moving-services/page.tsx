@@ -11,17 +11,17 @@ import { Phone } from 'lucide-react';
 export const metadata = {
   title: "What You Need to Know About Long Distance Moving Services",
   description: "Long distance moving usually refers to any relocation that covers 100 miles or more or crosses state lines.",
-  alternates: { canonical: `${SITE.url}/blog/b/what-you-need-to-know-about-long-distance-moving-services` },
+  alternates: { canonical: `${SITE.url}/blog/what-you-need-to-know-about-long-distance-moving-services` },
 };
 
 export default function Post() {
   return (
     <>
-      <BlogPostingLd slug="b/what-you-need-to-know-about-long-distance-moving-services" title="What You Need to Know About Long Distance Moving Services" description="Long distance moving usually refers to any relocation that covers 100 miles or more or crosses state lines." date="2026-02-13" />
+      <BlogPostingLd slug="what-you-need-to-know-about-long-distance-moving-services" title="What You Need to Know About Long Distance Moving Services" description="Long distance moving usually refers to any relocation that covers 100 miles or more or crosses state lines." date="2026-02-13" />
       <BreadcrumbsLd items={[
         { name: 'Home', url: SITE.url },
         { name: 'Blog', url: `${SITE.url}/blog` },
-        { name: "What You Need to Know About Long Distance Moving Services", url: `${SITE.url}/blog/b/what-you-need-to-know-about-long-distance-moving-services` },
+        { name: "What You Need to Know About Long Distance Moving Services", url: `${SITE.url}/blog/what-you-need-to-know-about-long-distance-moving-services` },
       ]} />
       <PageHero eyebrow="Long Distance · February 2026" title="What You Need to Know About Long Distance Moving Services" />
       <section className="pt-8">
