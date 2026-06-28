@@ -23,8 +23,30 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return { title: 'Post not found' };
+  // Shorter SEO <title> overrides for posts whose editorial H1 runs long
+  // (keeps the on-page H1 intact while the meta title stays ≤60 chars).
+  const SEO_TITLE_OVERRIDES: Record<string, string> = {
+    'orlando-apartment-move-checklist-30-day-plan': 'Orlando Apartment Move Checklist (30-Day Plan)',
+    'how-to-choose-the-best-moving-company-in-orlando-without-getting-burned-by':
+      'How to Choose the Best Orlando Moving Company',
+    'moving-with-kids-in-orlando-how-to-make-the-transition-easier-for-the-whole-fami':
+      'Moving with Kids in Orlando — Family Guide',
+    'apartment-moving-in-orlando-what-nobody-tells-you-before-move-in-day':
+      'Apartment Moving in Orlando — What to Know',
+    'the-real-cost-of-hiring-the-wrong-movers-in-orlando-and-how-to-avoid-it':
+      'The Real Cost of Hiring the Wrong Movers',
+    'why-liberty-moves-orlando-is-one-of-the-top-movers-in-lake-mary':
+      'Top-Rated Movers in Lake Mary | Liberty Moves',
+  };
+  // Use an absolute title so the root brand template isn't appended a second
+  // time. Only add the brand when there's room to stay near a sane length.
+  const titleAbsolute =
+    SEO_TITLE_OVERRIDES[slug] ??
+    (post.title.length <= 44
+      ? `${post.title} | Liberty Moves`
+      : post.title);
   return {
-    title: `${post.title} — Liberty Moves Orlando`,
+    title: { absolute: titleAbsolute },
     description: post.metaDescription || post.excerpt,
     alternates: { canonical: `${SITE.url}/blog/${slug}` },
     openGraph: {

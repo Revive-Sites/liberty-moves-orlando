@@ -17,7 +17,7 @@ const city: City = {
 };
 
 export const metadata = {
-  title: 'Lake Nona Movers | Medical City + Laureate Park Moving Company',
+  title: 'Lake Nona Movers | Medical City Orlando',
   description: 'Lake Nona movers serving Medical City, Laureate Park, Isles of Lake Nona, and Lake Nona Golf & Country Club. Licensed, insured, new-construction experts.',
   alternates: { canonical: `${SITE.url}/lake-nona-movers` },
 };

@@ -7,7 +7,7 @@ import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
-  title: 'Why Choose Liberty Moves Orlando — Orlando’s Trusted Movers',
+  title: { absolute: 'Why Choose Liberty Moves Orlando' },
   description:
     'Why families and businesses pick Liberty Moves Orlando: upfront pricing, licensed (USDOT 3455436), careful crews, and on-time service across Central Florida.',
   alternates: { canonical: `${SITE.url}/why-choose-us` },

@@ -3,7 +3,7 @@ import { CheckCircle2, Phone, Clock, ClipboardList, Truck, Star, ArrowRight } fr
 import { SITE } from '@/lib/site';
 
 export const metadata = {
-  title: 'Thank You — We’ve Got Your Request | Liberty Moves Orlando',
+  title: { absolute: 'Thank You | Liberty Moves Orlando' },
   description:
     'Thanks for reaching out to Liberty Moves Orlando. Your request is in — our team will be in touch shortly with your free, no-pressure moving quote.',
   alternates: { canonical: `${SITE.url}/thank-you` },

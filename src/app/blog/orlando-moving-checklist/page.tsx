@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Orlando Moving Checklist — 8 Weeks to Move-In Day',
+  title: { absolute: 'Orlando Moving Checklist — 8 Weeks Out' },
   description: 'Complete 8-week Orlando moving checklist. Week-by-week tasks, Florida-specific tips, packing timeline, and what to do on move day.',
   alternates: { canonical: `${SITE.url}/blog/orlando-moving-checklist` },
 };

@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'When’s the Best Time of Year to Move in Orlando?',
+  title: { absolute: 'Best Time of Year to Move in Orlando' },
   description: 'The best and worst times to move in Orlando — seasonal pricing, hurricane season, holidays, weekday discounts, and specific weeks that save you money.',
   alternates: { canonical: `${SITE.url}/blog/best-time-to-move-in-orlando` },
 };

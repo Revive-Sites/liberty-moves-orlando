@@ -16,8 +16,8 @@ const SITE_URL = 'https://libertymovesorlando.com';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Orlando Movers | Liberty Moves Orlando — Local & Long Distance Moving',
-    template: '%s | Liberty Moves Orlando',
+    default: 'Orlando Movers | Liberty Moves Orlando',
+    template: '%s | Liberty Moves',
   },
   description:
     'Orlando movers with upfront pricing and careful crews. Liberty Moves Orlando — licensed (USDOT 3455436), 5-star rated, serving all of Central Florida. Free quote in minutes.',

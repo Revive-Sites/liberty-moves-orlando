@@ -23,7 +23,7 @@ const GALLERY = [
 ];
 
 export const metadata = {
-  title: 'Gallery — Liberty Moves Orlando at Work',
+  title: 'Gallery — Our Crews at Work',
   description: 'Photos of Liberty Moves Orlando crews, trucks, and move days across Central Florida. Licensed, insured, and careful with every customer.',
   alternates: { canonical: `${SITE.url}/gallery` },
 };

@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Moving with Pets to Florida — The Complete Guide',
+  title: { absolute: 'Moving with Pets to Florida — Full Guide' },
   description: 'How to move dogs, cats, and exotic pets to Florida safely. Vet records, heat safety, road trip planning, and settling pets into Orlando.',
   alternates: { canonical: `${SITE.url}/blog/moving-with-pets-to-florida` },
 };

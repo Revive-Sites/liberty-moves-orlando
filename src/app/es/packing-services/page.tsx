@@ -10,7 +10,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Servicios de Empaque Orlando | Empacadores Profesionales',
+  title: 'Servicios de Empaque Orlando',
   description: 'Empaque profesional en Orlando — casa completa, parcial o solo cocina. Materiales de alta calidad, manejo cuidadoso, garantía sin daños.',
   alternates: { canonical: `${SITE.url}/es/packing-services`, languages: { 'en-US': `${SITE.url}/packing-services`, 'es': `${SITE.url}/es/packing-services` } },
 };

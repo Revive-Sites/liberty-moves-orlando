@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Office Relocation Planning Guide — Zero Downtime Playbook',
+  title: { absolute: 'Office Relocation Planning Guide' },
   description: 'Step-by-step office relocation playbook: IT coordination, landlord coordination, timeline, COIs, and how to minimize downtime.',
   alternates: { canonical: `${SITE.url}/blog/office-relocation-planning-guide` },
 };

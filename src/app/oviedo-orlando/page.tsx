@@ -5,7 +5,7 @@ import { SITE, CITIES } from '@/lib/site';
 const city = CITIES.find((c) => c.slug === 'oviedo-orlando')!;
 
 export const metadata = {
-  title: `${city.name} Movers | Liberty Moves Orlando — Licensed ${city.name} Moving Company`,
+  title: { absolute: `${city.name} Movers FL | Liberty Moves Orlando` },
   description: `${city.name}, FL movers with upfront pricing and careful crews. Serving ${city.region}. Licensed (USDOT 3455436), 5-star rated. Free quote in minutes.`,
   keywords: [`${city.name.toLowerCase()} movers`, `${city.name.toLowerCase()} moving company`, `movers in ${city.name.toLowerCase()}`, 'orlando movers'],
   alternates: { canonical: `${SITE.url}/oviedo-orlando` },

@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Moving During Hurricane Season in Florida — What to Know',
+  title: { absolute: 'Moving During Hurricane Season in Florida' },
   description: 'How to safely move during Florida hurricane season (June–November). Monitoring storms, rescheduling rules, what to pack first, and what to insure.',
   alternates: { canonical: `${SITE.url}/blog/moving-during-hurricane-season-florida` },
 };

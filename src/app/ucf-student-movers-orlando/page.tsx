@@ -16,7 +16,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'UCF Student Movers Orlando | Dorm + Apartment Moving',
+  title: 'UCF Student Movers Orlando',
   description: 'Affordable UCF student movers for dorms, apartments, and off-campus housing. Student discount, summer storage, semester-end specialists.',
   alternates: { canonical: `${SITE.url}/ucf-student-movers-orlando` },
 };

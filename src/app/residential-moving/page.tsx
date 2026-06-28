@@ -10,7 +10,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Residential Movers in Orlando | Home Moving Services',
+  title: 'Residential Movers in Orlando',
   description: 'Full-service residential moving in Orlando and Central Florida. Upfront pricing, careful crews, same-day local moves. Licensed (USDOT 3455436).',
   alternates: { canonical: `${SITE.url}/residential-moving` },
 };

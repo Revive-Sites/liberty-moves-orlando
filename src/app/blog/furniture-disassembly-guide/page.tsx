@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Furniture Disassembly Guide for Moving (Tools + Tips)',
+  title: { absolute: 'Furniture Disassembly Guide for Moving' },
   description: 'How to disassemble beds, tables, cribs, and bookcases for a move — tools, labeling systems, and how to make reassembly easy.',
   alternates: { canonical: `${SITE.url}/blog/furniture-disassembly-guide` },
 };

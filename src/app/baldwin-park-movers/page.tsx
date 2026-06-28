@@ -17,7 +17,7 @@ const city: City = {
 };
 
 export const metadata = {
-  title: 'Baldwin Park Movers | Lake Baldwin + Village Walk Moving',
+  title: 'Baldwin Park Movers Orlando',
   description: 'Baldwin Park, Orlando movers. Walkable neighborhoods, new-urbanism homes, and Lake Baldwin properties. Licensed, insured, local specialists.',
   alternates: { canonical: `${SITE.url}/baldwin-park-movers` },
 };

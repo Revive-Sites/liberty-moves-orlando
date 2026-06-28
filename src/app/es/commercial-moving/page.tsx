@@ -10,7 +10,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Mudanzas Comerciales Orlando | Reubicación de Negocios',
+  title: 'Mudanzas Comerciales Orlando',
   description: 'Mudanzas comerciales en Orlando — oficinas, tiendas, almacenes. Mudanzas de fin de semana para mantener su negocio abierto. Con licencia, asegurados.',
   alternates: { canonical: `${SITE.url}/es/commercial-moving`, languages: { 'en-US': `${SITE.url}/commercial-moving`, 'es': `${SITE.url}/es/commercial-moving` } },
 };

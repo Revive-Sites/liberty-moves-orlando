@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'How to Choose a Moving Company (7 Questions + Red Flags)',
+  title: { absolute: 'How to Choose a Moving Company (Red Flags)' },
   description: 'The 7 questions every honest mover answers easily — and the red flags that mean you should walk away. Florida-specific verification tips.',
   alternates: { canonical: `${SITE.url}/blog/how-to-choose-a-moving-company` },
 };

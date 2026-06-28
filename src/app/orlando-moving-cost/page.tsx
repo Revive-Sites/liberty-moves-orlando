@@ -22,7 +22,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'How Much Do Orlando Movers Cost? (2026 Pricing Guide)',
+  title: 'How Much Do Orlando Movers Cost? (2026)',
   description:
     'Complete Orlando moving cost guide — hourly rates, by-home-size pricing, long-distance estimates, and tipping standards. Transparent pricing from Liberty Moves Orlando.',
   alternates: { canonical: `${SITE.url}/orlando-moving-cost` },

@@ -16,7 +16,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Orlando Storage & Moving | Climate-Controlled Storage + Pro Movers',
+  title: 'Orlando Storage & Moving Services',
   description: 'Orlando storage + moving combined — climate-controlled units, pro crews, month-to-month contracts. One call handles your move, your storage, and your delivery.',
   alternates: { canonical: `${SITE.url}/storage-moving-orlando` },
 };

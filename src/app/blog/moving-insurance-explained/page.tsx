@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Moving Insurance Explained — What’s Actually Covered',
+  title: { absolute: 'Moving Insurance Explained — What’s Covered' },
   description: 'Florida moving insurance types explained — Released Value, Full Value Protection, third-party insurance. What’s covered, what’s not, and how to choose.',
   alternates: { canonical: `${SITE.url}/blog/moving-insurance-explained` },
 };

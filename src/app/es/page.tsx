@@ -19,7 +19,7 @@ const FAQS_ES = [
 ];
 
 export const metadata = {
-  title: 'Mudanzas Orlando | Liberty Moves Orlando — Mudanzas Locales y de Larga Distancia',
+  title: { absolute: 'Mudanzas Orlando | Liberty Moves Orlando' },
   description:
     'Mudanzas en Orlando con precios claros y equipos cuidadosos. Liberty Moves Orlando — licencia USDOT 3455436, 5 estrellas, sirviendo todo el centro de Florida. Cotización gratis en minutos.',
   keywords: ['mudanzas orlando', 'compañía de mudanzas orlando', 'mudanzas locales orlando', 'mudanza larga distancia florida'],

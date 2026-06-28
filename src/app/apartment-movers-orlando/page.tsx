@@ -17,7 +17,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Apartment Movers Orlando | Apartment Moving Company',
+  title: 'Apartment Movers Orlando',
   description:
     'Orlando apartment movers for 1, 2, 3-bedroom apartments. Elevator & HOA coordination, walk-up experts, written pricing. Free quote in minutes.',
   alternates: { canonical: `${SITE.url}/apartment-movers-orlando` },

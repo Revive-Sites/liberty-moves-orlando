@@ -5,7 +5,7 @@ import { SITE } from '@/lib/site';
 const origin = ORIGINS.find((o) => o.slug === 'philadelphia')!;
 
 export const metadata = {
-  title: `Moving from ${origin.city} to Orlando, FL | Long-Distance Movers`,
+  title: { absolute: `${origin.city} to Orlando Movers | Liberty Moves` },
   description: `Moving from ${origin.city}, ${origin.stateCode} to Orlando? Liberty Moves handles ${origin.city}-to-Orlando relocations with direct delivery, binding estimates, and licensed interstate carriers. Get a free quote.`,
   alternates: { canonical: `${SITE.url}/moving-to-orlando-from-philadelphia` },
 };

@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Phone } from 'lucide-react';
 
 export const metadata = {
-  title: "Orlando Movers: The Real Difference Between Licensed and Unlicensed",
+  title: { absolute: 'Licensed vs Unlicensed Orlando Movers' },
   description: "Picking a mover based on price alone is one of the most expensive mistakes Orlando residents make.",
   alternates: { canonical: `${SITE.url}/blog/orlando-movers-the-real-difference-between-licensed-and-unlicensed` },
 };

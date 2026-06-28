@@ -16,7 +16,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Piano Movers Orlando | Professional Piano Moving Services',
+  title: 'Piano Movers Orlando',
   description:
     'Professional piano movers in Orlando. Uprights, baby grands, grand pianos — careful, insured, experienced crews. Written quote in minutes. Licensed USDOT 3455436.',
   alternates: { canonical: `${SITE.url}/piano-movers-orlando` },

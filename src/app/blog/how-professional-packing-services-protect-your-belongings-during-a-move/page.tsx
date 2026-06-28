@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Phone } from 'lucide-react';
 
 export const metadata = {
-  title: "How Professional Packing Services Protect Your Belongings During a Move",
+  title: { absolute: 'How Pro Packing Protects Your Belongings' },
   description: "Professional packing services go far beyond placing items into boxes. Certified packers follow a trained, systematic approach that protects every belonging through loading, transit, and final delivery.",
   alternates: { canonical: `${SITE.url}/blog/how-professional-packing-services-protect-your-belongings-during-a-move` },
 };

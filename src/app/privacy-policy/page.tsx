@@ -2,7 +2,7 @@ import PageHero from '@/components/sections/PageHero';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
-  title: 'Privacy Policy — Liberty Moves Orlando',
+  title: { absolute: 'Privacy Policy | Liberty Moves Orlando' },
   description: 'How Liberty Moves Orlando collects, uses, and protects your information.',
   alternates: { canonical: `${SITE.url}/privacy-policy` },
   robots: { index: true, follow: false },
