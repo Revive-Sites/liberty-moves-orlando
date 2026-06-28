@@ -10,7 +10,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Packing Services Orlando | Professional Packers & Supplies',
+  title: 'Packing Services Orlando',
   description: 'Professional packing in Orlando — full-house, partial, or kitchen-only. Top-grade materials, careful handling, no-damage guarantee.',
   alternates: { canonical: `${SITE.url}/packing-services` },
 };

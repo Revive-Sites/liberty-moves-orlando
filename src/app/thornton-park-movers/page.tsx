@@ -17,7 +17,7 @@ const city: City = {
 };
 
 export const metadata = {
-  title: 'Thornton Park Movers | Downtown Orlando Moving Company',
+  title: 'Thornton Park Movers Orlando',
   description: 'Thornton Park movers serving downtown Orlando historic homes, condos, and lofts. Licensed, insured, historic-home specialists.',
   alternates: { canonical: `${SITE.url}/thornton-park-movers` },
 };

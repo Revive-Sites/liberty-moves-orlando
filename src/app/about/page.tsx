@@ -6,7 +6,7 @@ import { BreadcrumbsLd, LocalBusinessLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
-  title: 'About Liberty Moves Orlando — Family-Owned Moving Company',
+  title: 'About Us — Family-Owned Orlando Movers',
   description:
     'Meet the team behind Liberty Moves Orlando. A family-run, licensed moving company serving Orlando and Central Florida with honest pricing and careful crews.',
   alternates: { canonical: `${SITE.url}/about` },

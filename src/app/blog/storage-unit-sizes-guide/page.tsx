@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Storage Unit Sizes Guide — What Actually Fits in Each Size',
+  title: { absolute: 'Storage Unit Sizes Guide — What Fits' },
   description: 'Storage unit sizes from 5×5 to 10×30 — what actually fits in each, Orlando pricing, and which size you need.',
   alternates: { canonical: `${SITE.url}/blog/storage-unit-sizes-guide` },
 };

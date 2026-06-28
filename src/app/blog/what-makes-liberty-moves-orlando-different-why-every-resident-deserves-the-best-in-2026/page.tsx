@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Phone } from 'lucide-react';
 
 export const metadata = {
-  title: "What Makes Liberty Moves Orlando Different &amp; Why Every Resident Deserves the Best in 2026",
+  title: { absolute: 'What Makes Liberty Moves Orlando Different' },
   description: "Liberty Moves Orlando brings over a decade of licensed, insured, and professionally managed service to every move.",
   alternates: { canonical: `${SITE.url}/blog/what-makes-liberty-moves-orlando-different-why-every-resident-deserves-the-best-in-2026` },
 };

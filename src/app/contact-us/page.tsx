@@ -5,7 +5,7 @@ import { BreadcrumbsLd, LocalBusinessLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
-  title: 'Contact Liberty Moves Orlando — Get a Free Quote',
+  title: 'Contact Us — Free Orlando Moving Quote',
   description:
     'Contact Liberty Moves Orlando today for reliable local and long-distance moving services. Get a free quote and speak with our professional moving experts.',
   alternates: { canonical: `${SITE.url}/contact-us` },

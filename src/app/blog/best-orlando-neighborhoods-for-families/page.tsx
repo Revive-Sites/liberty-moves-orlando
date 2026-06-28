@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Best Orlando Neighborhoods for Families (2026 Guide)',
+  title: { absolute: 'Best Orlando Neighborhoods for Families (2026)' },
   description: 'The 10 best Orlando neighborhoods for families in 2026 — schools, safety, home prices, commutes, and vibe of each area compared.',
   alternates: { canonical: `${SITE.url}/blog/best-orlando-neighborhoods-for-families` },
 };

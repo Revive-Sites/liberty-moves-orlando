@@ -3,7 +3,7 @@ import { CheckCircle2, Phone, Clock, ClipboardList, Truck, Star, ArrowRight } fr
 import { SITE } from '@/lib/site';
 
 export const metadata = {
-  title: 'Gracias — Recibimos su solicitud | Liberty Moves Orlando',
+  title: { absolute: 'Gracias | Liberty Moves Orlando' },
   description:
     'Gracias por contactar a Liberty Moves Orlando. Recibimos su solicitud — nuestro equipo se comunicará con usted pronto con su cotización gratis y sin presión.',
   alternates: { canonical: `${SITE.url}/es/thank-you` },

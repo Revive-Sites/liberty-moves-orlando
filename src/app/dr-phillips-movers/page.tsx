@@ -17,7 +17,7 @@ const city: City = {
 };
 
 export const metadata = {
-  title: 'Dr. Phillips Movers | Bay Hill + Sand Lake Moving Company',
+  title: { absolute: 'Dr. Phillips Movers | Bay Hill & Sand Lake' },
   description: 'Dr. Phillips movers serving Bay Hill, Sand Lake Hills, Phillips Landing and Restaurant Row neighborhoods. Licensed, insured, luxury-home specialists.',
   alternates: { canonical: `${SITE.url}/dr-phillips-movers` },
 };

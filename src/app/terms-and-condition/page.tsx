@@ -2,7 +2,7 @@ import PageHero from '@/components/sections/PageHero';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
-  title: 'Terms & Conditions — Liberty Moves Orlando',
+  title: { absolute: 'Terms & Conditions | Liberty Moves Orlando' },
   description: 'Terms and conditions for Liberty Moves Orlando services.',
   alternates: { canonical: `${SITE.url}/terms-and-condition` },
   robots: { index: true, follow: false },

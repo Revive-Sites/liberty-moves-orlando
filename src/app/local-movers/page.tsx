@@ -11,7 +11,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Local Movers in Orlando | Same-Week Moving, Upfront Pricing',
+  title: 'Local Movers in Orlando, FL',
   description: 'Local movers serving Orlando and Central Florida. Hourly rates, same-week booking, uniformed crews, no surprise fees. Licensed (USDOT 3455436, FL IM3347).',
   alternates: { canonical: `${SITE.url}/local-movers` },
 };

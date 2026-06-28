@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'DIY Move vs Professional Movers in Orlando — Cost Breakdown',
+  title: { absolute: 'DIY Move vs Professional Movers in Orlando' },
   description: 'Real cost comparison: U-Haul DIY move vs hiring Orlando movers. Hidden DIY costs, time, damage risk, and when each makes sense.',
   alternates: { canonical: `${SITE.url}/blog/diy-vs-professional-movers-orlando` },
 };

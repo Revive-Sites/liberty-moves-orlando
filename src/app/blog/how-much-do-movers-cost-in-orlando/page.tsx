@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'How Much Do Movers Cost in Orlando? (2026 Pricing Guide)',
+  title: { absolute: 'How Much Do Movers Cost in Orlando? (2026)' },
   description: 'Complete Orlando moving cost breakdown — hourly rates, home-size tables, long-distance estimates, and money-saving tips. Transparent pricing from a licensed local mover.',
   alternates: { canonical: `${SITE.url}/blog/how-much-do-movers-cost-in-orlando` },
 };

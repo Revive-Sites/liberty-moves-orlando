@@ -5,7 +5,7 @@ import { BreadcrumbsLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 
 export const metadata = {
-  title: 'Contacto | Liberty Moves Orlando — Cotización Gratis',
+  title: { absolute: 'Contacto | Liberty Moves Orlando' },
   description: 'Contacte a Liberty Moves Orlando para servicios de mudanza locales y de larga distancia. Cotización gratis con expertos profesionales.',
   alternates: { canonical: `${SITE.url}/es/contact-us`, languages: { 'en-US': `${SITE.url}/contact-us`, 'es': `${SITE.url}/es/contact-us` } },
 };

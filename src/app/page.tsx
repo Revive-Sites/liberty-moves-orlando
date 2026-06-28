@@ -35,7 +35,7 @@ const HOME_FAQS = [
 ];
 
 export const metadata = {
-  title: 'Orlando Movers | Liberty Moves Orlando — Local & Long Distance Moving',
+  title: { absolute: 'Orlando Movers | Liberty Moves Orlando' },
   description:
     'Orlando movers with upfront pricing and careful crews. Licensed (USDOT 3455436), 5-star rated, serving all of Central Florida. Free quote in minutes — call 407-641-2887.',
   alternates: { canonical: SITE.url },

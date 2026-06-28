@@ -10,7 +10,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Mudanzas de Larga Distancia Orlando | Florida a Cualquier Parte',
+  title: 'Mudanzas de Larga Distancia Orlando',
   description: 'Mudanzas de larga distancia desde Orlando a cualquier parte de los EE.UU. Camiones dedicados, entrega directa, precios claros. Licencia USDOT 3455436.',
   alternates: { canonical: `${SITE.url}/es/long-distance-moving`, languages: { 'en-US': `${SITE.url}/long-distance-moving`, 'es': `${SITE.url}/es/long-distance-moving` } },
 };

@@ -10,7 +10,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Long Distance Movers Orlando | Florida to Anywhere in the US',
+  title: 'Long Distance Movers Orlando',
   description: 'Long-distance moving from Orlando to anywhere in the US. Dedicated trucks, direct delivery, transparent pricing. Licensed USDOT 3455436.',
   alternates: { canonical: `${SITE.url}/long-distance-moving` },
 };

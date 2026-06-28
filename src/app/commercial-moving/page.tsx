@@ -10,7 +10,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Commercial & Office Movers in Orlando | Business Relocation',
+  title: 'Commercial & Office Movers Orlando',
   description: 'Commercial moving in Orlando — offices, retail, warehouses. Weekend moves to keep your business open. Licensed, insured, IT-savvy crews.',
   alternates: { canonical: `${SITE.url}/commercial-moving` },
 };

@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Phone } from 'lucide-react';
 
 export const metadata = {
-  title: "What You Need to Know About Long Distance Moving Services",
+  title: { absolute: 'Long Distance Moving Services Explained' },
   description: "Long distance moving usually refers to any relocation that covers 100 miles or more or crosses state lines.",
   alternates: { canonical: `${SITE.url}/blog/what-you-need-to-know-about-long-distance-moving-services` },
 };

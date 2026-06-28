@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'How Much to Tip Movers in Florida (2026 Guide)',
+  title: { absolute: 'How Much to Tip Movers in Florida (2026)' },
   description: 'Tipping guide for Florida and Orlando movers — hourly rates, percentage method, exceptional service standards, and how to tip properly.',
   alternates: { canonical: `${SITE.url}/blog/how-much-to-tip-movers-in-florida` },
 };

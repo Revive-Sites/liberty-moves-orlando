@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Moving to Orlando With Kids — Schools, Neighborhoods, Family Tips',
+  title: { absolute: 'Moving to Orlando With Kids — Family Guide' },
   description: 'Moving to Orlando with kids? School district transfers, best family neighborhoods, kid-friendly activities, and everything a parent needs.',
   alternates: { canonical: `${SITE.url}/blog/moving-to-orlando-with-kids` },
 };

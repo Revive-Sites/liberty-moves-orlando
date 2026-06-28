@@ -10,7 +10,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Mudanzas Residenciales Orlando | Servicios de Mudanza Residencial',
+  title: 'Mudanzas Residenciales Orlando',
   description: 'Servicio completo de mudanzas residenciales en Orlando y centro de Florida. Precios claros, equipos cuidadosos, mudanzas locales el mismo día. Licencia USDOT 3455436.',
   alternates: { canonical: `${SITE.url}/es/residential-moving`, languages: { 'en-US': `${SITE.url}/residential-moving`, 'es': `${SITE.url}/es/residential-moving` } },
 };

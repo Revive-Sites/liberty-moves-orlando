@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Phone } from 'lucide-react';
 
 export const metadata = {
-  title: "How Hiring Local Movers Makes Relocation Quick and Easy",
+  title: { absolute: 'How Local Movers Make Relocation Quick & Easy' },
   description: "Local movers bring structure and efficiency to every step. Trained crews pack with care, load with strategy, and manage transportation without delays.",
   alternates: { canonical: `${SITE.url}/blog/how-hiring-local-movers-makes-relocation-quick-and-easy` },
 };

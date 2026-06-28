@@ -4,7 +4,7 @@ import { SITE } from '@/lib/site';
 import { Star } from 'lucide-react';
 
 export const metadata = {
-  title: 'Leave a Review — Liberty Moves Orlando',
+  title: { absolute: 'Leave a Review | Liberty Moves Orlando' },
   description: 'Share your Liberty Moves Orlando experience on Google. It helps other Orlando families find a trusted mover — and it means the world to our team.',
   alternates: { canonical: `${SITE.url}/review` },
 };

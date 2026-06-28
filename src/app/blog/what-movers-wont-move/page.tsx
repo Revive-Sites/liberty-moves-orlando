@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "What Movers Won't Move (and Why) — Non-Allowables List",
+  title: { absolute: "What Movers Won't Move (and Why)" },
   description: 'Complete non-allowables list: hazmat, firearms, food, plants, cash. Why movers refuse these and what to do with them instead.',
   alternates: { canonical: `${SITE.url}/blog/what-movers-wont-move` },
 };

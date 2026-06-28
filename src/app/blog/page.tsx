@@ -7,7 +7,7 @@ import { Calendar, ArrowRight } from 'lucide-react';
 import { listBlogPosts } from '@/data/blog-posts-manifest';
 
 export const metadata = {
-  title: 'Orlando Moving Tips & Guides — Liberty Moves Orlando Blog',
+  title: 'Orlando Moving Tips & Guides',
   description: 'Honest, practical Orlando moving advice — pricing, packing, tipping, hurricane-season planning, and 16+ guides written by actual movers.',
   alternates: { canonical: `${SITE.url}/blog` },
 };

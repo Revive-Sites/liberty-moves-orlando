@@ -7,7 +7,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Orlando Moving Cost Calculator — Instant Price Estimate',
+  title: 'Orlando Moving Cost Calculator',
   description: 'Free Orlando moving cost calculator. Drag the options for home size, move type, packing, and stairs — get an instant price range. No email required.',
   alternates: { canonical: `${SITE.url}/orlando-moving-cost-calculator` },
 };

@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'How to Pack Fragile Items for a Move (Pro Tips)',
+  title: { absolute: 'How to Pack Fragile Items for a Move' },
   description: 'Professional packing techniques for glassware, china, TVs, mirrors, art, and electronics. Learn what breaks, why, and how to prevent it.',
   alternates: { canonical: `${SITE.url}/blog/how-to-pack-fragile-items` },
 };

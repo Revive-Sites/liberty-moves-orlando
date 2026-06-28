@@ -16,7 +16,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Last Minute Movers Orlando | Same-Day Moving Service',
+  title: 'Last Minute Movers Orlando',
   description:
     'Need movers today or tomorrow in Orlando? Liberty Moves Orlando handles same-day and emergency moves. Licensed, insured, honest pricing. Call 407-641-2887.',
   alternates: { canonical: `${SITE.url}/last-minute-movers-orlando` },

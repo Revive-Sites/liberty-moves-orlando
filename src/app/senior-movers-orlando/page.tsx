@@ -16,7 +16,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: 'Senior Movers Orlando | Retirement & Downsizing Specialists',
+  title: 'Senior Movers Orlando',
   description: 'Orlando senior movers specializing in retirement communities, downsizing, and estate moves. Patient crews, heirloom care, family coordination. Licensed.',
   alternates: { canonical: `${SITE.url}/senior-movers-orlando` },
 };
