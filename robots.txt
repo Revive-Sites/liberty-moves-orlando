@@ -24,4 +24,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://liberty-moves-orlando.vercel.app/sitemap.xml
+Sitemap: https://libertymovesorlando.com/sitemap.xml
