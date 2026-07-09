@@ -11,6 +11,7 @@ import ScrollProgress from '@/components/ScrollProgress';
 import SocialProofToast from '@/components/SocialProofToast';
 import FloatingBoxes from '@/components/FloatingBoxes';
 import CookieConsent from '@/components/CookieConsent';
+import QuoteChoiceModal from '@/components/QuoteChoiceModal';
 
 const SITE_URL = 'https://libertymovesorlando.com';
 
@@ -72,6 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ExitIntent />
         <ChatWidget />
         <CookieConsent />
+        <QuoteChoiceModal />
       </body>
     </html>
   );

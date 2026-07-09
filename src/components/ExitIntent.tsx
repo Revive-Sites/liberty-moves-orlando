@@ -21,22 +21,23 @@ export default function ExitIntent() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (safeGet(STORAGE_KEY) === '1') return;
+    // Share a session flag with QuoteChoiceModal so a visitor never sees two modals stacked.
+    if (safeGet(STORAGE_KEY) === '1' || safeGet('revive-popup-shown') === '1') return;
+
+    const reveal = () => {
+      setShow(true);
+      safeSet(STORAGE_KEY, '1');
+      safeSet('revive-popup-shown', '1');
+    };
 
     const onMouseOut = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !closed) {
-        setShow(true);
-        safeSet(STORAGE_KEY, '1');
-      }
+      if (e.clientY <= 0 && !closed && safeGet('revive-popup-shown') !== '1') reveal();
     };
 
     let mobileTimer: any;
     if (window.matchMedia('(max-width: 768px)').matches) {
       mobileTimer = setTimeout(() => {
-        if (!closed) {
-          setShow(true);
-          safeSet(STORAGE_KEY, '1');
-        }
+        if (!closed && safeGet('revive-popup-shown') !== '1') reveal();
       }, 35000);
     } else {
       document.addEventListener('mouseout', onMouseOut);
