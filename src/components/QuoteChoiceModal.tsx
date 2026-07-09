@@ -12,14 +12,14 @@ import { Phone, MessageSquareText, ClipboardCheck, X, Star } from 'lucide-react'
  */
 
 const CFG = {
-  headingTop: '%%HEADING_TOP%%',
-  headingAccent: '%%HEADING_ACCENT%%',
+  headingTop: 'Ready to move?',
+  headingAccent: 'Get your free quote',
   subtext: 'Pick whatever’s easiest — a real person answers, and estimates are always free.',
-  phoneDisplay: '%%PHONE_DISPLAY%%',
-  phoneTel: '%%PHONE_TEL%%',
+  phoneDisplay: '(407) 641-2887',
+  phoneTel: 'tel:+14076412887',
   thirdLabel: 'Free estimate',
-  thirdSub: '%%THIRD_SUB%%',
-  thirdHref: '%%THIRD_HREF%%',
+  thirdSub: 'Takes 60 seconds',
+  thirdHref: '/contact-us',
   trust: 'Licensed & insured · trusted by Orlando families',
   accent: '#DC2626',
   ink: '#1E3A5F',
