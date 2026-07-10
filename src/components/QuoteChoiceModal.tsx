@@ -21,6 +21,7 @@ const CFG = {
   thirdSub: 'Takes 60 seconds',
   thirdHref: '/contact-us',
   trust: 'Licensed & insured · trusted by Orlando families',
+  smsBody: 'Hi! I’d like a free moving quote.',
   accent: '#DC2626',
   ink: '#1E3A5F',
 };
@@ -75,7 +76,7 @@ export default function QuoteChoiceModal() {
 
   if (!show) return null;
 
-  const smsHref = `sms:${CFG.phoneTel.replace('tel:', '')}`;
+  const smsHref = `sms:${CFG.phoneTel.replace('tel:', '')}?&body=${encodeURIComponent(CFG.smsBody)}`;
   const choices = [
     { icon: Phone, label: 'Call us', sub: CFG.phoneDisplay, href: CFG.phoneTel, action: 'call', internal: false },
     { icon: MessageSquareText, label: 'Text us', sub: CFG.phoneDisplay, href: smsHref, action: 'text', internal: false },
