@@ -78,6 +78,11 @@ export async function POST(req: Request) {
     }
   }
 
-  console.warn('[api/quote] LEAD RECEIVED but all delivery paths failed:', JSON.stringify({ input, attempts }));
-  return NextResponse.json({ ok: true, channel: 'log-fallback', attempts });
+  // All delivery paths failed. Do NOT report success: returning ok:true here made the
+  // form show its success state and fire the Google Ads / GA4 lead conversion for a lead
+  // that was never actually delivered to GHL — silent lead loss that also poisons
+  // conversion data. Surface a real failure so the visitor is prompted to call instead
+  // (the form's error state shows the phone number) and no phantom conversion fires.
+  console.error('[api/quote] LEAD DELIVERY FAILED on all paths:', JSON.stringify({ input, attempts }));
+  return NextResponse.json({ ok: false, error: 'delivery_failed', attempts }, { status: 502 });
 }
