@@ -78,6 +78,18 @@ export async function POST(req: Request) {
     }
   }
 
-  console.warn('[api/quote] LEAD RECEIVED but all delivery paths failed:', JSON.stringify({ input, attempts }));
-  return NextResponse.json({ ok: true, channel: 'log-fallback', attempts });
+  // Every delivery path failed. Return an ERROR, not a fake success.
+  //
+  // This used to `return { ok: true, channel: 'log-fallback' }`, which made the
+  // form show "Got it — we'll be in touch", redirect to /thank-you, and drop the
+  // lead into this console.warn. A lead vanishing that way is worse than one that
+  // never got submitted: the visitor believes they've been heard and stops trying.
+  // It also hid the Jul 2026 outage — nothing surfaced while leads went nowhere.
+  // Failing loudly makes QuoteForm render its error state with the phone number,
+  // so the visitor still has a way to reach Liberty.
+  console.error('[api/quote] LEAD LOST — all delivery paths failed:', JSON.stringify({ input, attempts }));
+  return NextResponse.json(
+    { ok: false, error: 'Could not submit — please call us at (407) 641-2887.', attempts },
+    { status: 502 },
+  );
 }
