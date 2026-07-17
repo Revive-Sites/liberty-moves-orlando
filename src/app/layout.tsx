@@ -12,6 +12,7 @@ import SocialProofToast from '@/components/SocialProofToast';
 import FloatingBoxes from '@/components/FloatingBoxes';
 import CookieConsent from '@/components/CookieConsent';
 import QuoteChoiceModal from '@/components/QuoteChoiceModal';
+import { Analytics } from '@vercel/analytics/next';
 
 const SITE_URL = 'https://libertymovesorlando.com';
 
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ChatWidget />
         <CookieConsent />
         <QuoteChoiceModal />
+        <Analytics />
       </body>
     </html>
   );
